@@ -1,3 +1,5 @@
+package Logic;
+
 public class AVLTreeNode {
     int key, height;
     AVLTreeNode left, right;
