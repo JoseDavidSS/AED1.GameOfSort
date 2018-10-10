@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
 import java.io.IOException;
 
 /**
@@ -14,6 +16,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     static Stage game;
+    static Scene scene;
 
     /**
      * @param scene_route es un argumento que entra al momento de ser llamado por el controller Juego y así definir cuál ventana mostrar.
@@ -22,12 +25,12 @@ public class Main extends Application {
 
     static void setScene(String scene_route) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource(scene_route));
-        Scene scene = new Scene(root);
+        Scene sceneG = new Scene(root);
         double width = game.getWidth();
         double height = game.getHeight();
         boolean fullscreen = game.isFullScreen();
-        game.setScene(scene);
-
+        game.setScene(sceneG);
+        scene = sceneG;
     }
 
     /**
