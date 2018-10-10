@@ -2,11 +2,14 @@ package GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
+import javafx.scene.paint.Color;
 import java.io.FileInputStream;
 import java.io.IOException;
 import Game.Grifo;
@@ -16,18 +19,15 @@ public class Game {
     String text = "hola";
     String textAreaString = "";
     @FXML private Text sideText;
-    private AnchorPane paneBoard;
-    //private Grifo player = new Grifo(1, 50, 50);
+    @FXML private AnchorPane paneBoard;
+    private Grifo player = new Grifo(1, 50, 50);
 
     /**
      * Método que cambia la escena gracias a una instancia que llama del Main.
      */
     public void runBoard () throws IOException {
         Main.setScene("Board.fxml");
-        Image heroImage = new Image((new FileInputStream("C:\\Users\\Kevin Cordero Zúñiga\\IdeaProjects\\Game of Sorts\\game_data\\images\\grifo.png")));
-        Node hero = new ImageView(heroImage);
-        //hero = new ImageView(heroImage);
-        //paneBoard.getChildren().add(player);
+
         Main.scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case W:
@@ -47,15 +47,21 @@ public class Game {
                     break;
             }
         });
-        paneBoard.getChildren().add(hero);
     }
-
+/*
+    public void addPlayer(){
+        Image img = new Image("file:grifo.png");
+        player.setFill(new ImagePattern(img));
+        paneBoard.getChildren().addAll(player);
+    }
+*/
 
 
     public void addText (){
         textAreaString += String.format("%s%n", text);
         System.out.println("Segundo: "+textAreaString);
         this.sideText.setText(textAreaString);
+        //addPlayer();
     }
 
 }

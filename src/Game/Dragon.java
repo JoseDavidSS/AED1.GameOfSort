@@ -9,8 +9,8 @@ public class Dragon extends Beast {
     public Dragon left;
     public Dragon right;
 
-    public Dragon(String path, int resistence, String name, int rSpeed, int age, String clas, int posx, int posy) {
-        super(path, resistence, posx, posy);
+    public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy) {
+        super(resistence, posx, posy);
         this.name = name;
         this.rechargeSpeed = rSpeed;
         this.age = age;

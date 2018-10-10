@@ -1,16 +1,16 @@
 package Game;
 
-import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-public class Beast {
+public class Beast extends Rectangle {
 
     private int resistence;
     private int posx;
     private int posy;
-    private String imagePath;
 
-    public Beast (String path, int resistence, int posx, int posy){
-        this.imagePath = path;
+    public Beast (int resistence, int posx, int posy){
+        super(50, 50, Color.BROWN);
         this.posx = posx;
         this.posy = posy;
         this.resistence = resistence;
