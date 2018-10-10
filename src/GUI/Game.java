@@ -2,13 +2,15 @@ package GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.io.IOException;
 
 public class Game {
     String text = "hola";
     String textAreaString = "";
-    @FXML private TextArea sideText;
+    @FXML private Text sideText;
 
     /**
      * Método que cambia la escena gracias a una instancia que llama del Main.
