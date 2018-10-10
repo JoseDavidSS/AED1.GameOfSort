@@ -47,7 +47,7 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception{
         Main.game=primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("Controller.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         primaryStage.setTitle("¡¡ Game of Sorts !!");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
