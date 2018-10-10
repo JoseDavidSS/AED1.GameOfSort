@@ -19,7 +19,7 @@ public class Main extends Application {
     static Scene scene;
 
     /**
-     * @param scene_route es un argumento que entra al momento de ser llamado por el controller Juego y así definir cuál ventana mostrar.
+     * @param scene_route es un argumento que entra al momento de ser llamado por el controller Game y así definir cuál ventana mostrar.
      * @throws IOException se usa para verifica cuando hay errores
      */
 

@@ -2,7 +2,7 @@ package GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -15,9 +15,9 @@ public class Game {
 
     String text = "hola";
     String textAreaString = "";
+    @FXML private Text sideText;
     private AnchorPane paneBoard;
     //private Grifo player = new Grifo(1, 50, 50);
-    @FXML private TextArea sideText;
 
     /**
      * Método que cambia la escena gracias a una instancia que llama del Main.
