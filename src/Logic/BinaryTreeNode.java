@@ -1,3 +1,5 @@
+package Logic;
+
 public class BinaryTreeNode {
     int value;
     BinaryTreeNode left;
