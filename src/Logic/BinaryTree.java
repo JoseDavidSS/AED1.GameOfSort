@@ -8,7 +8,7 @@ public class BinaryTree {
      * @param value int
      */
     public void add(int value) {
-        root = addRecursive(root, value);
+        root = add_aux(root, value);
     }
 
     /**
@@ -17,14 +17,14 @@ public class BinaryTree {
      * @param value int
      * @return Modified Logic.BinaryTreeNode
      */
-    private BinaryTreeNode addRecursive(BinaryTreeNode current, int value) {
+    private BinaryTreeNode add_aux(BinaryTreeNode current, int value) {
         if (current == null) {
             return new BinaryTreeNode(value);
         }
         if (value < current.value) {
-            current.left = addRecursive(current.left, value);
+            current.left = add_aux(current.left, value);
         } else if (value > current.value) {
-            current.right = addRecursive(current.right, value);
+            current.right = add_aux(current.right, value);
         } else {
             // value already exists
             return current;
@@ -39,7 +39,7 @@ public class BinaryTree {
      * @return
      */
     public boolean containsNode(int value) {
-        return containsNodeRecursive(root, value);
+        return containsNode_aux(root, value);
     }
 
     /**
@@ -48,7 +48,7 @@ public class BinaryTree {
      * @param value int
      * @return boolean
      */
-    private boolean containsNodeRecursive(BinaryTreeNode current, int value) {
+    private boolean containsNode_aux(BinaryTreeNode current, int value) {
         if (current == null) {
             return false;
         }
@@ -56,8 +56,8 @@ public class BinaryTree {
             return true;
         }
         return value < current.value
-                ? containsNodeRecursive(current.left, value)
-                : containsNodeRecursive(current.right, value);
+                ? containsNode_aux(current.left, value)
+                : containsNode_aux(current.right, value);
     }
 
     /**
@@ -65,7 +65,7 @@ public class BinaryTree {
      * @param value int to delete
      */
     public void delete(int value) {
-        root = deleteRecursive(root, value);
+        root = delete_aux(root, value);
     }
 
     /**
@@ -74,7 +74,7 @@ public class BinaryTree {
      * @param value int to delete
      * @return Modified Logic.BinaryTreeNode
      */
-    private BinaryTreeNode deleteRecursive(BinaryTreeNode current, int value) {
+    private BinaryTreeNode delete_aux(BinaryTreeNode current, int value) {
         if (current == null) {
             return null;
         }
@@ -90,10 +90,10 @@ public class BinaryTree {
             }
         }
         if (value < current.value) {
-            current.left = deleteRecursive(current.left, value);
+            current.left = delete_aux(current.left, value);
             return current;
         }
-        current.right = deleteRecursive(current.right, value);
+        current.right = delete_aux(current.right, value);
         return current;
     }
 
@@ -102,8 +102,8 @@ public class BinaryTree {
      * @param root Node where analysis starts from (usually root)
      * @return int
      */
-    private int findSmallestValue(BinaryTreeNode root) {
-        return root.left == null ? root.value : findSmallestValue(root.left);
+    private int findMin(BinaryTreeNode root) {
+        return root.left == null ? root.value : findMin(root.left);
     }
 
 }

@@ -5,12 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.io.IOException;
 
 /**
- * Clase para iniciar la interfaz.
+ * Main class to start the game
  */
 
 public class Main extends Application {
@@ -19,10 +18,9 @@ public class Main extends Application {
     static Scene scene;
 
     /**
-     * @param scene_route es un argumento que entra al momento de ser llamado por el controller Game y así definir cuál ventana mostrar.
-     * @throws IOException se usa para verifica cuando hay errores
+     * @param scene_route calls Game controller and defines which window to show
+     * @throws IOException for error verification
      */
-
     static void setScene(String scene_route) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource(scene_route));
         Scene sceneG = new Scene(root);
@@ -34,10 +32,9 @@ public class Main extends Application {
     }
 
     /**
-     * main es el método que ejecuta la clase una vez que se inicializa.
-     * @param args argumentos que son necesarios para inicializar y correr la clase.
+     * Executes GUI
+     * @param args arguments to run class
      */
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -45,13 +42,12 @@ public class Main extends Application {
     @Override
 
     /**
-     * El método start se utiliza para definir con qué ventana se iniciará la interfaz.
+     * Defines which window shows when first run
      */
-
     public void start(Stage primaryStage) throws Exception{
         Main.game=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        primaryStage.setTitle("¡¡ Game of Sorts !!");
+        primaryStage.setTitle("Game of Sorts");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
     }

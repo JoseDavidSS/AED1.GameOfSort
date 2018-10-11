@@ -9,7 +9,7 @@ public class AVLTree {
      * @param b int
      * @return int
      */
-    private int max(int a, int b) {
+    private int findMax(int a, int b) {
         return (a > b) ? a : b;
     }
 
@@ -36,8 +36,8 @@ public class AVLTree {
         x.right = y;
         y.left = T2;
 
-        y.height = max(getHeight(y.left), getHeight(y.right)) + 1;
-        x.height = max(getHeight(x.left), getHeight(x.right)) + 1;
+        y.height = findMax(getHeight(y.left), getHeight(y.right)) + 1;
+        x.height = findMax(getHeight(x.left), getHeight(x.right)) + 1;
 
         return x;
     }
@@ -54,8 +54,8 @@ public class AVLTree {
         y.left = x;
         x.right = T2;
 
-        x.height = max(getHeight(x.left), getHeight(x.right)) + 1;
-        y.height = max(getHeight(y.left), getHeight(y.right)) + 1;
+        x.height = findMax(getHeight(x.left), getHeight(x.right)) + 1;
+        y.height = findMax(getHeight(y.left), getHeight(y.right)) + 1;
 
         return y;
     }
@@ -90,7 +90,7 @@ public class AVLTree {
         else
             return node;
 
-        node.height = 1 + max(getHeight(node.left), getHeight(node.right));
+        node.height = 1 + findMax(getHeight(node.left), getHeight(node.right));
 
         int balance = getBalance(node);
 
@@ -125,8 +125,5 @@ public class AVLTree {
             preOrder(node.right);
         }
     }
-
-
-
 
 }

@@ -25,6 +25,11 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/Players/YellowDragon.gif" />
+                     </image>
+                  </ImageView>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="212.0" prefWidth="1000.0" textFill="#972a2a">
                      <font>
                         <Font name="System Bold" size="96.0" />
@@ -32,7 +37,7 @@
                      <graphic>
                         <ImageView fitHeight="266.0" fitWidth="372.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Media/MainLogo.png" />
+                              <Image url="@../Media/MenuAssets/MainLogo.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -40,10 +45,17 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Separator prefHeight="100.0" prefWidth="406.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runBoard" prefHeight="100.0" prefWidth="200.0" text="Play">
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runBoard" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: black;">
                            <font>
                               <Font name="System Bold Italic" size="36.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="112.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Media/MenuAssets/PlayButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                         <Separator prefHeight="100.0" prefWidth="394.0" />
                      </children>

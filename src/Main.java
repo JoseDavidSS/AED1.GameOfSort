@@ -1,8 +1,12 @@
+import Game.Dragon;
+import Game.GameUtil;
 import Logic.AVLTree;
 import Logic.BinaryTree;
 
+import java.io.IOException;
+
 public class Main{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BinaryTree bt = new BinaryTree();
         bt.add(1);
         bt.add(2);
@@ -31,5 +35,10 @@ public class Main{
         System.out.println("Preorder traversal" +
                 " of constructed tree is : ");
         tree.preOrder(tree.root);
+
+        String name = GameUtil.generateName();
+        System.out.println();
+        System.out.println("Random dragon name is: " + name);
+
     }
 }

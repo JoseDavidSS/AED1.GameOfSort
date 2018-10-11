@@ -1,29 +1,22 @@
 package GUI;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-import javafx.scene.paint.Color;
-import java.io.FileInputStream;
 import java.io.IOException;
-import Game.Grifo;
+import Game.Gryphon;
 
 public class Game {
 
-    String text = "hola";
+    String text = "Hello";
     String textAreaString = "";
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
-    private Grifo player = new Grifo(1, 50, 50);
+    private Gryphon player = new Gryphon(1, 50, 50);
 
     /**
-     * Método que cambia la escena gracias a una instancia que llama del Main.
+     * Changes scene by calling main class
      */
     public void runBoard () throws IOException {
         Main.setScene("Board.fxml");
@@ -31,23 +24,24 @@ public class Game {
         Main.scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case W:
-                    System.out.println("Arriba");
+                    System.out.println("Up");
                     break;
                 case A:
-                    System.out.println("Izquierda");
+                    System.out.println("Left");
                     break;
                 case D:
-                    System.out.println("Derecha");
+                    System.out.println("Right");
                     break;
                 case S:
-                    System.out.println("Abajo");
+                    System.out.println("Down");
                     break;
                 case SPACE:
-                    System.out.println("Disparo");
+                    System.out.println("Shot");
                     break;
             }
         });
     }
+
 /*
     public void addPlayer(){
         Image img = new Image("file:grifo.png");
@@ -56,10 +50,9 @@ public class Game {
     }
 */
 
-
     public void addText (){
         textAreaString += String.format("%s%n", text);
-        System.out.println("Segundo: "+textAreaString);
+        System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
         //addPlayer();
     }
