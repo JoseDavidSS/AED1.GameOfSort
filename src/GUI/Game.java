@@ -28,7 +28,7 @@ public class Game {
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
 
-        Image img = new Image("file:C:\\Users\\Kevin Cordero Zúñiga\\IdeaProjects\\Game of Sorts\\game_data\\images\\gryphon.png");
+        Image img = new Image("file:src/Media/Players/gryphon.png");
         player.setFill(new ImagePattern(img));
         paneBoard.getChildren().add(player);
 
