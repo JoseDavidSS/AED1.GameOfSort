@@ -19,7 +19,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#addText" prefHeight="140.0" prefWidth="212.0" text="Prueba" />
+            <Button mnemonicParsing="false" onAction="#inicioJuego" prefHeight="140.0" prefWidth="212.0" text="Prueba" />
             <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <content>
                   <Text fx:id="sideText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="JUSTIFY" wrappingWidth="204.0" />
