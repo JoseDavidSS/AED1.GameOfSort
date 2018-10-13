@@ -1,6 +1,8 @@
 package Game;
 
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 public class Beast extends Rectangle {
@@ -8,15 +10,19 @@ public class Beast extends Rectangle {
     private int resistence;
     private int posx;
     private int posy;
+    private boolean dead;
 
-    public Beast (int resistence, int posx, int posy, int width, int height){
+    public Beast (int resistence, int posx, int posy, int width, int height, String imgPath){
         super(width, height, Color.BISQUE);
-        setTranslateX(posx);
-        setTranslateY(posy);
+        this.setTranslateX(posx);
+        this.setTranslateY(posy);
+        Image img = new Image(imgPath);
+        this.setFill(new ImagePattern(img));
 
         this.posx = posx;
         this.posy = posy;
         this.resistence = resistence;
+        this.dead = false;
     }
 
     public int getResistence() {
@@ -41,6 +47,14 @@ public class Beast extends Rectangle {
 
     public void setPosy(int posy) {
         this.posy = posy;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
     }
 
     public void moveUp(){

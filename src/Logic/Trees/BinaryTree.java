@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Trees;
 
 public class BinaryTree {
     BinaryTreeNode root;
@@ -15,7 +15,7 @@ public class BinaryTree {
      * Adds a value to the tree recursively
      * @param current Node where addition starts (usually root)
      * @param value int
-     * @return Modified Logic.BinaryTreeNode
+     * @return Modified Logic.Trees.BinaryTreeNode
      */
     private BinaryTreeNode add_aux(BinaryTreeNode current, int value) {
         if (current == null) {
@@ -72,7 +72,7 @@ public class BinaryTree {
      * Deletes an element from the tree.
      * @param current Node where analysis starts from. (usually root)
      * @param value int to delete
-     * @return Modified Logic.BinaryTreeNode
+     * @return Modified Logic.Trees.BinaryTreeNode
      */
     private BinaryTreeNode delete_aux(BinaryTreeNode current, int value) {
         if (current == null) {

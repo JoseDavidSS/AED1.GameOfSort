@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Trees;
 
 public class AVLTree {
     public AVLTreeNode root;
@@ -15,7 +15,7 @@ public class AVLTree {
 
     /**
      * Gets height from tree.
-     * @param N Logic.AVLTreeNode
+     * @param N Logic.Trees.AVLTreeNode
      * @return int Height of tree
      */
     public int getHeight(AVLTreeNode N) {
@@ -26,8 +26,8 @@ public class AVLTree {
 
     /**
      * Rotates the tree to the right.
-     * @param y Logic.AVLTreeNode
-     * @return Modified Logic.AVLTree
+     * @param y Logic.Trees.AVLTreeNode
+     * @return Modified Logic.Trees.AVLTree
      */
     private AVLTreeNode rightRotate(AVLTreeNode y) {
         AVLTreeNode x = y.left;
@@ -44,8 +44,8 @@ public class AVLTree {
 
     /**
      * Rotates the tree to the left.
-     * @param x Logic.AVLTreeNode
-     * @return Modified Logic.AVLTree
+     * @param x Logic.Trees.AVLTreeNode
+     * @return Modified Logic.Trees.AVLTree
      */
     private AVLTreeNode leftRotate(AVLTreeNode x) {
         AVLTreeNode y = x.right;
@@ -63,7 +63,7 @@ public class AVLTree {
 
     /**
      * Gets balance factor of node N.
-     * @param N Logic.AVLTreeNode
+     * @param N Logic.Trees.AVLTreeNode
      * @return int
      */
     public int getBalance(AVLTreeNode N) {
@@ -75,9 +75,9 @@ public class AVLTree {
 
     /**
      * Inserts Node in tree and adjusts it correspondingly
-     * @param node Logic.AVLTreeNode
+     * @param node Logic.Trees.AVLTreeNode
      * @param key int
-     * @return Logic.AVLTreeNode
+     * @return Logic.Trees.AVLTreeNode
      */
     public AVLTreeNode insert(AVLTreeNode node, int key) {
         if (node == null)

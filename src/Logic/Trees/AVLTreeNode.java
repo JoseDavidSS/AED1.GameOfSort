@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Trees;
 
 public class AVLTreeNode {
     int key, height;

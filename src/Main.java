@@ -1,7 +1,6 @@
-import Game.Dragon;
 import Game.GameUtil;
-import Logic.AVLTree;
-import Logic.BinaryTree;
+import Logic.Trees.AVLTree;
+import Logic.Trees.BinaryTree;
 
 import java.io.IOException;
 
