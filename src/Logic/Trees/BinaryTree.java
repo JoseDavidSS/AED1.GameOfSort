@@ -1,6 +1,7 @@
 package Logic.Trees;
 
 public class BinaryTree {
+
     BinaryTreeNode root;
 
     /**

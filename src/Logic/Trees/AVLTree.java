@@ -1,6 +1,7 @@
 package Logic.Trees;
 
 public class AVLTree {
+
     public AVLTreeNode root;
 
     /**

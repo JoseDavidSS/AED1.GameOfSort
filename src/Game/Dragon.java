@@ -6,8 +6,6 @@ public class Dragon extends Beast {
     private int rechargeSpeed;
     private int age;
     private String clas;
-    public Dragon left;
-    public Dragon right;
 
     public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy, int width, int height, String imgPath) {
         super(resistence, posx, posy, width, height, imgPath);
@@ -15,8 +13,6 @@ public class Dragon extends Beast {
         this.rechargeSpeed = rSpeed;
         this.age = age;
         this.clas = clas;
-        this.left = null;
-        this.right = null;
     }
 
     public String getName() {

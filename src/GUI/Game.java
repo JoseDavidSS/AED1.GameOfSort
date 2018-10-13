@@ -2,6 +2,8 @@ package GUI;
 
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
+import Logic.Lists.TemporalList;
+import Logic.Lists.TemporalNode;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
@@ -10,11 +12,13 @@ import java.io.IOException;
 
 import Game.Gryphon;
 import Game.Attack;
+import Game.Dragon;
 
 public class Game {
 
     String text = "Hello";
     String textAreaString = "";
+    private int level = 1;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     private Gryphon player = new Gryphon(1, 50, 100, 150, 100, "file:src/Media/Players/Charizard.gif");
@@ -59,15 +63,43 @@ public class Game {
             }
         };
         timer.start();
+
+        this.addEnemies();
     }
 
-    public void shoot(String who){
+    private void shoot(String who){
         Attack attack = new Attack(1, player.getPosx() + 150, player.getPosy(), 80, 80, "file:src/Media/Bullets/Green Bullet.png", who);
         paneBoard.getChildren().add(attack);
         BulletsList.getInstance().addBullet(attack);
     }
 
-    public void update(){
+    //Tambien hacer uno que reciba arboles
+    public void addEnemies(/*List*/){
+        //Temporal
+        int i = 0;
+        int n = 10;
+        while (i != 100){
+            Dragon dragon = new Dragon(1, "Hol", 2, 122, "Comandante", 650, n, 100, 150, "file:src/Media/Players/Nightfury.gif");
+            TemporalList.getInstance().addEnemy(dragon);
+            n += 70;
+            if (i % 10 == 0 && i != 0){
+                n = 10;
+            }
+            i++;
+        }
+        TemporalList list = TemporalList.getInstance();
+        //Termina lo temporal
+        i = 0;
+        TemporalNode tmp = list.head;
+        while(i != 10){
+            paneBoard.getChildren().add(tmp.getDragon());
+            i++;
+            tmp = tmp.next;
+        }
+
+    }
+
+    private void update(){
         BulletsList tmp = BulletsList.getInstance();
         if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
