@@ -87,13 +87,13 @@ public class Game {
     public void addEnemies(/*List*/){
         //Temporal
         int i = 0;
-        int n = 10;
+        int n = 50;
         while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 140, "file:src/Media/Players/Nightfury.gif");
+            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 160, "file:src/Media/Players/Nightfury.gif");
             TemporalList.getInstance().addEnemy(dragon);
-            n += 70;
-            if (i % 10 == 0 && i != 0){
-                n = 10;
+            n += 100;
+            if (i % 6 == 0 && i != 0){
+                n = 50;
             }
             i++;
         }
@@ -101,7 +101,7 @@ public class Game {
         //Termina lo temporal
         i = 0;
         TemporalNode tmp = list.head;
-        while (i != 10){
+        while (i != 6){
             paneBoard.getChildren().add(tmp.getDragon());
             i++;
             onScreenEnemies++;
