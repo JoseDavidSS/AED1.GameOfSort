@@ -88,4 +88,12 @@ public class Beast extends Rectangle {
             this.posx = this.posx + 10;
         }
     }
+
+    public void hit(){
+        if (this.resistence == 0){
+            this.dead = true;
+        }else{
+            this.resistence--;
+        }
+    }
 }

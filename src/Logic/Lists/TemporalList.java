@@ -49,4 +49,25 @@ public class TemporalList {
         }
     }
 
+    public void deleteEnemy(Dragon dragon){
+        if (this.head.getDragon() == dragon){
+            this.head = this.head.next;
+            this.large--;
+        }else{
+            TemporalNode tmp = this.head;
+            while (tmp.next != null){
+                if (tmp.next.getDragon() == dragon && tmp.next.next == null){
+                    tmp.next = null;
+                    break;
+                }else if(tmp.next.getDragon() == dragon){
+                    tmp.next = tmp.next.next;
+                    this.large--;
+                    break;
+                }else{
+                    tmp = tmp.next;
+                }
+            }
+        }
+    }
+
 }
