@@ -27,4 +27,13 @@ public class Attack extends Beast {
         }
     }
 
+    public void moveLeft(){
+        if (this.getPosx() == 0){
+            this.setDead(true);
+        }else{
+            setTranslateX(this.getPosx() - 2);
+            this.setPosx(this.getPosx() - 2);
+        }
+    }
+
 }

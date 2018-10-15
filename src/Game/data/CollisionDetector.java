@@ -31,13 +31,15 @@ public class CollisionDetector extends Thread {
                                 sub_sub_tmp.setDead(true);
                                 sub_sub_tmp2.hit();
                                 this.sleep();
-                                System.out.println(sub_sub_tmp2.getResistence());
                                 break;
                             }else{
                                 sub_temp2 = sub_temp2.next;
                                 i++;
                             }
                         }
+                        sub_tmp = sub_tmp.next;
+                    }
+                    else{
                         sub_tmp = sub_tmp.next;
                     }
                 }

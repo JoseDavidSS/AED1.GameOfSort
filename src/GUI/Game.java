@@ -23,6 +23,8 @@ public class Game {
     String textAreaString = "";
     private int level = 1;
     public static int onScreenEnemies = 0;
+    public static boolean inFormation = true;
+    private double enemyShoot = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     private Gryphon player = new Gryphon(1, 50, 100, 150, 100, "file:src/Media/Players/Charizard.gif");
@@ -57,7 +59,9 @@ public class Game {
                     player.moveDown();
                     break;
                 case K:
-                    this.shoot("playerbullet");
+                    if (inFormation){
+                        this.shoot();
+                    }
                     break;
             }
         });
@@ -77,8 +81,14 @@ public class Game {
 
     }
 
-    private void shoot(String who){
-        Attack attack = new Attack(1, player.getPosx() + 150, player.getPosy(), 60, 60, "file:src/Media/Bullets/Green Bullet.png", who);
+    private void shoot(){
+        Attack attack = new Attack(0, player.getPosx() + 150, player.getPosy(), 60, 60, "file:src/Media/Bullets/Green Bullet.png", "playerbullet");
+        paneBoard.getChildren().add(attack);
+        BulletsList.getInstance().addBullet(attack);
+    }
+
+    public void shoot(Dragon dragon){
+        Attack attack = new Attack(0, dragon.getPosx(), dragon.getPosy() + 20, 60, 60, "file:src/Media/Bullets/Fire.png", "enemybullet");
         paneBoard.getChildren().add(attack);
         BulletsList.getInstance().addBullet(attack);
     }
@@ -114,12 +124,22 @@ public class Game {
     private void update(){
         BulletsList tmp = BulletsList.getInstance();
         TemporalList tmp2 = TemporalList.getInstance();
+        this.enemyShoot += 0.016;
         if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
             while (sub_tmp != null){
                 Attack sub_sub_tmp = sub_tmp.getAttack();
                 if (sub_sub_tmp.getWho().equals("playerbullet")){
                     sub_sub_tmp.moveRight();
+                    if (sub_sub_tmp.isDead()) {
+                        paneBoard.getChildren().remove(sub_sub_tmp);
+                        BulletsList.getInstance().deleteBullet(sub_sub_tmp);
+                        sub_tmp = sub_tmp.next;
+                    }else{
+                        sub_tmp = sub_tmp.next;
+                    }
+                }else{
+                    sub_sub_tmp.moveLeft();
                     if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
@@ -135,7 +155,14 @@ public class Game {
             int i = 0;
             while (onScreenEnemies != i){
                 Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
-                sub_sub_tmp2.moveLeft();
+                if (inFormation){
+                    sub_sub_tmp2.moveLeft();
+                    if (this.enemyShoot > 2){
+                        if (Math.random() < 0.4) {
+                            this.shoot(sub_sub_tmp2);
+                        }
+                    }
+                }
                 if (sub_sub_tmp2.isDead()){
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     TemporalList.getInstance().deleteEnemy(sub_sub_tmp2);
@@ -147,6 +174,8 @@ public class Game {
                     i++;
                 }
             }
+        }if (this.enemyShoot > 2) {
+            this.enemyShoot = 0;
         }
     }
 
