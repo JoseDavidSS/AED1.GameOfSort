@@ -27,7 +27,7 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Media/Players/YellowDragon.gif" />
+                        <Image url="@../Media/Enemies/YellowDragon.gif" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="212.0" prefWidth="1000.0" textFill="#972a2a">
@@ -45,7 +45,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Separator prefHeight="100.0" prefWidth="406.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runBoard" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: black;">
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runInstructions" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: black;">
                            <font>
                               <Font name="System Bold Italic" size="36.0" />
                            </font>

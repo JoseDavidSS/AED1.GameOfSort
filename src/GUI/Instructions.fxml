@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneBoard" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
+   <children>
+      <GridPane layoutY="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" text="Instructions" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="72.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Game of Sorts is a game that works based on waves, each wave has its own number of enemies. Each enemy has its own age, level, power and health. Use your hero to save the kingdom." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="70.0" prefWidth="288.0" text="Movement:" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;W&quot;, &quot;A&quot;, &quot;S&quot;, &quot;D&quot; from your keyboard, use them respectively to move upward, backward, downward, and forward." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="70.0" prefWidth="288.0" text="Shooting:" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;K&quot; from your keyboard to shoot at your enemies before they get through you and causing the kingdoms doom." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#runSetUp" prefHeight="60.0" prefWidth="110.0" text="Set up">
+                           <font>
+                              <Font name="System Bold Italic" size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

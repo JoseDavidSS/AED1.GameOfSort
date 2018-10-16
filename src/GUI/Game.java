@@ -31,13 +31,27 @@ public class Game {
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
     /**
-     * Changes scene by calling main class
+     * Changes scene from Menu to Instructions
+     */
+    public void runInstructions () throws IOException {
+        Main.setScene("Instructions.fxml");
+    }
+
+    /**
+     * Changes scene from Instructions to SetUp
+     */
+    public void runSetUp () throws IOException {
+        Main.setScene("SetUp.fxml");
+    }
+
+    /**
+     * Changes scene from SetUp to Board
      */
     public void runBoard () throws IOException {
         Main.setScene("Board.fxml");
     }
 
-    public void inicioJuego (){
+    public void startGame(){
         textAreaString += String.format("%s%n", text);
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
@@ -99,7 +113,7 @@ public class Game {
         int i = 0;
         int n = 50;
         while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 160, "file:src/Media/Players/Nightfury.gif");
+            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 160, "file:src/Media/Enemies/Nightfury.gif");
             TemporalList.getInstance().addEnemy(dragon);
             n += 100;
             if (i % 6 == 0 && i != 0){
@@ -177,6 +191,12 @@ public class Game {
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
         }
+    }
+
+    private String choosePlayer (int choice){
+        if (choice == 1);
+        String rute = "file:src/Media/Players/Charizard.gif";
+        return rute;
     }
 
 }
