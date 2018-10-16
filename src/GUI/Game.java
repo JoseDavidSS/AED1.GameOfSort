@@ -27,8 +27,36 @@ public class Game {
     private double enemyShoot = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
-    private Gryphon player = new Gryphon(1, 50, 100, 150, 100, "file:src/Media/Players/Charizard.gif");
+    private Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
+
+    public void print (){
+        System.out.println(Holder.playerRute);
+    }
+    public void choosePlayer1 (){
+        Holder.playerRute ="file:src/Media/Players/Charizard.gif";
+    }
+    public void choosePlayer2 (){
+        Holder.playerRute ="file:src/Media/Players/FlyingBeast.gif";
+    }
+    public void choosePlayer3 (){
+        Holder.playerRute = "file:src/Media/Players/Pony.gif";
+    }
+    public void choosePlayer4 (){
+        Holder.playerRute = "file:src/Media/Players/Angel.gif";
+    }
+    public void chooseEnemy1 (){
+        Holder.enemyRute = "file:src/Media/Enemies/BlackDragon.gif";
+    }
+    public void chooseEnemy2 (){
+        Holder.enemyRute = "file:src/Media/Enemies/GreenDragon.gif";
+    }
+    public void chooseEnemy3 (){
+        Holder.enemyRute = "file:src/Media/Enemies/Nightfury.gif";
+    }
+    public void chooseEnemy4 (){
+        Holder.enemyRute = "file:src/Media/Enemies/YellowDragon.gif";
+    }
 
     /**
      * Changes scene from Menu to Instructions
@@ -56,6 +84,7 @@ public class Game {
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
 
+        player = new Gryphon(1, 50, 100, 150, 100, Holder.playerRute);
         paneBoard.getChildren().add(player);
 
         Main.scene.setOnKeyPressed(e -> {
@@ -113,7 +142,7 @@ public class Game {
         int i = 0;
         int n = 50;
         while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 160, "file:src/Media/Enemies/Nightfury.gif");
+            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 650, n, 100, 160, Holder.enemyRute);
             TemporalList.getInstance().addEnemy(dragon);
             n += 100;
             if (i % 6 == 0 && i != 0){
@@ -192,11 +221,4 @@ public class Game {
             this.enemyShoot = 0;
         }
     }
-
-    private String choosePlayer (int choice){
-        if (choice == 1);
-        String rute = "file:src/Media/Players/Charizard.gif";
-        return rute;
-    }
-
 }

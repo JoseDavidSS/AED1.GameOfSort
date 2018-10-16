@@ -15,12 +15,12 @@
 <AnchorPane fx:id="paneBoard" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
    <children>
       <GridPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
@@ -38,11 +38,91 @@
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button cancelButton="true" mnemonicParsing="false" onAction="#choosePlayer1" prefHeight="60.0" prefWidth="110.0" text="Cha">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#choosePlayer2" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#choosePlayer3" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#choosePlayer4" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
                   <Label text="Choose your enemy:" textFill="#eeeeee">
                      <font>
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button cancelButton="true" mnemonicParsing="false" onAction="#chooseEnemy1" prefHeight="60.0" prefWidth="110.0" text="Return">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy2" prefHeight="60.0" prefWidth="110.0" text="Play">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy3" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="500.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy4" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
