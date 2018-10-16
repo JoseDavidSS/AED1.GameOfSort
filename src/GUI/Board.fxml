@@ -31,7 +31,6 @@
                   <Text fx:id="sideText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="199.0" />
                </content>
             </ScrollPane>
-            <Button mnemonicParsing="false" onAction="#print" text="Button" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
