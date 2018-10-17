@@ -1,11 +1,13 @@
 package Server;
 
-import Logic.Lists.TemporalList;
+import GUI.Holder;
+import Game.Dragon;
+import Logic.Lists.DragonList;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(name = "Sort",urlPatterns = "sort")
+@WebServlet(name = "Sort_1",urlPatterns = "sort_1")
 public class mainServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
@@ -13,13 +15,14 @@ public class mainServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String command = request.getParameter("command");
-        String contenido = request.getParameter("contenido");
+        String list = request.getParameter("list");
+
 
         //Decodificar y transformar en lista el contenido si recibe algun contenido
 
-        TemporalList lista;
+        DragonList lista;
 
-        if (command == "sort"){
+        if (command.equals("sort")){
             Sort sort = Sort.getInstance();
             switch (sort.getRound()){
                 case 0: lista = sort.selectionSort(null);
@@ -29,9 +32,20 @@ public class mainServlet extends javax.servlet.http.HttpServlet {
                 case 4: lista = sort.AVL(null);
             }
         }
-        else if(command == "generate"){
-            //Crear lista
+        else if(command.equals("generate")){
+            int num = Integer.parseInt("list");
+            int i = 0;
+            int n = 5;
+            while (i != num){
+                Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+                DragonList.getInstance().addEnemy(dragon);
+                n += 70;
+                if (i % 10 == 0 && i != 0){
+                    n = 5;
+                }
+                i++;
+            }
+            DragonList dList = DragonList.getInstance();
         }
-        //Returnar la lista
     }
 }

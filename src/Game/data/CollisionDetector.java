@@ -5,8 +5,8 @@ import Game.Attack;
 import Game.Dragon;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
-import Logic.Lists.TemporalList;
-import Logic.Lists.TemporalNode;
+import Logic.Lists.DragonList;
+import Logic.Lists.DragonNode;
 
 public class CollisionDetector extends Thread {
 
@@ -15,7 +15,7 @@ public class CollisionDetector extends Thread {
     public void run(){
         while (true){
             BulletsList tmp = BulletsList.getInstance();
-            TemporalList tmp2 = TemporalList.getInstance();
+            DragonList tmp2 = DragonList.getInstance();
             //HAY QUE DEJAR ESTE PRINT AQUI, PORQUE SI SE QUITA POR ALGUNA RAZON EL DETECTOR DE COLISIONES DEJA DE FUNCIONAR!!!
             System.out.print("");
             if (tmp.getLarge() != 0 && tmp2.getLarge() != 0){
@@ -24,7 +24,7 @@ public class CollisionDetector extends Thread {
                     Attack sub_sub_tmp = sub_tmp.getAttack();
                     if (sub_sub_tmp.getWho().equals("playerbullet")){
                         int i = 0;
-                        TemporalNode sub_temp2 = tmp2.head;
+                        DragonNode sub_temp2 = tmp2.head;
                         while (i != Game.onScreenEnemies){
                             Dragon sub_sub_tmp2 = sub_temp2.getDragon();
                             if (sub_sub_tmp.getBoundsInParent().intersects(sub_sub_tmp2.getBoundsInParent())){
