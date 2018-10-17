@@ -1,6 +1,7 @@
 package GUI;
 
 import Game.data.CollisionDetector;
+import Game.data.MusicPlayer;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 
 import Game.Gryphon;
@@ -122,6 +124,9 @@ public class Game {
             }
         };
         timer.start();
+
+        MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
+        musicPlayer.start();
 
         this.temporalMethod();
 
@@ -240,7 +245,7 @@ public class Game {
             }catch (NullPointerException e){}
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
-        }if (this.enemySpawn > 6){
+        }if (this.enemySpawn > 10){
             this.addEnemies();
             this.enemySpawn = 0;
         }
