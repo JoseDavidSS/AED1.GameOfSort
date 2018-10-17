@@ -1,15 +1,55 @@
 package Server;
 
-import javax.servlet.annotation.WebServlet;
-import java.io.IOException;
+import Logic.Lists.TemporalList;
 
-@WebServlet(name = "Sort",urlPatterns = "sort")
-public class Sort extends javax.servlet.http.HttpServlet {
-    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+public class Sort {
 
+    private int round;
+    private static Sort sort = null;
+
+    public static Sort getInstance(){
+
+        if (sort==null){
+            sort = new Sort();
+        }
+        return sort;
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String contenido = request.getParameter("Contenido");
+    private Sort(){
+        this.round = 0;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
+    public TemporalList selectionSort(TemporalList lista){
+        //Aplicar selectionSort
+        this.round++;
+        return lista;
+    }
+
+    public TemporalList insertionSort(TemporalList lista){
+        //Aplicar insertionSort
+        this.round++;
+        return lista;
+    }
+
+    public TemporalList quickSort(TemporalList lista){
+        //Aplicar quickSort
+        this.round++;
+        return lista;
+    }
+
+    public TemporalList binaryThree(TemporalList lista){
+        //Aplicar el ordenamiento tipo arbol
+        this.round++;
+        return lista;
+    }
+
+    public TemporalList AVL(TemporalList lista){
+        //Ordenar AVL por edades
+        this.round = 0;
+        return lista;
     }
 }
