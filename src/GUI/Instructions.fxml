@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneBoard" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
+<AnchorPane fx:id="paneBoard" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
    <children>
       <GridPane layoutY="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
         <columnConstraints>
@@ -22,12 +22,12 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" text="Instructions" textFill="#eeeeee">
+                  <Label alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" text="Welcome" textFill="#eeeeee">
                      <font>
                         <Font name="System Bold" size="72.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Game of Sorts is a game that works based on waves, each wave has its own number of enemies. Each enemy has its own age, level, power and health. Use your hero to save the kingdom." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1197.0" text="Game of Sorts is a simple sidescroller game in Java. Choose your hero and conquer the Five Realsm by destroying waves of evil dragons. Each wave has its own number of enemies with a unique age, level, power and health. Valar Morghulis." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;W&quot;, &quot;A&quot;, &quot;S&quot;, &quot;D&quot; from your keyboard, use them respectively to move upward, backward, downward, and forward." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;W&quot;, &quot;A&quot;, &quot;S&quot;, &quot;D&quot; to move upward, backward, downward, and forward respectively." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
@@ -47,7 +47,7 @@
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;K&quot; from your keyboard to shoot at your enemies before they get through you and causing the kingdoms doom." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Press &quot;K&quot; to shoot at your enemies before they get through you and bring chaos and destruction to the kingdom with them." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
