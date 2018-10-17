@@ -27,7 +27,7 @@ public class Game {
     private double enemyShoot = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
-    private Gryphon player;
+    public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
     public void print (){
@@ -84,7 +84,7 @@ public class Game {
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
 
-        player = new Gryphon(1, 50, 100, 150, 100, Holder.playerRute);
+        player = new Gryphon(2, 50, 100, 150, 100, Holder.playerRute);
         paneBoard.getChildren().add(player);
 
         Main.scene.setOnKeyPressed(e -> {
@@ -169,7 +169,10 @@ public class Game {
         BulletsList tmp = BulletsList.getInstance();
         TemporalList tmp2 = TemporalList.getInstance();
         this.enemyShoot += 0.016;
-        if (tmp.getLarge() != 0){
+        if (player.isDead()){
+            paneBoard.getChildren().remove(player);
+            System.out.println("MORI");
+        }if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
             while (sub_tmp != null){
                 Attack sub_sub_tmp = sub_tmp.getAttack();
@@ -193,8 +196,7 @@ public class Game {
                     }
                 }
             }
-        }
-        if (tmp2.getLarge() != 0){
+        }if (tmp2.getLarge() != 0){
             TemporalNode sub_tmp2 = tmp2.head;
             int i = 0;
             while (onScreenEnemies != i){

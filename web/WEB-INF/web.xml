@@ -5,6 +5,13 @@
          version="4.0">
     <servlet>
         <servlet-name>Sort</servlet-name>
-        <servlet-class>Server.Sort</servlet-class>
+        <servlet-class>Server.mainServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>Sort</servlet-name>
+        <url-pattern>sort</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -1,5 +1,6 @@
 import Game.GameUtil;
 import Logic.Trees.AVLTree;
+import Logic.Trees.BTree;
 import Logic.Trees.BinaryTree;
 
 import java.io.IOException;
@@ -38,6 +39,23 @@ public class Main{
 //        String name = GameUtil.generateName();
 //        System.out.println();
 //        System.out.println("Random dragon name is: " + name);
+
+        BTree<String> bt = new BTree<>();
+        bt.add("Drani");
+        bt.add("Smaug");
+        bt.add("Jeff");
+        bt.add("Schmidt");
+        bt.add("Laura");
+        bt.add("Yamir");
+        bt.add("Ale");
+        bt.add("Emma");
+        bt.add("Lion");
+        bt.add("Lady");
+        bt.add("Sansa");
+        bt.add("Stark");
+        bt.add("Drogon");
+        bt.add("Lorde");
+        System.out.println(bt);
 
     }
 }
