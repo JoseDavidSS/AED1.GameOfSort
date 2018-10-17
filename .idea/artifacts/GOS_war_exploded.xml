@@ -8,6 +8,7 @@
         </element>
       </element>
       <element id="javaee-facet-resources" facet="GOS/web/Web" />
+      <element id="javaee-facet-resources" facet="Progra-2/web/Web" />
     </root>
   </artifact>
 </component>
