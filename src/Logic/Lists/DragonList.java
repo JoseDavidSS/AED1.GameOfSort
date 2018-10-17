@@ -4,25 +4,25 @@ package Logic.Lists;
 import Game.Dragon;
 
 //Esta lista es temporal mientras apu y chus suben sus partes
-public class TemporalList {
+public class DragonList {
 
-    public TemporalNode head;
+    public DragonNode head;
     private int large;
-    private static TemporalList list = new TemporalList();
+    private static DragonList list = new DragonList();
 
-    public static TemporalList getInstance(){
+    public static DragonList getInstance(){
         return list;
     }
 
-    public static void setInstance(TemporalList list1){
+    public static void setInstance(DragonList list1){
         list = list1;
     }
 
     public static void reset(){
-        list = new TemporalList();
+        list = new DragonList();
     }
 
-    private TemporalList(){
+    private DragonList(){
         this.head = null;
         this.large = 0;
     }
@@ -37,14 +37,14 @@ public class TemporalList {
 
     public void addEnemy(Dragon dragon){
         if (this.head == null){
-            this.head = new TemporalNode(dragon);
+            this.head = new DragonNode(dragon);
             this.large++;
         }else{
-            TemporalNode tmp = this.head;
+            DragonNode tmp = this.head;
             while (tmp.next != null){
                 tmp = tmp.next;
             }
-            tmp.next = new TemporalNode(dragon);
+            tmp.next = new DragonNode(dragon);
             this.large++;
         }
     }
@@ -54,7 +54,7 @@ public class TemporalList {
             this.head = this.head.next;
             this.large--;
         }else{
-            TemporalNode tmp = this.head;
+            DragonNode tmp = this.head;
             while (tmp.next != null){
                 if (tmp.next.getDragon() == dragon && tmp.next.next == null){
                     tmp.next = null;

@@ -82,7 +82,7 @@ public class Beast extends Rectangle {
     }
 
     public void moveRight(){
-        if (this.posx == 650){
+        if (this.posx == 830){
         }else{
             setTranslateX(this.posx + 10);
             this.posx = this.posx + 10;

@@ -1,6 +1,6 @@
 package Server;
 
-import Logic.Lists.TemporalList;
+import Logic.Lists.DragonList;
 
 public class Sort {
 
@@ -8,7 +8,6 @@ public class Sort {
     private static Sort sort = null;
 
     public static Sort getInstance(){
-
         if (sort==null){
             sort = new Sort();
         }
@@ -23,31 +22,31 @@ public class Sort {
         return round;
     }
 
-    public TemporalList selectionSort(TemporalList lista){
+    public DragonList selectionSort(DragonList lista){
         //Aplicar selectionSort
         this.round++;
         return lista;
     }
 
-    public TemporalList insertionSort(TemporalList lista){
+    public DragonList insertionSort(DragonList lista){
         //Aplicar insertionSort
         this.round++;
         return lista;
     }
 
-    public TemporalList quickSort(TemporalList lista){
+    public DragonList quickSort(DragonList lista){
         //Aplicar quickSort
         this.round++;
         return lista;
     }
 
-    public TemporalList binaryThree(TemporalList lista){
+    public DragonList binaryThree(DragonList lista){
         //Aplicar el ordenamiento tipo arbol
         this.round++;
         return lista;
     }
 
-    public TemporalList AVL(TemporalList lista){
+    public DragonList AVL(DragonList lista){
         //Ordenar AVL por edades
         this.round = 0;
         return lista;

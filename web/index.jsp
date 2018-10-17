@@ -11,6 +11,6 @@
     <title>Home</title>
 </head>
 <body>
-GOS
+GOS 1.0.1
 </body>
 </html>

@@ -2,12 +2,12 @@ package Logic.Lists;
 
 import Game.Dragon;
 
-public class TemporalNode {
+public class DragonNode {
 
-    public TemporalNode next;
+    public DragonNode next;
     private Dragon dragon;
 
-    public TemporalNode(Dragon dragon){
+    public DragonNode(Dragon dragon){
         this.next = null;
         this.dragon = dragon;
     }
