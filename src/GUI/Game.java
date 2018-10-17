@@ -138,6 +138,7 @@ public class Game {
 
     //Tambien hacer uno que reciba arboles
     public void addEnemies(/*List*/){
+        System.out.println(Holder.enemyRute);
         //Temporal
         int i = 0;
         int n = 50;
