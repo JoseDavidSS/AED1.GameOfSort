@@ -27,6 +27,7 @@ public class Game {
     public static int onScreenEnemies = 0;
     public static boolean inFormation = true;
     private double enemyShoot = 0;
+    private double enemySpawn = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     public static Gryphon player;
@@ -122,7 +123,7 @@ public class Game {
         };
         timer.start();
 
-        this.addEnemies();
+        this.temporalMethod();
 
     }
 
@@ -138,26 +139,17 @@ public class Game {
         BulletsList.getInstance().addBullet(attack);
     }
 
-    //Tambien hacer uno que reciba arboles
-    public void addEnemies(/*List*/){
-        //Temporal
-        int i = 0;
-        int n = 5;
-        while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
-            DragonList.getInstance().addEnemy(dragon);
-            n += 70;
-            if (i % 10 == 0 && i != 0){
-                n = 5;
-            }
-            i++;
-        }
+    public void addEnemies(){
         DragonList list = DragonList.getInstance();
-        //Termina lo temporal
-        i = 0;
+        int i = 0;
         DragonNode tmp = list.head;
         Image img = new Image(Holder.enemyRute);
         ImagePattern ing = new ImagePattern(img);
+        while (i != onScreenEnemies){
+            tmp = tmp.next;
+            i++;
+        }
+        i = 0;
         while (i != 10){
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
@@ -167,12 +159,28 @@ public class Game {
         }
     }
 
+    public void temporalMethod(){
+        int i = 0;
+        int n = 5;
+        while (i != 100){
+            Dragon dragon = new Dragon(0, "Hol", 100, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+            DragonList.getInstance().addEnemy(dragon);
+            n += 70;
+            if (i % 10 == 0 && i != 0){
+                n = 5;
+            }
+            i++;
+        }
+        this.addEnemies();
+    }
+
     //Corregir un error cuando los dragones llegan al lado izquierdo de la pantalla.
 
     private void update(){
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
+        this.enemySpawn += 0.016;
         if (player.isDead()){
             paneBoard.getChildren().remove(player);
             System.out.println("MORI");
@@ -201,31 +209,40 @@ public class Game {
                 }
             }
         }if (tmp2.getLarge() != 0){
-            DragonNode sub_tmp2 = tmp2.head;
-            int i = 0;
-            while (onScreenEnemies != i){
-                Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
-                if (inFormation){
-                    sub_sub_tmp2.moveLeft();
-                    if (this.enemyShoot > 2){
-                        if (Math.random() < 0.3) {
-                            this.shoot(sub_sub_tmp2);
+            try {
+                DragonNode sub_tmp2 = tmp2.head;
+                int i = 0;
+                while (onScreenEnemies != i){
+                    Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                    if (inFormation){
+                        sub_sub_tmp2.moveLeft();
+                        if (this.enemyShoot > 2){
+                            if (Math.random() < 0.5 && sub_sub_tmp2.getRechargeSpeed() >= 70) {
+                                this.shoot(sub_sub_tmp2);
+                            }if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
+                                this.shoot(sub_sub_tmp2);
+                            }if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
+                                this.shoot(sub_sub_tmp2);
+                            }
                         }
                     }
+                    if (sub_sub_tmp2.isDead()){
+                        paneBoard.getChildren().remove(sub_sub_tmp2);
+                        DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
+                        sub_tmp2 = sub_tmp2.next;
+                        i++;
+                        onScreenEnemies--;
+                    }else{
+                        sub_tmp2 = sub_tmp2.next;
+                        i++;
+                    }
                 }
-                if (sub_sub_tmp2.isDead()){
-                    paneBoard.getChildren().remove(sub_sub_tmp2);
-                    DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    sub_tmp2 = sub_tmp2.next;
-                    i++;
-                    onScreenEnemies--;
-                }else{
-                    sub_tmp2 = sub_tmp2.next;
-                    i++;
-                }
-            }
+            }catch (NullPointerException e){}
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
+        }if (this.enemySpawn > 6){
+            this.addEnemies();
+            this.enemySpawn = 0;
         }
     }
 }

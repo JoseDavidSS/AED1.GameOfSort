@@ -52,8 +52,8 @@ public class Dragon extends Beast {
             this.setDead(true);
         }else{
             if (Math.random() < 0.4) {
-                setTranslateX(this.getPosx() - 2);
-                this.setPosx(this.getPosx() - 2);
+                setTranslateX(this.getPosx() - 1);
+                this.setPosx(this.getPosx() - 1);
             }
         }
     }

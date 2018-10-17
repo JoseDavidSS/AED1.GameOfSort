@@ -1,6 +1,5 @@
 package Server;
 
-import GUI.Holder;
 import Game.Dragon;
 import Logic.Lists.DragonList;
 
@@ -20,16 +19,16 @@ public class mainServlet extends javax.servlet.http.HttpServlet {
 
         //Decodificar y transformar en lista el contenido si recibe algun contenido
 
-        DragonList lista;
+        DragonList dList;
 
         if (command.equals("sort")){
             Sort sort = Sort.getInstance();
             switch (sort.getRound()){
-                case 0: lista = sort.selectionSort(null);
-                case 1: lista = sort.insertionSort(null);
-                case 2: lista = sort.quickSort(null);
-                case 3: lista = sort.binaryThree(null);
-                case 4: lista = sort.AVL(null);
+                case 0: dList = sort.selectionSort(null);
+                case 1: dList = sort.insertionSort(null);
+                case 2: dList = sort.quickSort(null);
+                case 3: dList = sort.binaryThree(null);
+                case 4: dList = sort.AVL(null);
             }
         }
         else if(command.equals("generate")){
@@ -45,7 +44,7 @@ public class mainServlet extends javax.servlet.http.HttpServlet {
                 }
                 i++;
             }
-            DragonList dList = DragonList.getInstance();
+            dList = DragonList.getInstance();
         }
     }
 }
