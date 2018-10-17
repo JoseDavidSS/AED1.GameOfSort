@@ -10,7 +10,6 @@ public class Sort extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        //String contenido = request.getParameter("Contenido");
-        response.getWriter().println("Hola");
+        String contenido = request.getParameter("Contenido");
     }
 }
