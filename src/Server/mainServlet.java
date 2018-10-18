@@ -1,6 +1,5 @@
 package Server;
 
-import GUI.Holder;
 import Game.Dragon;
 import Logic.Lists.DragonList;
 
