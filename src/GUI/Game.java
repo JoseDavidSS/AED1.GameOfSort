@@ -16,15 +16,18 @@ import java.io.IOException;
 import Game.Gryphon;
 import Game.Attack;
 import Game.Dragon;
+import Game.GameUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static oracle.jrockit.jfr.events.Bits.intValue;
 
 public class Game {
 
     String text = "Hello";
     String textAreaString = "";
     private int level = 1;
-    public static boolean inFormation = true;
+    public boolean inFormation = true;
     private double enemyShoot = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
@@ -85,7 +88,7 @@ public class Game {
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
 
-        player = new Gryphon(2, 50, 100, 130, 80, Holder.playerRute);
+        player = new Gryphon(10, 50, 100, 130, 80, Holder.playerRute);
         paneBoard.getChildren().add(player);
 
         Main.scene.setOnKeyPressed(e -> {
@@ -122,7 +125,11 @@ public class Game {
         MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
         musicPlayer.start();*/
 
-        this.temporalMethod();
+        try {
+            this.temporalMethod();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -152,23 +159,41 @@ public class Game {
         }
     }
 
-    public void temporalMethod(){
+    public void temporalMethod() throws IOException {
         int i = 0;
         int y = 5;
         int x = 900;
         boolean fLine = false;
+        boolean first = false;
+        int age;
+        int rSpeed;
+        int resistence;
+        String dragonName;
+        String clas;
         while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 100, 122, "Comandante", x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+            dragonName = GameUtil.generateName();
+            age = intValue(Math.random() * 1000);
+            rSpeed = intValue(Math.random() * 100);
+            resistence = intValue(Math.random() * 3 + 0);
+            clas = "Captain";
+            if (!first){
+                first = true;
+                clas = "Commander";
+            }
+            if (resistence < 2){
+                clas = "Infantry";
+            }
+            Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
             DragonList.getInstance().addEnemy(dragon);
             y += 70;
             if (i % 10 == 0 && i != 0){
                 y = 5;
                 if (!fLine){
-                    x += 500;
+                    x += 800;
                     fLine = true;
                 }
                 else{
-                    x += 300;
+                    x += 500;
                 }
             }
             i++;
@@ -218,31 +243,52 @@ public class Game {
                 }
             }
         }if (tmp2.getLarge() != 0){
-            try {
-                DragonNode sub_tmp2 = tmp2.head;
-                while (sub_tmp2 != null){
-                    Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
-                    if (inFormation){
-                        sub_sub_tmp2.moveLeft();
-                        if (this.enemyShoot > 2){
-                            if (Math.random() < 0.5 && sub_sub_tmp2.getRechargeSpeed() >= 70) {
-                                this.shoot(sub_sub_tmp2);
-                            }if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
-                                this.shoot(sub_sub_tmp2);
-                            }if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
-                                this.shoot(sub_sub_tmp2);
-                            }
+            DragonNode sub_tmp2 = tmp2.head;
+            while (sub_tmp2 != null){
+                Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                if (inFormation){
+                    sub_sub_tmp2.moveLeft();
+                    if (this.enemyShoot > 2){
+                        if (Math.random() < 0.5 && sub_sub_tmp2.getRechargeSpeed() >= 70) {
+                            this.shoot(sub_sub_tmp2);
+                        }if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
+                            this.shoot(sub_sub_tmp2);
+                        }if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
+                            this.shoot(sub_sub_tmp2);
                         }
                     }
-                    if (sub_sub_tmp2.isDead()) {
-                        paneBoard.getChildren().remove(sub_sub_tmp2);
-                        DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    }
-                    sub_tmp2 = sub_tmp2.next;
+                }if (sub_sub_tmp2.isDead()) {
+                    paneBoard.getChildren().remove(sub_sub_tmp2);
+                    DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
+                    //this.inFormation = false;
+                    //this.reorganize();
                 }
-            }catch (NullPointerException e){}
+                sub_tmp2 = sub_tmp2.next;
+            }
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
+        }
+    }
+
+    public void reorganize(){
+        DragonList sList = DragonList.getInstance();
+        //Se llama al server.
+        DragonList nList = DragonList.getInstance();
+        if (sList.getLarge() != 0){
+            DragonNode sDragon;
+            DragonNode nDragon = nList.head;
+            while (nDragon != null){
+                sDragon = nList.head;
+                while (sDragon != null){
+                    if (sDragon == nDragon){
+                        System.out.println("Hacer el cambio");
+                        sList.deleteEnemy(sDragon.getDragon());
+                        break;
+                    }
+                    sDragon = sDragon.next;
+                }
+                nDragon = nDragon.next;
+            }
         }
     }
 }

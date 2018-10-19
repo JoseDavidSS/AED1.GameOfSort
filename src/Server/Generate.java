@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static oracle.jrockit.jfr.events.Bits.intValue;
 
-@WebServlet(name = "Generate",urlPatterns = "generate")
+@WebServlet(name = "Generate", urlPatterns = "generate")
 
 public class Generate extends javax.servlet.http.HttpServlet {
 
@@ -50,11 +50,11 @@ public class Generate extends javax.servlet.http.HttpServlet {
             if (i % 10 == 0 && i != 0){
                 y = 5;
                 if (!fLine){
-                    x += 500;
+                    x += 800;
                     fLine = true;
                 }
                 else{
-                    x += 300;
+                    x += 500;
                 }
             }
             i++;
