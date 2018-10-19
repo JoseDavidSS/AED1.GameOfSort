@@ -1,5 +1,7 @@
 package Server;
 
+import Logic.Lists.DragonList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +21,7 @@ public class Sort extends HttpServlet {
         //Convertir dList en la lista de dragones
         switch (round){
             case 0:
-                //Aplicar selection Sort
+                DragonList.getInstance().selectionSort();
                 response.getWriter().println("0");
                 round++;
                 break;
@@ -46,6 +48,4 @@ public class Sort extends HttpServlet {
         }
         //Enviar la lista codificada.
     }
-
-
 }

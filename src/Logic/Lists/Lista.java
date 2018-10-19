@@ -5,11 +5,6 @@ public class Lista {
     int largo;
     Nodo head;
 
-    public Lista() {
-        this.head = null;
-        this.largo = 0;
-    }
-
     public void selectionSort() {
         if (!listaVacia()) {
             for (int a = 0; a < this.largo - 1; a++) {
@@ -113,4 +108,20 @@ public class Lista {
             return false;
         }
     }
+
+    public static void main(String[] args){
+        Lista lista = new Lista();
+        lista.head = new Nodo(10);
+        lista.head.next = new Nodo(1);
+        lista.head.next.next = new Nodo(12);
+        lista.head.next.next.next = new Nodo(11);
+        lista.head.next.next.next.next = new Nodo(20);
+        lista.head.next.next.next.next.next = new Nodo(2);
+        lista.head.next.next.next.next.next.next = new Nodo(7);
+        lista.largo = 7;
+        lista.print();
+        lista.insertionSort();
+        lista.print();
+    }
 }
+

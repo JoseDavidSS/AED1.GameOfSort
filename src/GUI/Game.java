@@ -239,7 +239,6 @@ public class Game {
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
                     }
                     sub_tmp = sub_tmp.next;
-
                 }
             }
         }if (tmp2.getLarge() != 0){
@@ -260,8 +259,8 @@ public class Game {
                 }if (sub_sub_tmp2.isDead()) {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    //this.inFormation = false;
-                    //this.reorganize();
+                    this.inFormation = false;
+                    this.reorganize();
                 }
                 sub_tmp2 = sub_tmp2.next;
             }
