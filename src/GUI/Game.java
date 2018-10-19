@@ -1,6 +1,5 @@
 package GUI;
 
-import Game.data.CollisionDetector;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
@@ -27,6 +26,7 @@ public class Game {
     public static int onScreenEnemies = 0;
     public static boolean inFormation = true;
     private double enemyShoot = 0;
+    private double enemySpawn = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     public static Gryphon player;
@@ -111,9 +111,6 @@ public class Game {
             }
         });
 
-        CollisionDetector collisionDetector = new CollisionDetector();
-        collisionDetector.start();
-
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -167,12 +164,27 @@ public class Game {
         }
     }
 
-    //Corregir un error cuando los dragones llegan al lado izquierdo de la pantalla.
+    public void temporalMethod(){
+        int i = 0;
+        int n = 5;
+        while (i != 100){
+            Dragon dragon = new Dragon(0, "Hol", 100, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+            DragonList.getInstance().addEnemy(dragon);
+            n += 70;
+            if (i % 10 == 0 && i != 0){
+                n = 5;
+            }
+            i++;
+        }
+        this.addEnemies();
+    }
 
     private void update(){
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
+        this.enemySpawn += 0.016;
+        int i = 0;
         if (player.isDead()){
             paneBoard.getChildren().remove(player);
             System.out.println("MORI");
@@ -226,6 +238,9 @@ public class Game {
             }
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
+        }if (this.enemySpawn > 10){
+            this.addEnemies();
+            this.enemySpawn = 0;
         }
     }
 }
