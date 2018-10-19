@@ -16,6 +16,8 @@
           <element id="file-copy" path="$PROJECT_DIR$/resources/logback-classic-1.2.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/logback-core-1.2.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar" />
+          <element id="library" level="application" name="jackson-dataformat-xml-2.9.7-javadoc" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Progra-2/web/Web" />

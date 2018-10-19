@@ -1,5 +1,6 @@
 package GUI;
 
+import Game.data.MusicPlayer;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
@@ -122,9 +123,8 @@ public class Game {
         };
         timer.start();
 
-        /*
         MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
-        musicPlayer.start();*/
+        musicPlayer.start();
 
         try {
             this.temporalMethod();

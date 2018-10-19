@@ -11,7 +11,12 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.transaction.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/resources/jackson-dataformat-xml-2.9.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/resources/jackson-dataformat-xml-2.9.7-sources (1).jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/jackson-dataformat-xml-2.9.7-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

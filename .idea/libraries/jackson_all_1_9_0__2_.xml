@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jackson-all-1.9.0 (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources/jackson-all-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/jackson-annotations-2.9.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/jackson-core-2.9.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/jackson-databind-2.9.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
