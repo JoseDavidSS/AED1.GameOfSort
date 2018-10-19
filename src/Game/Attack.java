@@ -19,7 +19,7 @@ public class Attack extends Beast {
     }
 
     public void moveRight(){
-        if (this.getPosx() >= 750){
+        if (this.getPosx() >= 900){
             this.setDead(true);
         }else{
             setTranslateX(this.getPosx() + 5);
