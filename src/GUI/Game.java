@@ -4,9 +4,10 @@ import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
 import Logic.Lists.DragonNode;
-import javafx.animation.AnimationTimer;
+import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
@@ -17,6 +18,7 @@ import Game.Gryphon;
 import Game.Attack;
 import Game.Dragon;
 import Game.GameUtil;
+import javafx.util.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +26,8 @@ import static oracle.jrockit.jfr.events.Bits.intValue;
 
 public class Game {
 
+    private int BACKGROUND_WIDTH = 2000;
+    private ParallelTransition parallelTransition;
     String text = "Hello";
     String textAreaString = "";
     private int level = 1;
@@ -31,8 +35,11 @@ public class Game {
     private double enemyShoot = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
+    @FXML private ImageView background1;
+    @FXML private ImageView background2;
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
+
 
     public void print (){
         System.out.println(Holder.playerRute);
@@ -291,5 +298,22 @@ public class Game {
                 nDragon = nDragon.next;
             }
         }
+    }
+
+    @FXML
+    public void initialize() {
+
+        TranslateTransition translateTransition = new TranslateTransition(Duration.millis(10000), background1);
+        translateTransition.setFromX(0);
+        translateTransition.setToX(-1 * BACKGROUND_WIDTH);
+        translateTransition.setInterpolator(Interpolator.LINEAR);
+
+        TranslateTransition translateTransition2 = new TranslateTransition(Duration.millis(10000), background2);
+        translateTransition2.setFromX(0);
+        translateTransition2.setToX(-1 * BACKGROUND_WIDTH);
+        translateTransition2.setInterpolator(Interpolator.LINEAR);
+
+        parallelTransition = new ParallelTransition( translateTransition, translateTransition2 );
+        parallelTransition.setCycleCount(Animation.INDEFINITE);
     }
 }
