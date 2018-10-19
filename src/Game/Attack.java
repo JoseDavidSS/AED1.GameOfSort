@@ -22,7 +22,7 @@ public class Attack extends Beast {
         if (this.getPosx() >= 900){
             this.setDead(true);
         }else{
-            //setTranslateX(this.getPosx() + 5);
+            setTranslateX(this.getPosx() + 5);
             this.setPosx(this.getPosx() + 5);
         }
     }
@@ -31,7 +31,7 @@ public class Attack extends Beast {
         if (this.getPosx() == 0){
             this.setDead(true);
         }else{
-            //setTranslateX(this.getPosx() - 2);
+            setTranslateX(this.getPosx() - 2);
             this.setPosx(this.getPosx() - 2);
         }
     }

@@ -60,7 +60,7 @@ public class Beast extends Rectangle {
     public void moveUp(){
         if (this.posy == 0){
         }else{
-            //setTranslateY(this.posy - 10);
+            setTranslateY(this.posy - 10);
             this.posy = this.posy - 10;
         }
     }
