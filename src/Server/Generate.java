@@ -21,6 +21,7 @@ public class Generate extends javax.servlet.http.HttpServlet {
         String dragons = request.getParameter("dragons");
         int Dragons = Integer.parseInt(dragons);
         response.getWriter().println(Dragons);
+
         int i = 0;
         int y = 5;
         int x = 900;
@@ -31,35 +32,33 @@ public class Generate extends javax.servlet.http.HttpServlet {
         int resistence;
         String dragonName;
         String clas;
-        while (i != Dragons){
+        while (i != Dragons) {
             dragonName = GameUtil.generateName();
             age = intValue(Math.random() * 1000);
             rSpeed = intValue(Math.random() * 100);
             resistence = intValue(Math.random() * 3 + 0);
             clas = "Captain";
-            if (!first){
+            if (!first) {
                 first = true;
                 clas = "Commander";
             }
-            if (resistence < 2){
+            if (resistence < 2) {
                 clas = "Infantry";
             }
             Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
             DragonList.getInstance().addEnemy(dragon);
             y += 70;
-            if (i % 10 == 0 && i != 0){
+            if (i % 10 == 0 && i != 0) {
                 y = 5;
-                if (!fLine){
+                if (!fLine) {
                     x += 800;
                     fLine = true;
-                }
-                else{
+                } else {
                     x += 500;
                 }
             }
             i++;
         }
     }
-
 }
 
