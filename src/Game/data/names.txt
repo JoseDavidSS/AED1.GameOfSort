@@ -271,6 +271,7 @@ Cysul
 Hao
 Suldro
 Furykissryl
+DeMairena
 Ris
 Retan
 Poris
@@ -323,6 +324,7 @@ IDGAF
 Nvidia
 Sonos
 SuMadre
+Carmen
 MamiAdriana
 LordIsaac
 #PapiJeff

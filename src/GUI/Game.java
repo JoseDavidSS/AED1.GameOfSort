@@ -10,23 +10,25 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 
 import Game.Gryphon;
 import Game.Attack;
 import Game.Dragon;
+import Game.GameUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static oracle.jrockit.jfr.events.Bits.intValue;
 
 public class Game {
 
     String text = "Hello";
     String textAreaString = "";
     private int level = 1;
-    public static int onScreenEnemies = 0;
-    public static boolean inFormation = true;
+    public boolean inFormation = true;
     private double enemyShoot = 0;
-    private double enemySpawn = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     public static Gryphon player;
@@ -86,7 +88,7 @@ public class Game {
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
 
-        player = new Gryphon(2, 50, 100, 130, 80, Holder.playerRute);
+        player = new Gryphon(10, 50, 100, 130, 80, Holder.playerRute);
         paneBoard.getChildren().add(player);
 
         Main.scene.setOnKeyPressed(e -> {
@@ -104,7 +106,7 @@ public class Game {
                     player.moveDown();
                     break;
                 case K:
-                    if (inFormation){
+                    if (inFormation && !player.isDead()){
                         this.shoot();
                     }
                     break;
@@ -119,7 +121,15 @@ public class Game {
         };
         timer.start();
 
-        this.addEnemies();
+        /*
+        MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
+        musicPlayer.start();*/
+
+        try {
+            this.temporalMethod();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -130,49 +140,61 @@ public class Game {
     }
 
     public void shoot(Dragon dragon){
-        Attack attack = new Attack(0, dragon.getPosx(), dragon.getPosy() + 20, 40, 40, "file:src/Media/Bullets/Fire.png", "enemybullet");
-        paneBoard.getChildren().add(attack);
-        BulletsList.getInstance().addBullet(attack);
+        if (dragon.getPosx() < 900){
+            Attack attack = new Attack(0, dragon.getPosx(), dragon.getPosy() + 20, 40, 40, "file:src/Media/Bullets/Fire.png", "enemybullet");
+            paneBoard.getChildren().add(attack);
+            BulletsList.getInstance().addBullet(attack);
+        }
     }
 
-    //Tambien hacer uno que reciba arboles
-    public void addEnemies(/*List*/){
-        //Temporal
-        int i = 0;
-        int n = 5;
-        while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 2, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
-            DragonList.getInstance().addEnemy(dragon);
-            n += 70;
-            if (i % 10 == 0 && i != 0){
-                n = 5;
-            }
-            i++;
-        }
+    public void addEnemies(){
         DragonList list = DragonList.getInstance();
-        //Termina lo temporal
-        i = 0;
         DragonNode tmp = list.head;
         Image img = new Image(Holder.enemyRute);
         ImagePattern ing = new ImagePattern(img);
-        while (i != 10){
+        while (tmp != null){
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
-            i++;
-            onScreenEnemies++;
             tmp = tmp.next;
         }
     }
 
-    public void temporalMethod(){
+    public void temporalMethod() throws IOException {
         int i = 0;
-        int n = 5;
+        int y = 5;
+        int x = 900;
+        boolean fLine = false;
+        boolean first = false;
+        int age;
+        int rSpeed;
+        int resistence;
+        String dragonName;
+        String clas;
         while (i != 100){
-            Dragon dragon = new Dragon(0, "Hol", 100, 122, "Comandante", 830, n, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+            dragonName = GameUtil.generateName();
+            age = intValue(Math.random() * 1000);
+            rSpeed = intValue(Math.random() * 100);
+            resistence = intValue(Math.random() * 3 + 0);
+            clas = "Captain";
+            if (!first){
+                first = true;
+                clas = "Commander";
+            }
+            if (resistence < 2){
+                clas = "Infantry";
+            }
+            Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
             DragonList.getInstance().addEnemy(dragon);
-            n += 70;
+            y += 70;
             if (i % 10 == 0 && i != 0){
-                n = 5;
+                y = 5;
+                if (!fLine){
+                    x += 800;
+                    fLine = true;
+                }
+                else{
+                    x += 500;
+                }
             }
             i++;
         }
@@ -183,8 +205,6 @@ public class Game {
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
-        this.enemySpawn += 0.016;
-        int i = 0;
         if (player.isDead()){
             paneBoard.getChildren().remove(player);
             System.out.println("MORI");
@@ -194,53 +214,81 @@ public class Game {
                 Attack sub_sub_tmp = sub_tmp.getAttack();
                 if (sub_sub_tmp.getWho().equals("playerbullet")){
                     sub_sub_tmp.moveRight();
+                    DragonNode sub_tmp2 = tmp2.head;
+                    while (sub_tmp2 != null){
+                        Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                        if (sub_sub_tmp.getBoundsInParent().intersects(sub_sub_tmp2.getBoundsInParent())) {
+                            sub_sub_tmp.setDead(true);
+                            sub_sub_tmp2.hit();
+                            break;
+                        }
+                        sub_tmp2 = sub_tmp2.next;
+                    }
                     if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
-                        sub_tmp = sub_tmp.next;
-                    }else{
-                        sub_tmp = sub_tmp.next;
                     }
+                    sub_tmp = sub_tmp.next;
                 }else{
                     sub_sub_tmp.moveLeft();
-                    if (sub_sub_tmp.isDead()) {
+                    if (sub_sub_tmp.getBoundsInParent().intersects((player.getBoundsInParent()))) {
+                        sub_sub_tmp.setDead(true);
+                        player.hit();
+                    }if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
-                        sub_tmp = sub_tmp.next;
-                    }else{
-                        sub_tmp = sub_tmp.next;
                     }
+                    sub_tmp = sub_tmp.next;
+
                 }
             }
         }if (tmp2.getLarge() != 0){
             DragonNode sub_tmp2 = tmp2.head;
-            int i = 0;
-            while (onScreenEnemies != i){
+            while (sub_tmp2 != null){
                 Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
                 if (inFormation){
                     sub_sub_tmp2.moveLeft();
                     if (this.enemyShoot > 2){
-                        if (Math.random() < 0.3) {
+                        if (Math.random() < 0.5 && sub_sub_tmp2.getRechargeSpeed() >= 70) {
+                            this.shoot(sub_sub_tmp2);
+                        }if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
+                            this.shoot(sub_sub_tmp2);
+                        }if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
                             this.shoot(sub_sub_tmp2);
                         }
                     }
-                }
-                if (sub_sub_tmp2.isDead()){
+                }if (sub_sub_tmp2.isDead()) {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    sub_tmp2 = sub_tmp2.next;
-                    i++;
-                    onScreenEnemies--;
-                }else{
-                    sub_tmp2 = sub_tmp2.next;
-                    i++;
+                    //this.inFormation = false;
+                    //this.reorganize();
                 }
+                sub_tmp2 = sub_tmp2.next;
             }
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
-        }if (this.enemySpawn > 10){
-            this.addEnemies();
-            this.enemySpawn = 0;
+        }
+    }
+
+    public void reorganize(){
+        DragonList sList = DragonList.getInstance();
+        //Se llama al server.
+        DragonList nList = DragonList.getInstance();
+        if (sList.getLarge() != 0){
+            DragonNode sDragon;
+            DragonNode nDragon = nList.head;
+            while (nDragon != null){
+                sDragon = nList.head;
+                while (sDragon != null){
+                    if (sDragon == nDragon){
+                        System.out.println("Hacer el cambio");
+                        sList.deleteEnemy(sDragon.getDragon());
+                        break;
+                    }
+                    sDragon = sDragon.next;
+                }
+                nDragon = nDragon.next;
+            }
         }
     }
 }
