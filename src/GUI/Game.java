@@ -1,7 +1,5 @@
 package GUI;
 
-import Game.data.CollisionDetector;
-import Game.data.MusicPlayer;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
@@ -114,9 +112,6 @@ public class Game {
             }
         });
 
-        CollisionDetector collisionDetector = new CollisionDetector();
-        collisionDetector.start();
-
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -125,8 +120,10 @@ public class Game {
         };
         timer.start();
 
+        /*
         MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
         musicPlayer.start();
+        */
 
         this.temporalMethod();
 
@@ -179,13 +176,12 @@ public class Game {
         this.addEnemies();
     }
 
-    //Corregir un error cuando los dragones llegan al lado izquierdo de la pantalla.
-
     private void update(){
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
         this.enemySpawn += 0.016;
+        int i = 0;
         if (player.isDead()){
             paneBoard.getChildren().remove(player);
             System.out.println("MORI");
@@ -195,28 +191,40 @@ public class Game {
                 Attack sub_sub_tmp = sub_tmp.getAttack();
                 if (sub_sub_tmp.getWho().equals("playerbullet")){
                     sub_sub_tmp.moveRight();
+                    DragonNode sub_tmp2 = tmp2.head;
+                    i = 0;
+                    while (i != onScreenEnemies){
+                        Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                        if (sub_sub_tmp.getBoundsInParent().intersects(sub_sub_tmp2.getBoundsInParent())) {
+                            sub_sub_tmp.setDead(true);
+                            sub_sub_tmp2.hit();
+                            break;
+                        }
+                        sub_tmp2 = sub_tmp2.next;
+                        i++;
+                    }
                     if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
-                        sub_tmp = sub_tmp.next;
-                    }else{
-                        sub_tmp = sub_tmp.next;
                     }
+                    sub_tmp = sub_tmp.next;
                 }else{
                     sub_sub_tmp.moveLeft();
-                    if (sub_sub_tmp.isDead()) {
+                    if (sub_sub_tmp.getBoundsInParent().intersects((player.getBoundsInParent()))) {
+                        sub_sub_tmp.setDead(true);
+                        player.hit();
+                    }if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
-                        sub_tmp = sub_tmp.next;
-                    }else{
-                        sub_tmp = sub_tmp.next;
                     }
+                    sub_tmp = sub_tmp.next;
+
                 }
             }
         }if (tmp2.getLarge() != 0){
             try {
                 DragonNode sub_tmp2 = tmp2.head;
-                int i = 0;
+                i = 0;
                 while (onScreenEnemies != i){
                     Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
                     if (inFormation){
@@ -231,21 +239,18 @@ public class Game {
                             }
                         }
                     }
-                    if (sub_sub_tmp2.isDead()){
+                    if (sub_sub_tmp2.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp2);
                         DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                        sub_tmp2 = sub_tmp2.next;
-                        i++;
                         onScreenEnemies--;
-                    }else{
-                        sub_tmp2 = sub_tmp2.next;
-                        i++;
                     }
+                    sub_tmp2 = sub_tmp2.next;
+                    i++;
                 }
             }catch (NullPointerException e){}
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
-        }if (this.enemySpawn > 10){
+        }if (this.enemySpawn > 9){
             this.addEnemies();
             this.enemySpawn = 0;
         }
