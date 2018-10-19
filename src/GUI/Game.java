@@ -39,15 +39,16 @@ public class Game {
     }
     public void choosePlayer1 (){
         Holder.playerRute ="file:src/Media/Players/Charizard.gif";
+
     }
     public void choosePlayer2 (){
-        Holder.playerRute ="file:src/Media/Players/FlyingBeast.gif";
+        Holder.playerRute ="file:src/Media/Players/Pony.gif";
     }
     public void choosePlayer3 (){
-        Holder.playerRute = "file:src/Media/Players/Pony.gif";
+        Holder.playerRute = "file:src/Media/Players/FlyingBeast.gif";
     }
     public void choosePlayer4 (){
-        Holder.playerRute = "file:src/Media/Players/Angel.gif";
+        Holder.playerRute = "file:src/Media/Players/PinkPegasus.gif";
     }
     public void chooseEnemy1 (){
         Holder.enemyRute = "file:src/Media/Enemies/BlackDragon.gif";
@@ -155,6 +156,7 @@ public class Game {
         }
         i = 0;
         while (i != 10){
+            System.out.println(Holder.playerRute);
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
             i++;

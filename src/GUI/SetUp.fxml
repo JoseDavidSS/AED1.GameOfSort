@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,10 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="paneBoard" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
    <children>
-      <GridPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;">
+      <GridPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
          </columnConstraints>
@@ -42,37 +43,65 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button cancelButton="true" mnemonicParsing="false" onAction="#choosePlayer1" prefHeight="60.0" prefWidth="110.0" text="Cha">
+                              <Button cancelButton="true" mnemonicParsing="false" onAction="#choosePlayer1" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView disable="true" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Players/Charizard.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#choosePlayer2" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                              <Button mnemonicParsing="false" onAction="#choosePlayer2" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Players/Pony.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#choosePlayer3" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                              <Button mnemonicParsing="false" onAction="#choosePlayer3" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Players/FlyingBeast.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#choosePlayer4" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                              <Button mnemonicParsing="false" onAction="#choosePlayer4" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Players/Angel.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
@@ -87,37 +116,64 @@
                      <children>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button cancelButton="true" mnemonicParsing="false" onAction="#chooseEnemy1" prefHeight="60.0" prefWidth="110.0" text="Return">
+                              <Button cancelButton="true" mnemonicParsing="false" onAction="#chooseEnemy1" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Enemies/BlackDragon.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#chooseEnemy2" prefHeight="60.0" prefWidth="110.0" text="Play">
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy2" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Enemies/GreenDragon.gif" />
+                                       </image></ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#chooseEnemy3" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy3" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Enemies/Nightfury.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="500.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#chooseEnemy4" prefHeight="60.0" prefWidth="110.0" text="Neg">
+                              <Button mnemonicParsing="false" onAction="#chooseEnemy4" prefHeight="150.0" prefWidth="150.0">
                                  <font>
                                     <Font name="System Bold Italic" size="24.0" />
                                  </font>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Media/Enemies/YellowDragon.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </StackPane>
