@@ -7,6 +7,7 @@ import Logic.Lists.DragonList;
 import Logic.Lists.DragonNode;
 import javafx.animation.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
@@ -38,6 +39,11 @@ public class Game {
     @FXML private AnchorPane paneBoard;
     @FXML private ImageView background1;
     @FXML private ImageView background2;
+    @FXML private static Label livesLeftTxt;
+    @FXML private static Label enemiesLeftTxt;
+    @FXML private static Label levelTxt;
+    @FXML private static Label currentOrderTxt;
+
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
@@ -321,5 +327,24 @@ public class Game {
 
         parallelTransition = new ParallelTransition( translateTransition, translateTransition2 );
         parallelTransition.setCycleCount(Animation.INDEFINITE);
+    }
+
+    public static void setLivesLeftTxt (int lives){
+        Integer.toString(lives);
+        livesLeftTxt.setText("Lives left: " + lives);
+    }
+
+    public static void setEnemiesLeftTxt (int enemies){
+        Integer.toString(enemies);
+        enemiesLeftTxt.setText("Enemies left: " + enemies);
+    }
+
+    public static void setLevelTxt (int level){
+        Integer.toString(level);
+        levelTxt.setText("Level: " + level);
+    }
+
+    public static void setCurrentOrderTxt (String currentOrder){
+        currentOrderTxt.setText("Current order: " + currentOrder);
     }
 }
