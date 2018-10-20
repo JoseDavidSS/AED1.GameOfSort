@@ -27,7 +27,7 @@ import static oracle.jrockit.jfr.events.Bits.intValue;
 
 public class Game {
 
-    private int BACKGROUND_WIDTH = 2000;
+    private int BACKGROUND_WIDTH = 1200;
     private ParallelTransition parallelTransition;
     String text = "Hello";
     String textAreaString = "";
@@ -93,6 +93,9 @@ public class Game {
     }
 
     public void startGame(){
+
+        parallelTransition.play();
+
         textAreaString += String.format("%s%n", text);
         System.out.println("Second: "+textAreaString);
         this.sideText.setText(textAreaString);
