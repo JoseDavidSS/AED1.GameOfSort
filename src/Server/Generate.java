@@ -41,6 +41,7 @@ public class Generate extends javax.servlet.http.HttpServlet {
             if (!first) {
                 first = true;
                 clas = "Commander";
+                resistence = 2;
             }
             if (resistence < 2) {
                 clas = "Infantry";

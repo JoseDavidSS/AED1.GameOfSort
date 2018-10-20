@@ -1,13 +1,12 @@
 package Logic.Lists;
 
-
 import Game.Dragon;
 
-//Esta lista es temporal mientras apu y chus suben sus partes
 public class DragonList {
 
     public DragonNode head;
     private int large;
+    private int leftest;
     private static DragonList list = new DragonList();
 
     public static DragonList getInstance(){
@@ -35,10 +34,19 @@ public class DragonList {
         this.large = large;
     }
 
+    public int getLeftest() {
+        return leftest;
+    }
+
+    public void setLeftest(int leftest) {
+        this.leftest = leftest;
+    }
+
     public void addEnemy(Dragon dragon){
         if (this.head == null){
             this.head = new DragonNode(dragon);
             this.large++;
+            this.leftest = dragon.getPosx();
         }else{
             DragonNode tmp = this.head;
             while (tmp.next != null){
@@ -53,6 +61,7 @@ public class DragonList {
         if (this.head.getDragon() == dragon){
             this.head = this.head.next;
             this.large--;
+            this.leftest = this.head.getDragon().getPosx();
         }else{
             DragonNode tmp = this.head;
             while (tmp.next != null){

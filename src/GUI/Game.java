@@ -1,5 +1,6 @@
 package GUI;
 
+import Game.data.MusicPlayer;
 import Logic.Lists.BulletsList;
 import Logic.Lists.BulletsNodes;
 import Logic.Lists.DragonList;
@@ -129,9 +130,8 @@ public class Game {
         };
         timer.start();
 
-        /*
         MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
-        musicPlayer.start();*/
+        musicPlayer.start();
 
         try {
             this.temporalMethod();
@@ -187,6 +187,7 @@ public class Game {
             if (!first){
                 first = true;
                 clas = "Commander";
+                resistence = 2;
             }
             if (resistence < 2){
                 clas = "Infantry";
@@ -232,6 +233,18 @@ public class Game {
                         }
                         sub_tmp2 = sub_tmp2.next;
                     }
+                    BulletsNodes sub_tmp3 = tmp.head;
+                    while (sub_tmp3 != null){
+                        Attack sub_sub_tmp3 = sub_tmp3.getAttack();
+                        if (!sub_sub_tmp3.getWho().equals("playerbullet")){
+                            if (sub_sub_tmp.getBoundsInParent().intersects(sub_sub_tmp3.getBoundsInParent())){
+                                sub_sub_tmp.setDead(true);
+                                sub_sub_tmp3.setDead(true);
+                                break;
+                            }
+                        }
+                        sub_tmp3 = sub_tmp3.next;
+                    }
                     if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
@@ -247,6 +260,7 @@ public class Game {
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
                     }
                     sub_tmp = sub_tmp.next;
+
                 }
             }
         }if (tmp2.getLarge() != 0){
@@ -267,8 +281,9 @@ public class Game {
                 }if (sub_sub_tmp2.isDead()) {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    this.inFormation = false;
-                    this.reorganize();
+                    //this.inFormation = false;
+                    //this.reorganize();
+                    //this.inFormation = true;
                 }
                 sub_tmp2 = sub_tmp2.next;
             }
@@ -278,24 +293,13 @@ public class Game {
     }
 
     public void reorganize(){
-        DragonList sList = DragonList.getInstance();
+        DragonList oList = DragonList.getInstance();
         //Se llama al server.
         DragonList nList = DragonList.getInstance();
-        if (sList.getLarge() != 0){
-            DragonNode sDragon;
-            DragonNode nDragon = nList.head;
-            while (nDragon != null){
-                sDragon = nList.head;
-                while (sDragon != null){
-                    if (sDragon == nDragon){
-                        System.out.println("Hacer el cambio");
-                        sList.deleteEnemy(sDragon.getDragon());
-                        break;
-                    }
-                    sDragon = sDragon.next;
-                }
-                nDragon = nDragon.next;
-            }
+        DragonNode tmp = nList.head;
+        while (tmp != null){
+            tmp.getDragon().moveTo();
+            tmp = tmp.next;
         }
     }
 
