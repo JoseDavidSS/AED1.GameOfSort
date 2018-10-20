@@ -42,7 +42,6 @@
                         <Text fx:id="sideText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="199.0" />
                     </content>
                 </ScrollPane>
-                <Button mnemonicParsing="false" onAction="#print" text="Button" GridPane.rowIndex="1" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label fx:id="livesLeftTxt" alignment="CENTER" minHeight="48.0" prefHeight="48.0" prefWidth="251.0" text="Lives left: 10">

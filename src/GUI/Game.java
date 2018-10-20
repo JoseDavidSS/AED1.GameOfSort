@@ -47,10 +47,6 @@ public class Game {
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
-
-    public void print (){
-        System.out.println(Holder.playerRute);
-    }
     public void choosePlayer1 (){
         Holder.playerRute ="file:src/Media/Players/Charizard.gif";
 
