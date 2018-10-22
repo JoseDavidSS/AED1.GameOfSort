@@ -2,6 +2,8 @@ package Logic.Lists;
 
 import Game.Dragon;
 
+import java.util.ArrayList;
+
 public class DragonList {
 
     public DragonNode head;
@@ -218,81 +220,92 @@ public class DragonList {
      * @param startingX start x position (of the first dragon/root)
      */
     public static void binaryGUI(int start, int end, int startingX) {
+        // Initializes variables, gets chunk of list to organize.
         DragonList list = DragonList.getInstance();
         DragonList current10 = list.getChunk(start, end);
         DragonNode node = current10.head;
-        int leftx = 0;
-        double lefty = 0;
-        int rightx = 0;
-        double righty = 0;
         int switchSide = 0;
 
-        while (node != null) {
-            Dragon currentDragon = node.getDragon();
-            System.out.println(currentDragon.getClas());
-            node = node.next;
-        }
-        node = current10.head;
+        // Prints the dragon classes.
+//        while (node != null) {
+//            Dragon currentDragon = node.getDragon();
+//            System.out.println(currentDragon.getClas());
+//            node = node.next;
+//        }
+//        node = current10.head;
 
+        // Takes the first dragon and makes it the root. Modifies x and y positions of next dragons.
         Dragon firstDragon = node.getDragon();
         firstDragon.setPosx(startingX);
         firstDragon.setTranslateY(250);
-        leftx = firstDragon.getPosx() + 50;
-        lefty = firstDragon.getTranslateY() + 50;
-        rightx = firstDragon.getPosx() + 50;
-        righty = firstDragon.getTranslateY() - 50;
+        int leftx = firstDragon.getPosx() + 50;
+        double lefty = firstDragon.getTranslateY() + 80;
+        int rightx = firstDragon.getPosx() + 50;
+        double righty = firstDragon.getTranslateY() - 80;
+        int putDragons = 1;
+        node = node.next;
 
+        // Organizes captains only.
         while (node != null) {
             Dragon currentDragon = node.getDragon();
             if (currentDragon.getClas().equals("Captain")) {
+                if (putDragons > 4 && putDragons < 7) {
+                    if (switchSide == 0) {
+                        leftx -= 50;
+                        lefty -= 200;
+                    } else {
+                        rightx -= 50;
+                        righty += 200;
+                    }
+                }
                 if (switchSide == 0) {
                     currentDragon.setPosx(leftx);
                     currentDragon.setTranslateY(lefty);
                     leftx += 50;
-                    lefty += 50;
+                    lefty += 80;
                     switchSide = 1;
+                    putDragons ++;
                 } else {
                     currentDragon.setPosx(rightx);
                     currentDragon.setTranslateY(righty);
                     rightx += 50;
-                    righty -= 50;
+                    righty -= 80;
                     switchSide = 0;
+                    putDragons ++;
                 }
             }
             node = node.next;
         }
 
-        node = current10.head;
+        node = current10.head.next;
 
+        // Same thing but with Infantry.
         while (node != null) {
             Dragon currentDragon = node.getDragon();
             if (currentDragon.getClas().equals("Infantry")) {
-                if (leftx == rightx) {
+                if (putDragons > 4 && putDragons < 7) {
                     if (switchSide == 0) {
-                        currentDragon.setPosx(leftx);
-                        currentDragon.setTranslateY(lefty);
-                        leftx += 50;
-                        lefty += 50;
-                        switchSide = 1;
+                        leftx -= 50;
+                        lefty -= 200;
                     } else {
-                        currentDragon.setPosx(rightx);
-                        currentDragon.setTranslateY(righty);
-                        rightx += 50;
-                        righty -= 50;
-                        switchSide = 0;
+                        rightx -= 50;
+                        righty += 200;
                     }
-                } else if (leftx > rightx) {
-                    currentDragon.setPosx(rightx);
-                    currentDragon.setTranslateY(righty);
-                    rightx += 50;
-                    righty -= 50;
-                    switchSide = 0;
-                } else {
+                }
+                if (switchSide == 0) {
                     currentDragon.setPosx(leftx);
                     currentDragon.setTranslateY(lefty);
                     leftx += 50;
-                    lefty += 50;
+                    lefty += 80;
                     switchSide = 1;
+                    putDragons ++;
+                } else {
+                    currentDragon.setPosx(rightx);
+                    currentDragon.setTranslateY(righty);
+                    rightx += 50;
+                    righty -= 80;
+                    switchSide = 0;
+                    putDragons ++;
                 }
             }
             node = node.next;
@@ -300,23 +313,55 @@ public class DragonList {
     }
 
     /**
-     * Organizes all 100 dragons in Binary Tree form.
+     * Organizes alive dragons in Binary Tree form.
      */
     public static void binaryGUIHelper() {
-        DragonList list = DragonList.getInstance();
-        int totalDragons = list.large;
-        int startingX = 600;
-        int times = totalDragons / 10;
-        binaryGUI(0, 10, startingX);
-        binaryGUI(10, 20, startingX + 600);
-        binaryGUI(20, 30, startingX + 1200);
-        binaryGUI(30, 40, startingX + 1800);
-        binaryGUI(40, 50, startingX + 2400);
-        binaryGUI(50, 60, startingX + 3000);
-        binaryGUI(60, 70, startingX + 3600);
-        binaryGUI(70, 80, startingX + 4200);
-        binaryGUI(80, 90, startingX + 4800);
-        binaryGUI(90, 100, startingX + 5400);
+        DragonList dragons = DragonList.getInstance();
+        int length = dragons.large;
+        ArrayList pos = separate(length);
+
+        // If there are less than 10 dragons alive.
+        if (length < 10) {
+            binaryGUI(0, length, 800);
+        } else {
+            int i = 0;
+            int xStart = 0;
+            // Iterates binaryGUI in groups of 10.
+            while (i < pos.size()) {
+                if ((int) pos.get(i + 1) == 404) {
+                    break;
+                }
+                binaryGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + 800);
+                xStart += 600;
+                i++;
+            }
+        }
+    }
+
+    /**
+     * Generates ArrayList in groups of ten.
+     * @param length length of list
+     * @return ArrayList
+     */
+    public static ArrayList separate(int length) {
+        int count = 0;
+        int multiplier = 1;
+        ArrayList result = new ArrayList();
+        result.add(0);
+        while (count != length) {
+            if (count % 10 == 0) {
+                result.add(multiplier * 10);
+                multiplier ++;
+            }
+            count ++;
+        }
+        if (length % 10 != 0) {
+            int listLen = result.size();
+            result.remove(listLen - 1);
+            result.add((length % 10 + 10 * multiplier) - 20);
+        }
+        result.add(404);
+        return result;
     }
 
 }
