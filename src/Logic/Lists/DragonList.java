@@ -194,6 +194,12 @@ public class DragonList {
         }
     }
 
+    /**
+     * Gets a chunk of the game's DragonList instance.
+     * @param start start of chunk
+     * @param end end of chunk
+     * @return DragonList
+     */
     public DragonList getChunk(int start, int end) {
         DragonNode startDragon = this.getDragonNode(start);
         DragonNode endDragon = this.getDragonNode(end);
@@ -205,6 +211,12 @@ public class DragonList {
         return result;
     }
 
+    /**
+     * Organizes a chunk of dragons in a Binary Tree form in the GUI.
+     * @param start start of chunk
+     * @param end end of chunk
+     * @param startingX start x position (of the first dragon/root)
+     */
     public static void binaryGUI(int start, int end, int startingX) {
         DragonList list = DragonList.getInstance();
         DragonList current10 = list.getChunk(start, end);
@@ -222,20 +234,13 @@ public class DragonList {
         }
         node = current10.head;
 
-        while (node != null) {
-            Dragon currentDragon = node.getDragon();
-            if (currentDragon.getClas().equals("Commander")) {
-                currentDragon.setPosx(startingX);
-                currentDragon.setTranslateY(200);
-                leftx = currentDragon.getPosx() + 50;
-                lefty = currentDragon.getTranslateY() + 50;
-                rightx = currentDragon.getPosx() + 50;
-                righty = currentDragon.getTranslateY() - 50;
-                break;
-            }
-            node = node.next;
-        }
-        node = current10.head;
+        Dragon firstDragon = node.getDragon();
+        firstDragon.setPosx(startingX);
+        firstDragon.setTranslateY(250);
+        leftx = firstDragon.getPosx() + 50;
+        lefty = firstDragon.getTranslateY() + 50;
+        rightx = firstDragon.getPosx() + 50;
+        righty = firstDragon.getTranslateY() - 50;
 
         while (node != null) {
             Dragon currentDragon = node.getDragon();
@@ -294,18 +299,24 @@ public class DragonList {
         }
     }
 
+    /**
+     * Organizes all 100 dragons in Binary Tree form.
+     */
     public static void binaryGUIHelper() {
+        DragonList list = DragonList.getInstance();
+        int totalDragons = list.large;
         int startingX = 600;
+        int times = totalDragons / 10;
         binaryGUI(0, 10, startingX);
-//        binaryGUI(10, 20, startingX + 600);
-//        binaryGUI(20, 30, startingX + 1200);
-//        binaryGUI(30, 40, startingX + 1800);
-//        binaryGUI(40, 50, startingX + 2400);
-//        binaryGUI(50, 60, startingX + 3000);
-//        binaryGUI(60, 70, startingX + 3600);
-//        binaryGUI(70, 80, startingX + 4200);
-//        binaryGUI(80, 90, startingX + 4800);
-//        binaryGUI(90, 99, startingX + 5400);
+        binaryGUI(10, 20, startingX + 600);
+        binaryGUI(20, 30, startingX + 1200);
+        binaryGUI(30, 40, startingX + 1800);
+        binaryGUI(40, 50, startingX + 2400);
+        binaryGUI(50, 60, startingX + 3000);
+        binaryGUI(60, 70, startingX + 3600);
+        binaryGUI(70, 80, startingX + 4200);
+        binaryGUI(80, 90, startingX + 4800);
+        binaryGUI(90, 100, startingX + 5400);
     }
 
 }
