@@ -70,7 +70,7 @@ public class Dragon extends Beast {
             }
             while (posx != this.getPosx()){
                 posx += 5;
-                setTranslateX(posx);
+                this.setTranslateX(posx);
             }
         }if (this.getPosx() < posx){
             if (this.getPosx() < 0){
@@ -78,7 +78,7 @@ public class Dragon extends Beast {
             }
             while (posx != this.getPosx()){
                 posx -= 5;
-                setTranslateX(posx);
+                this.setTranslateX(posx);
             }
         }if (this.getPosy() > posy){
             if (this.getPosy() > 700){
@@ -86,7 +86,7 @@ public class Dragon extends Beast {
             }
             while (posy != this.getPosy()){
                 posy += 5;
-                setTranslateY(posy);
+                this.setTranslateY(posy);
             }
         }if (this.getPosy() < posy){
             if (this.getPosy() < 0){
@@ -94,7 +94,7 @@ public class Dragon extends Beast {
             }
             while (posx != this.getPosx()){
                 posx -= 5;
-                setTranslateX(posx);
+                this.setTranslateX(posx);
             }
         }
     }

@@ -119,10 +119,16 @@ public class Game {
                 case S:
                     player.moveDown();
                     break;
+                case M:
+                    DragonList.binaryGUIHelper();
+                    break;
                 case K:
                     if (inFormation && !player.isDead()){
                         this.shoot();
                     }
+                    break;
+                case ESCAPE:
+                    System.exit(0);
                     break;
             }
         });
