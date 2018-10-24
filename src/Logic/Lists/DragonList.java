@@ -81,6 +81,27 @@ public class DragonList {
         }
     }
 
+    public boolean allReady(){
+        if (this.large != 0){
+            boolean a = true;
+            DragonNode tmp = this.head;
+            while (tmp != null){
+                Dragon sub_tmp = tmp.getDragon();
+                if (sub_tmp.isReadyX() && sub_tmp.isReadyY()){
+                    sub_tmp.setReadyX(false);
+                    sub_tmp.setReadyY(false);
+                    tmp = tmp.next;
+                }else{
+                    a = false;
+                    break;
+                }
+            }
+            return a;
+        }else{
+            return false;
+        }
+    }
+
     public void print() {
         if (this.getLarge()>0) {
             for (int a = 0; a < this.large; a++) {
@@ -188,11 +209,29 @@ public class DragonList {
     }
 
     public void quickSort(int mayor, int menor){
-        if(menor<mayor){
+        if(menor < mayor){
             int pi = partition();
             quickSort(pi-1,menor);
             quickSort(mayor, pi+1);
+        }
+    }
 
+    public void arrange(){
+        DragonNode tmp = this.head;
+        int y = 15;
+        int x = this.leftest;
+        int i = 0;
+        while (tmp != null){
+            Dragon sub_tmp = tmp.getDragon();
+            sub_tmp.setPosx(x);
+            sub_tmp.setPosy(y);
+            y += 70;
+            if (i % 9 == 0 && i != 0){
+                y = 15;
+                x += 400;
+            }
+            i++;
+            tmp = tmp.next;
         }
     }
 
@@ -237,11 +276,11 @@ public class DragonList {
         // Takes the first dragon and makes it the root. Modifies x and y positions of next dragons.
         Dragon firstDragon = node.getDragon();
         firstDragon.setPosx(startingX);
-        firstDragon.setTranslateY(250);
+        firstDragon.setPosy(250);
         int leftx = firstDragon.getPosx() + 50;
-        double lefty = firstDragon.getTranslateY() + 80;
+        int lefty = firstDragon.getPosy() + 80;
         int rightx = firstDragon.getPosx() + 50;
-        double righty = firstDragon.getTranslateY() - 80;
+        int righty = firstDragon.getPosy() - 80;
         int putDragons = 1;
         node = node.next;
 
@@ -260,14 +299,14 @@ public class DragonList {
                 }
                 if (switchSide == 0) {
                     currentDragon.setPosx(leftx);
-                    currentDragon.setTranslateY(lefty);
+                    currentDragon.setPosy(lefty);
                     leftx += 50;
                     lefty += 80;
                     switchSide = 1;
                     putDragons ++;
                 } else {
                     currentDragon.setPosx(rightx);
-                    currentDragon.setTranslateY(righty);
+                    currentDragon.setPosy(righty);
                     rightx += 50;
                     righty -= 80;
                     switchSide = 0;
@@ -294,14 +333,14 @@ public class DragonList {
                 }
                 if (switchSide == 0) {
                     currentDragon.setPosx(leftx);
-                    currentDragon.setTranslateY(lefty);
+                    currentDragon.setPosy(lefty);
                     leftx += 50;
                     lefty += 80;
                     switchSide = 1;
                     putDragons ++;
                 } else {
                     currentDragon.setPosx(rightx);
-                    currentDragon.setTranslateY(righty);
+                    currentDragon.setPosy(righty);
                     rightx += 50;
                     righty -= 80;
                     switchSide = 0;
@@ -322,7 +361,7 @@ public class DragonList {
 
         // If there are less than 10 dragons alive.
         if (length < 10) {
-            binaryGUI(0, length, 800);
+            binaryGUI(0, length, dragons.getLeftest());
         } else {
             int i = 0;
             int xStart = 0;
@@ -331,8 +370,8 @@ public class DragonList {
                 if ((int) pos.get(i + 1) == 404) {
                     break;
                 }
-                binaryGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + 800);
-                xStart += 600;
+                binaryGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + dragons.getLeftest());
+                xStart += 800;
                 i++;
             }
         }

@@ -35,6 +35,7 @@ public class Game {
     private int level = 1;
     public boolean inFormation = true;
     private double enemyShoot = 0;
+    private int whichFormation = 0;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     @FXML private ImageView background1;
@@ -119,9 +120,6 @@ public class Game {
                 case S:
                     player.moveDown();
                     break;
-                case M:
-                    DragonList.binaryGUIHelper();
-                    break;
                 case K:
                     if (inFormation && !player.isDead()){
                         this.shoot();
@@ -180,7 +178,7 @@ public class Game {
 
     public void temporalMethod() throws IOException {
         int i = 0;
-        int y = 5;
+        int y = 15;
         int x = 900;
         boolean fLine = false;
         boolean first = false;
@@ -206,14 +204,14 @@ public class Game {
             Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
             DragonList.getInstance().addEnemy(dragon);
             y += 70;
-            if (i % 10 == 0 && i != 0){
-                y = 5;
+            if (i % 9 == 0 && i != 0){
+                y = 15;
                 if (!fLine){
-                    x += 800;
+                    x += 400;
                     fLine = true;
                 }
                 else{
-                    x += 500;
+                    x += 400;
                 }
             }
             i++;
@@ -274,43 +272,65 @@ public class Game {
 
                 }
             }
-        }if (tmp2.getLarge() != 0){
+        }if (tmp2.getLarge() != 0) {
             DragonNode sub_tmp2 = tmp2.head;
-            while (sub_tmp2 != null){
+            while (sub_tmp2 != null) {
                 Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
-                if (inFormation){
+                if (inFormation) {
                     sub_sub_tmp2.moveLeft();
-                    if (this.enemyShoot > 2){
+                    if (sub_sub_tmp2 == tmp2.head.getDragon()) {
+                        tmp2.setLeftest(sub_sub_tmp2.getPosx());
+                    }
+                    if (this.enemyShoot > 2) {
                         if (Math.random() < 0.5 && sub_sub_tmp2.getRechargeSpeed() >= 70) {
                             this.shoot(sub_sub_tmp2);
-                        }if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
+                        }
+                        if (Math.random() < 0.3 && sub_sub_tmp2.getRechargeSpeed() < 70 && sub_sub_tmp2.getRechargeSpeed() >= 40) {
                             this.shoot(sub_sub_tmp2);
-                        }if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
+                        }
+                        if (Math.random() < 0.2 && sub_sub_tmp2.getRechargeSpeed() < 40) {
                             this.shoot(sub_sub_tmp2);
                         }
                     }
-                }if (sub_sub_tmp2.isDead()) {
+                }
+                if (sub_sub_tmp2.isDead()) {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    //this.inFormation = false;
-                    //this.reorganize();
-                    //this.inFormation = true;
+                    this.inFormation = false;
+                    this.changeFormation();
                 }
                 sub_tmp2 = sub_tmp2.next;
+            }
+        }if (!this.inFormation){
+            DragonNode sub_tmp2 = tmp2.head;
+            while (sub_tmp2 != null){
+                sub_tmp2.getDragon().moveToX();
+                sub_tmp2.getDragon().moveToY();
+                sub_tmp2 = sub_tmp2.next;
+            }
+            if (tmp2.allReady()){
+                this.inFormation = true;
             }
         }if (this.enemyShoot > 2) {
             this.enemyShoot = 0;
         }
     }
 
-    public void reorganize(){
-        DragonList oList = DragonList.getInstance();
-        //Se llama al server.
-        DragonList nList = DragonList.getInstance();
-        DragonNode tmp = nList.head;
-        while (tmp != null){
-            tmp.getDragon().moveTo();
-            tmp = tmp.next;
+    public void changeFormation(){
+        if (this.whichFormation == 0){
+            DragonList.getInstance().selectionSort();
+            DragonList.getInstance().arrange();
+            this.whichFormation++;
+        }else if (this.whichFormation == 1){
+            DragonList.getInstance().insertionSort();
+            DragonList.getInstance().arrange();
+            this.whichFormation++;
+        }else if (this.whichFormation == 2){
+           // DragonList.getInstance().quickSort(DragonList.getInstance().getLarge() - 1, 0);
+            this.whichFormation++;
+        }else if (this.whichFormation == 3){
+            DragonList.binaryGUIHelper();
+            this.whichFormation = 0;
         }
     }
 

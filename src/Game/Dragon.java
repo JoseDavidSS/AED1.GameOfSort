@@ -6,6 +6,8 @@ public class Dragon extends Beast {
     private int rechargeSpeed;
     private int age;
     private String clas;
+    private boolean readyY;
+    private boolean readyX;
 
     public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy, int width, int height, String imgPath) {
         super(resistence, posx, posy, width, height, imgPath);
@@ -13,6 +15,8 @@ public class Dragon extends Beast {
         this.rechargeSpeed = rSpeed;
         this.age = age;
         this.clas = clas;
+        this.readyY = false;
+        this.readyX = false;
     }
 
     public String getName() {
@@ -47,13 +51,29 @@ public class Dragon extends Beast {
         this.clas = clas;
     }
 
-    public void moveLeft(){
-        if (this.getPosx() <= 0){
+    public boolean isReadyY() {
+        return readyY;
+    }
+
+    public void setReadyY(boolean readyY) {
+        this.readyY = readyY;
+    }
+
+    public boolean isReadyX() {
+        return readyX;
+    }
+
+    public void setReadyX(boolean readyX) {
+        this.readyX = readyX;
+    }
+
+    public void moveLeft() {
+        if (this.getPosx() <= 0) {
             this.setDead(true);
-        }else if (this.getPosx() == 1200){
+        } else if (this.getPosx() == 1200) {
             this.setPosx(900);
             setTranslateX(900);
-        }else{
+        } else {
             if (Math.random() < 0.4) {
                 setTranslateX(this.getPosx() - 1);
                 this.setPosx(this.getPosx() - 1);
@@ -61,42 +81,39 @@ public class Dragon extends Beast {
         }
     }
 
-    public void moveTo(){
+    public void moveToX() {
+        boolean ready = true;
         double posx = getTranslateX();
-        double posy = getTranslateY();
-        if (this.getPosx() > posx){
-            if (this.getPosx() > 900 & this.getPosx() < 1200){
-                this.setPosx(1250);
-            }
-            while (posx != this.getPosx()){
-                posx += 5;
-                this.setTranslateX(posx);
-            }
-        }if (this.getPosx() < posx){
-            if (this.getPosx() < 0){
-                this.setPosx(0);
-            }
-            while (posx != this.getPosx()){
-                posx -= 5;
-                this.setTranslateX(posx);
-            }
-        }if (this.getPosy() > posy){
-            if (this.getPosy() > 700){
-                this.setPosy(700);
-            }
-            while (posy != this.getPosy()){
-                posy += 5;
-                this.setTranslateY(posy);
-            }
-        }if (this.getPosy() < posy){
-            if (this.getPosy() < 0){
-                this.setPosy(0);
-            }
-            while (posx != this.getPosx()){
-                posx -= 5;
-                this.setTranslateX(posx);
-            }
+        if (this.getPosx() > posx) {
+            posx += 1;
+            this.setTranslateX(posx);
+            ready = false;
+        }
+        if (this.getPosx() < posx) {
+            posx -= 1;
+            this.setTranslateX(posx);
+            ready = false;
+        }
+        if (ready) {
+            this.readyX = true;
         }
     }
 
+    public void moveToY() {
+        boolean ready = true;
+        double posy = getTranslateY();
+        if (this.getPosy() > posy) {
+            posy += 1;
+            this.setTranslateY(posy);
+            ready = false;
+        }
+        if (this.getPosy() < posy) {
+            posy -= 1;
+            this.setTranslateY(posy);
+            ready = false;
+        }
+        if (ready) {
+            this.readyY = true;
+        }
+    }
 }
