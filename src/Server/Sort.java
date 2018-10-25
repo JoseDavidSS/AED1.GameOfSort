@@ -21,7 +21,7 @@ public class Sort extends HttpServlet {
         //Convertir dList en la lista de dragones
         switch (round){
             case 0:
-                DragonList.getInstance().selectionSort();
+               // DragonList.getInstance().selectionSort();
                 response.getWriter().println("0");
                 round++;
                 break;

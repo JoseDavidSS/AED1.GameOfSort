@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="stax2-api-3.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources/stax2-api-3.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

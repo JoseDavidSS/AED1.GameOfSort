@@ -8,8 +8,9 @@ public class Dragon extends Beast {
     private String clas;
     private boolean readyY;
     private boolean readyX;
+    private int ID;
 
-    public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy, int width, int height, String imgPath) {
+    public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy, int width, int height, String imgPath, int ID) {
         super(resistence, posx, posy, width, height, imgPath);
         this.name = name;
         this.rechargeSpeed = rSpeed;
@@ -17,6 +18,7 @@ public class Dragon extends Beast {
         this.clas = clas;
         this.readyY = false;
         this.readyX = false;
+        this.ID = ID;
     }
 
     public String getName() {
@@ -65,6 +67,14 @@ public class Dragon extends Beast {
 
     public void setReadyX(boolean readyX) {
         this.readyX = readyX;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public void moveLeft() {

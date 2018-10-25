@@ -18,7 +18,6 @@ public class Beast extends Rectangle {
         this.setTranslateY(posy);
         Image img = new Image(imgPath);
         this.setFill(new ImagePattern(img));
-
         this.posx = posx;
         this.posy = posy;
         this.resistence = resistence;

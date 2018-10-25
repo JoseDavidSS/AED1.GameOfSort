@@ -21,7 +21,7 @@ public class Generate extends javax.servlet.http.HttpServlet {
         String dragons = request.getParameter("dragons");
         int Dragons = Integer.parseInt(dragons);
         response.getWriter().println(Dragons);
-
+/*
         int i = 0;
         int y = 5;
         int x = 900;
@@ -59,7 +59,7 @@ public class Generate extends javax.servlet.http.HttpServlet {
                 }
             }
             i++;
-        }
+        }*/
     }
 }
 

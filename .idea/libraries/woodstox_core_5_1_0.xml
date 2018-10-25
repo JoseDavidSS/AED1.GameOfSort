@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="woodstox-core-5.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources/woodstox-core-5.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

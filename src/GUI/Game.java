@@ -1,10 +1,8 @@
 package GUI;
 
 import Game.data.MusicPlayer;
-import Logic.Lists.BulletsList;
-import Logic.Lists.BulletsNodes;
-import Logic.Lists.DragonList;
-import Logic.Lists.DragonNode;
+import Logic.Lists.*;
+import Server.Serializer;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -230,6 +228,7 @@ public class Game {
         int resistence;
         String dragonName;
         String clas;
+        int id = 1;
         while (i != 100){
             dragonName = GameUtil.generateName();
             age = intValue(Math.random() * 1000);
@@ -244,7 +243,7 @@ public class Game {
             if (resistence < 2){
                 clas = "Infantry";
             }
-            Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif");
+            Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif", id);
             DragonList.getInstance().addEnemy(dragon);
             y += 70;
             if (i % 9 == 0 && i != 0){
@@ -258,6 +257,7 @@ public class Game {
                 }
             }
             i++;
+            id++;
         }
         this.addEnemies();
     }
@@ -364,18 +364,29 @@ public class Game {
 
     public void changeFormation(){
         if (this.whichFormation == 0){
-            DragonList.getInstance().selectionSort();
-            DragonList.getInstance().arrange();
-            this.whichFormation++;
+            //Pruebas
+            SendList sl = new SendList();
+            DragonList dl = DragonList.getInstance();
+            DragonNode tmp = dl.head;
+            while (tmp != null){
+                Dragon dragon = tmp.getDragon();
+                sl.addData(dragon.getAge(),dragon.getRechargeSpeed(), dragon.getClas(), dragon.getPosx(), dragon.getPosy(), dragon.getID(), dragon.getName(), dragon.getResistence());
+                tmp = tmp.next;
+            }
+            try {
+                Serializer.serializadorString(sl);
+                this.whichFormation++;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }else if (this.whichFormation == 1){
-            DragonList.getInstance().insertionSort();
-            DragonList.getInstance().arrange();
+
             this.whichFormation++;
         }else if (this.whichFormation == 2){
-           // DragonList.getInstance().quickSort(DragonList.getInstance().getLarge() - 1, 0);
+
             this.whichFormation++;
         }else if (this.whichFormation == 3){
-            DragonList.binaryGUIHelper();
+
             this.whichFormation = 0;
         }
     }
