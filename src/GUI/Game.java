@@ -48,28 +48,59 @@ public class Game {
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
+    /**
+     * Defines player´s first skin (image rute)
+     */
     public void choosePlayer1 (){
         Holder.playerRute ="file:src/Media/Players/Charizard.gif";
 
     }
+
+    /**
+     * Defines player´s second skin (image rute)
+     */
     public void choosePlayer2 (){
         Holder.playerRute ="file:src/Media/Players/Pony.gif";
     }
+
+    /**
+     * Defines player´s third skin (image rute)
+     */
     public void choosePlayer3 (){
         Holder.playerRute = "file:src/Media/Players/FlyingBeast.gif";
     }
+
+    /**
+     * Defines player´s fourth skin (image rute)
+     */
     public void choosePlayer4 (){
         Holder.playerRute = "file:src/Media/Players/PinkPegasus.gif";
     }
+
+    /**
+     * Defines enemies´ first skin (image rute)
+     */
     public void chooseEnemy1 (){
         Holder.enemyRute = "file:src/Media/Enemies/BlackDragon.gif";
     }
+
+    /**
+     * Defines enemies´ second skin (image rute)
+     */
     public void chooseEnemy2 (){
         Holder.enemyRute = "file:src/Media/Enemies/GreenDragon.gif";
     }
+
+    /**
+     * Defines enemies´ third skin (image rute)
+     */
     public void chooseEnemy3 (){
         Holder.enemyRute = "file:src/Media/Enemies/Nightfury.gif";
     }
+
+    /**
+     * Defines enemies´ fourth skin (image rute)
+     */
     public void chooseEnemy4 (){
         Holder.enemyRute = "file:src/Media/Enemies/YellowDragon.gif";
     }
@@ -95,6 +126,9 @@ public class Game {
         Main.setScene("Board.fxml");
     }
 
+    /**
+     * startGame is a method called by Main class to start the game
+     */
     public void startGame(){
 
         parallelTransition.play();
@@ -150,12 +184,18 @@ public class Game {
 
     }
 
+    /**
+     * shoot() is a method used to create and move player's bullets
+     */
     private void shoot(){
         Attack attack = new Attack(0, player.getPosx() + 150, player.getPosy(), 40, 40, "file:src/Media/Bullets/Green Bullet.png", "playerbullet");
         paneBoard.getChildren().add(attack);
         BulletsList.getInstance().addBullet(attack);
     }
 
+    /**
+     * shoot(Dragon dragon) is a method used to create and move enemies' bullets
+     */
     public void shoot(Dragon dragon){
         if (dragon.getPosx() < 900){
             Attack attack = new Attack(0, dragon.getPosx(), dragon.getPosy() + 20, 40, 40, "file:src/Media/Bullets/Fire.png", "enemybullet");
@@ -164,6 +204,9 @@ public class Game {
         }
     }
 
+    /**
+     * addEnemies is a method used to add enemies
+     */
     public void addEnemies(){
         DragonList list = DragonList.getInstance();
         DragonNode tmp = list.head;
@@ -219,6 +262,9 @@ public class Game {
         this.addEnemies();
     }
 
+    /**
+     * update() is a method used to refresh and update game data
+     */
     private void update(){
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
@@ -334,6 +380,9 @@ public class Game {
         }
     }
 
+    /**
+     * initialize is a method used to add a moving background to the paneBoard
+     */
     @FXML
     public void initialize() {
 
@@ -351,21 +400,33 @@ public class Game {
         parallelTransition.setCycleCount(Animation.INDEFINITE);
     }
 
+    /**
+     * setLivesLeftTxt() is a method used to set livesLeftTxt label text
+     */
     public static void setLivesLeftTxt (int lives){
         Integer.toString(lives);
         livesLeftTxt.setText("Lives left: " + lives);
     }
 
+    /**
+     * setEnemiesLeftTxt() is a method used to set enemiesLeftTxt label text
+     */
     public static void setEnemiesLeftTxt (int enemies){
         Integer.toString(enemies);
         enemiesLeftTxt.setText("Enemies left: " + enemies);
     }
 
+    /**
+     * setLevelTxt() is a method used to set levelTxt label text
+     */
     public static void setLevelTxt (int level){
         Integer.toString(level);
         levelTxt.setText("Level: " + level);
     }
 
+    /**
+     * setCurrentOrderTxt() is a method used to set currentOrderTxt label text
+     */
     public static void setCurrentOrderTxt (String currentOrder){
         currentOrderTxt.setText("Current order: " + currentOrder);
     }

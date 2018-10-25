@@ -149,5 +149,7 @@
     <orderEntry type="library" name="jackson-dataformat-xml-2.9.7-sources" level="project" />
     <orderEntry type="library" name="jackson-dataformat-xml-2.9.7-sources" level="project" />
     <orderEntry type="library" name="jackson-dataformat-xml-2.9.7-sources (1)" level="project" />
+    <orderEntry type="library" name="jSerialComm-2.3.0" level="project" />
+    <orderEntry type="library" name="arduino" level="project" />
   </component>
 </module>

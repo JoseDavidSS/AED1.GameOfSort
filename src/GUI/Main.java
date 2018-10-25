@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 /**
  * Main class to start the game
  */
@@ -40,7 +41,6 @@ public class Main extends Application {
     }
 
     @Override
-
     /**
      * Defines which window shows when first run
      */
