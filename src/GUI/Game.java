@@ -15,6 +15,11 @@ import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.Scanner;
 
 import Game.Gryphon;
 import Game.Attack;
@@ -179,7 +184,21 @@ public class Game {
     }
 
     public void temporalMethod() throws IOException {
-        int i = 0;
+        try {
+            String url = "http://localhost:9080/Progra_2_war_exploded/generate?dragons=100";
+            URLConnection conn = new URL(url).openConnection();
+            try (InputStream stream = conn.getInputStream();
+                 Scanner sc = new Scanner(stream, "UTF-8")) {
+                sc.useDelimiter("\\A");
+                if (sc.hasNext()) {
+                    byte[] receive = sc.next().getBytes();
+                }
+            }
+        } catch (MalformedURLException e) {
+        } catch (IOException e) {
+        }
+
+        /*int i = 0;
         int y = 5;
         int x = 900;
         boolean fLine = false;
@@ -218,7 +237,7 @@ public class Game {
             }
             i++;
         }
-        this.addEnemies();
+        this.addEnemies();*/
     }
 
     private void update(){

@@ -1,7 +1,9 @@
 package Logic.Lists;
 
 import Game.Dragon;
+import jop.Parser;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class DragonList {
@@ -78,15 +80,6 @@ public class DragonList {
                     tmp = tmp.next;
                 }
             }
-        }
-    }
-
-    public void print() {
-        if (this.getLarge()>0) {
-            for (int a = 0; a < this.large; a++) {
-                System.out.println(getDragon(a).getRechargeSpeed());
-            }
-            System.out.println("--------------------------");
         }
     }
 
@@ -362,6 +355,20 @@ public class DragonList {
         }
         result.add(404);
         return result;
+    }
+
+    public byte[] toXMLByte(){
+        String xml = "";
+        try {
+            xml = Parser.getStringForObject(this);
+            System.out.println(xml);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        byte[] xmlBytes = xml.getBytes();
+        return xmlBytes;
     }
 
 }
