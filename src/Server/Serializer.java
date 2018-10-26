@@ -17,7 +17,7 @@ public class Serializer {
 
     public static void deserializadorString() throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
-        Prueba value = xmlMapper.readValue("<Prueba><x>1</x><y>2</y></Prueba>", Prueba.class);
+        //Prueba value = xmlMapper.readValue("<Prueba><x>1</x><y>2</y></Prueba>", Prueba.class);
     }
 
     public static String inputStreamToString(InputStream is) throws IOException {
