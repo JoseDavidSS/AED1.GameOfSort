@@ -13,9 +13,10 @@ public class Serializer {
         return xml;
     }
 
-    public static void deserializadorString() throws IOException {
+    public static SendList deserializadorString(String xml) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
-        //Prueba value = xmlMapper.readValue("<Prueba><x>1</x><y>2</y></Prueba>", Prueba.class);
+        SendList value = xmlMapper.readValue(xml, SendList.class);
+        return value;
     }
 
     public static String inputStreamToString(InputStream is) throws IOException {

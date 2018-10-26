@@ -1,5 +1,7 @@
 package Server;
 
+import Logic.Lists.SendList;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -9,19 +11,8 @@ import java.util.Scanner;
 
 public class mainTest {
 
-    public static void main(String[] args){
-        try {
-            String url = "http://localhost:9080/Progra_2_war_exploded/generate?dragons=8";
-            URLConnection conn = new URL(url).openConnection();
-            try (InputStream stream = conn.getInputStream();
-                 Scanner sc = new Scanner(stream, "UTF-8")) {
-                sc.useDelimiter("\\A");
-                if (sc.hasNext()) {
-                    System.out.printf("Respuesta: %s", sc.next());
-                }
-            }
-        } catch (MalformedURLException e) {
-        } catch (IOException e) {
-        }
+    public static void main(String[] args) throws IOException{
+        SendList hola = Serializer.deserializadorString(Server.generate(100));
+        hola.printAge();
     }
 }

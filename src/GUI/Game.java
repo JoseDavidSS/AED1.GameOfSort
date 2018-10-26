@@ -2,6 +2,8 @@ package GUI;
 
 import Game.data.MusicPlayer;
 import Logic.Lists.*;
+import Server.Serializer;
+import Server.Server;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -230,6 +232,11 @@ public class Game {
      * @throws IOException in case something goes wrong.
      */
     public void connectToServer() throws IOException {
+
+       SendList sl =  Serializer.deserializadorString(Server.generate(100));
+
+
+
         int i = 0;
         int y = 15;
         int x = 900;
