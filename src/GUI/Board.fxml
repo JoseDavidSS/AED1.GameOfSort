@@ -44,7 +44,7 @@
                 </ScrollPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="livesLeftTxt" alignment="CENTER" minHeight="48.0" prefHeight="48.0" prefWidth="251.0" text="Lives left: 10">
+                  <Label fx:id="livesLeftTxt" alignment="CENTER" minHeight="48.0" prefHeight="48.0" prefWidth="251.0" text="Lives left:">
                      <font>
                         <Font name="System Bold Italic" size="16.0" />
                      </font>

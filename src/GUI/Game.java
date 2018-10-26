@@ -4,7 +4,9 @@ import Game.data.MusicPlayer;
 import Logic.Lists.*;
 import Server.Serializer;
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,20 +30,21 @@ public class Game {
 
     private int BACKGROUND_WIDTH = 1200;
     private ParallelTransition parallelTransition;
-    String text = "Hello";
     String textAreaString = "";
     private int level = 1;
-    public boolean inFormation = true;
+    private boolean inFormation = true;
     private double enemyShoot = 0;
     private int whichFormation = 0;
+    private int batchOfEnemies = 100;
+    private AnimationTimer timer;
     @FXML private Text sideText;
     @FXML private AnchorPane paneBoard;
     @FXML private ImageView background1;
     @FXML private ImageView background2;
-    @FXML private static Label livesLeftTxt;
-    @FXML private static Label enemiesLeftTxt;
-    @FXML private static Label levelTxt;
-    @FXML private static Label currentOrderTxt;
+    @FXML private Label livesLeftTxt;
+    @FXML private Label enemiesLeftTxt;
+    @FXML private Label levelTxt;
+    @FXML private Label currentOrderTxt;
 
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
@@ -131,11 +134,12 @@ public class Game {
 
         parallelTransition.play();
 
-        textAreaString += String.format("%s%n", text);
-        System.out.println("Second: "+textAreaString);
-        this.sideText.setText(textAreaString);
+        //textAreaString += String.format("%s%n", text);
+        //this.sideText.setText(textAreaString);
 
-        player = new Gryphon(10, 50, 100, 130, 80, Holder.playerRute);
+        this.setLivesLeftTxt(10);
+
+        player = new Gryphon(9, 50, 100, 130, 80, Holder.playerRute);
         paneBoard.getChildren().add(player);
 
         Main.scene.setOnKeyPressed(e -> {
@@ -163,7 +167,7 @@ public class Game {
             }
         });
 
-        AnimationTimer timer = new AnimationTimer() {
+        timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 update();
@@ -215,6 +219,9 @@ public class Game {
             paneBoard.getChildren().add(tmp.getDragon());
             tmp = tmp.next;
         }
+        this.setEnemiesLeftTxt(this.batchOfEnemies);
+        this.setLevelTxt(this.level);
+        this.setCurrentOrderTxt("Random");
     }
 
     public void temporalMethod() throws IOException {
@@ -229,7 +236,7 @@ public class Game {
         String dragonName;
         String clas;
         int id = 1;
-        while (i != 100){
+        while (i != this.batchOfEnemies){
             dragonName = GameUtil.generateName();
             age = intValue(Math.random() * 1000);
             rSpeed = intValue(Math.random() * 100);
@@ -249,7 +256,7 @@ public class Game {
             if (i % 9 == 0 && i != 0){
                 y = 15;
                 if (!fLine){
-                    x += 400;
+                    x += 600;
                     fLine = true;
                 }
                 else{
@@ -262,6 +269,16 @@ public class Game {
         this.addEnemies();
     }
 
+    private void nextLevel(){
+        this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
+        this.level++;
+        try {
+            this.temporalMethod();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * update() is a method used to refresh and update game data
      */
@@ -271,7 +288,18 @@ public class Game {
         this.enemyShoot += 0.016;
         if (player.isDead()){
             paneBoard.getChildren().remove(player);
-            System.out.println("MORI");
+            timer.stop();
+            try {
+                //Mejorar el fin del juego
+                this.runInstructions();
+            } catch (IOException e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Aviso");
+                alert.setHeaderText("Error");
+                alert.setContentText("A problem appeared :(");
+                alert.showAndWait();
+                Platform.exit();
+            }
         }if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
             while (sub_tmp != null){
@@ -310,12 +338,12 @@ public class Game {
                     if (sub_sub_tmp.getBoundsInParent().intersects((player.getBoundsInParent()))) {
                         sub_sub_tmp.setDead(true);
                         player.hit();
+                        this.setLivesLeftTxt(player.getResistence() + 1);
                     }if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
                         BulletsList.getInstance().deleteBullet(sub_sub_tmp);
                     }
                     sub_tmp = sub_tmp.next;
-
                 }
             }
         }if (tmp2.getLarge() != 0) {
@@ -342,8 +370,14 @@ public class Game {
                 if (sub_sub_tmp2.isDead()) {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
-                    this.inFormation = false;
-                    this.changeFormation();
+                    this.setEnemiesLeftTxt(DragonList.getInstance().getLarge());
+                    if (DragonList.getInstance().getLarge() != 0){
+                        this.inFormation = false;
+                        this.changeFormation();
+                    }else{
+                        this.nextLevel();
+                        break;
+                    }
                 }
                 sub_tmp2 = sub_tmp2.next;
             }
@@ -364,7 +398,8 @@ public class Game {
 
     public void changeFormation(){
         if (this.whichFormation == 0){
-            //Pruebas
+            this.setCurrentOrderTxt("Selection Sort");
+            /*
             SendList sl = new SendList();
             DragonList dl = DragonList.getInstance();
             DragonNode tmp = dl.head;
@@ -378,15 +413,22 @@ public class Game {
                 this.whichFormation++;
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            }*/
+            this.whichFormation++;
         }else if (this.whichFormation == 1){
+            this.setCurrentOrderTxt("Insertion Sort");
 
             this.whichFormation++;
         }else if (this.whichFormation == 2){
+            this.setCurrentOrderTxt("Quick Sort");
 
             this.whichFormation++;
         }else if (this.whichFormation == 3){
+            this.setCurrentOrderTxt("Binary Tree");
 
+            this.whichFormation++;
+        }else{
+            this.setCurrentOrderTxt("AVL Tree");
             this.whichFormation = 0;
         }
     }
@@ -414,7 +456,7 @@ public class Game {
     /**
      * setLivesLeftTxt() is a method used to set livesLeftTxt label text
      */
-    public static void setLivesLeftTxt (int lives){
+    public void setLivesLeftTxt (int lives){
         Integer.toString(lives);
         livesLeftTxt.setText("Lives left: " + lives);
     }
@@ -422,7 +464,7 @@ public class Game {
     /**
      * setEnemiesLeftTxt() is a method used to set enemiesLeftTxt label text
      */
-    public static void setEnemiesLeftTxt (int enemies){
+    public void setEnemiesLeftTxt (int enemies){
         Integer.toString(enemies);
         enemiesLeftTxt.setText("Enemies left: " + enemies);
     }
@@ -430,7 +472,7 @@ public class Game {
     /**
      * setLevelTxt() is a method used to set levelTxt label text
      */
-    public static void setLevelTxt (int level){
+    public void setLevelTxt (int level){
         Integer.toString(level);
         levelTxt.setText("Level: " + level);
     }
@@ -438,7 +480,7 @@ public class Game {
     /**
      * setCurrentOrderTxt() is a method used to set currentOrderTxt label text
      */
-    public static void setCurrentOrderTxt (String currentOrder){
+    public void setCurrentOrderTxt (String currentOrder){
         currentOrderTxt.setText("Current order: " + currentOrder);
     }
 }

@@ -6,7 +6,7 @@ public class DragonList {
 
     public DragonNode head;
 
-    public int large;
+    private int large;
     private int leftest;
     private static DragonList list = new DragonList();
 
@@ -63,12 +63,17 @@ public class DragonList {
         if (this.head.getDragon() == dragon){
             this.head = this.head.next;
             this.large--;
-            this.leftest = this.head.getDragon().getPosx();
+            if (this.large != 0){
+                this.leftest = this.head.getDragon().getPosx();
+            }else{
+                this.leftest = 900;
+            }
         }else{
             DragonNode tmp = this.head;
             while (tmp.next != null){
                 if (tmp.next.getDragon() == dragon && tmp.next.next == null){
                     tmp.next = null;
+                    this.large--;
                     break;
                 }else if(tmp.next.getDragon() == dragon){
                     tmp.next = tmp.next.next;
