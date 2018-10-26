@@ -6,7 +6,7 @@ public class DragonList {
 
     public DragonNode head;
 
-    private int large;
+    public int large;
     private int leftest;
     private static DragonList list = new DragonList();
 
