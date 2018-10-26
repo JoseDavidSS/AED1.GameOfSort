@@ -16,10 +16,21 @@
           <element id="file-copy" path="$PROJECT_DIR$/resources/logback-classic-1.2.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/logback-core-1.2.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/slf4j-api-1.7.25.jar" />
-          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar" />
-          <element id="library" level="application" name="jackson-dataformat-xml-2.9.7-javadoc" />
+          <element id="library" level="project" name="jackson-dataformat-xml-2.9.7-javadoc" />
+          <element id="library" level="project" name="jackson-annotations-2.9.7" />
+          <element id="library" level="project" name="jackson-module-jaxb-annotations-2.9.7" />
+          <element id="library" level="project" name="woodstox-core-5.1.0" />
+          <element id="library" level="project" name="stax2-api-3.0.1" />
+          <element id="library" level="project" name="javax.ws.rs-api-2.0" />
         </element>
       </element>
+      <element id="library" level="project" name="jackson-all-1.9.0" />
+      <element id="library" level="project" name="jackson-all-1.9.0 (2)" />
+      <element id="library" level="project" name="jackson-dataformat-xml-2.9.7-javadoc (2)" />
+      <element id="library" level="project" name="jackson-dataformat-xml-2.9.7-sources (1)" />
+      <element id="library" level="project" name="jackson-dataformat-xml-2.9.7-sources" />
+      <element id="library" level="project" name="jackson-dataformat-xml-2.9.7-javadoc (3)" />
+      <element id="library" level="project" name="jSerialComm-2.3.0" />
       <element id="javaee-facet-resources" facet="Progra-2/web/Web" />
     </root>
   </artifact>

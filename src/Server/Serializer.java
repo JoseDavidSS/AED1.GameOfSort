@@ -7,12 +7,10 @@ import java.io.*;
 
 public class Serializer {
 
-    public static void serializadorString(SendList sendList) throws IOException {
+    public static String serializadorString(SendList sendList) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         String xml = xmlMapper.writeValueAsString(sendList);
-        System.out.println(xml);
-        SendList sl = xmlMapper.readValue(xml, SendList.class);
-        sl.printAge();
+        return xml;
     }
 
     public static void deserializadorString() throws IOException {
