@@ -156,5 +156,6 @@
     <orderEntry type="library" name="stax2-api-3.0.1" level="project" />
     <orderEntry type="library" name="jSerialComm-2.3.0" level="project" />
     <orderEntry type="library" name="arduino" level="project" />
+    <orderEntry type="library" name="javax.ws.rs-api-2.0" level="project" />
   </component>
 </module>
