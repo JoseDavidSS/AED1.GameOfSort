@@ -9,9 +9,9 @@ import java.util.Random;
 public class GameUtil {
 
     /**
-     * Generates random dragon name from a names text file
-     * @return String random name
-     * @throws IOException
+     * Generates random dragon name from a names text file.
+     * @return String random name.
+     * @throws IOException in case something goes wrong.
      */
     public static String generateName() throws IOException {
         String file = "src/Game/data/names.txt";

@@ -20,6 +20,9 @@ public class BulletsList {
         list = new BulletsList();
     }
 
+    /**
+     * Constructor of the BulletsList class.
+     */
     private BulletsList(){
         this.head = null;
         this.large = 0;
@@ -33,6 +36,10 @@ public class BulletsList {
         this.large = large;
     }
 
+    /**
+     * Method to add a bullet to the list.
+     * @param bullet instance of the attack of the dragon or the gryphon.
+     */
     public void addBullet(Attack bullet){
         if (this.head == null){
             this.head = new BulletsNodes(bullet);
@@ -47,6 +54,10 @@ public class BulletsList {
         }
     }
 
+    /**
+     * Method to delete a specific bullet of the list.
+     * @param bullet instance of the attack to delete.
+     */
     public void deleteBullet(Attack bullet){
         if (this.head.getAttack() == bullet){
             this.head = this.head.next;

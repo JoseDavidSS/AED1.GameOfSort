@@ -2,7 +2,6 @@ package GUI;
 
 import Game.data.MusicPlayer;
 import Logic.Lists.*;
-import Server.Serializer;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -46,7 +45,6 @@ public class Game {
     @FXML private Label enemiesLeftTxt;
     @FXML private Label levelTxt;
     @FXML private Label currentOrderTxt;
-
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
@@ -55,7 +53,6 @@ public class Game {
      */
     public void choosePlayer1 (){
         Holder.playerRute ="file:src/Media/Players/Charizard.gif";
-
     }
 
     /**
@@ -183,7 +180,7 @@ public class Game {
         musicPlayer.start();
 
         try {
-            this.temporalMethod();
+            this.connectToServer();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -228,7 +225,11 @@ public class Game {
         this.setCurrentOrderTxt("Random");
     }
 
-    public void temporalMethod() throws IOException {
+    /**
+     * Method to call the server
+     * @throws IOException in case something goes wrong.
+     */
+    public void connectToServer() throws IOException {
         int i = 0;
         int y = 15;
         int x = 900;
@@ -273,11 +274,14 @@ public class Game {
         this.addEnemies();
     }
 
+    /**
+     * Method to advance to the next level.
+     */
     private void nextLevel(){
         this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
         this.level++;
         try {
-            this.temporalMethod();
+            this.connectToServer();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -400,6 +404,9 @@ public class Game {
         }
     }
 
+    /**
+     * Method to change the current formation of the game.
+     */
     public void changeFormation(){
         if (this.whichFormation == 0){
             this.setCurrentOrderTxt("Selection Sort");

@@ -7,6 +7,10 @@ public class DragonNode {
     public DragonNode next;
     private Dragon dragon;
 
+    /**
+     * Constructor of the DragonNode class.
+     * @param dragon instance of the dragon that the node will save.
+     */
     public DragonNode(Dragon dragon){
         this.next = null;
         this.dragon = dragon;
