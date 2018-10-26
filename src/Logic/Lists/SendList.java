@@ -349,131 +349,129 @@ public class SendList {
         return result;
     }
 
-//
-//    /**
-//     * Organizes dragons in AVL Tree form in GUI.
-//     * @param start start of DragonList to organize.
-//     * @param end end of DrgonsList to organize
-//     * @param startingX starting x position (of dragon in root position)
-//     */
-//    public static void AVLGUI(int start, int end, int startingX) {
-//        //Kevin, aquí se refiere al método getChunk de esta clase.
-//        DragonList currentChunk = DragonList.getInstance().getChunk(start, end);
-//        AVLTree tree = instanceToAVL(currentChunk);
-//        tree.preOrder(tree.root);
-//
-//        // Places dragon in root position and defines left and right's x and y positions.
-//        Dragon firstDragon = ageToDragon(tree.root.getKey(), currentChunk);
-//        firstDragon.setPosx(startingX);
-//        firstDragon.setTranslateY(250);
-//        int leftx = firstDragon.getPosx() + 60;
-//        double lefty = firstDragon.getTranslateY() + 90;
-//        int rightx = firstDragon.getPosx() + 60;
-//        double righty = firstDragon.getTranslateY() - 90;
-//
-//        // Recursively modifies dragon positions.
-//        placeLeft(tree.root.left, leftx, lefty, currentChunk);
-//        placeRight(tree.root.right, rightx, righty, currentChunk);
-//    }
-//
-//    /**
-//     * Organizes alive dragons in AVL Tree form.
-//     */
-//    public static void AVLGUIHelper(){
-//        DragonList dragons = DragonList.getInstance();
-//        int length = dragons.large;
-//        ArrayList pos = separate(length);
-//
-//        // If there are less than 10 dragons alive.
-//        if (length < 10) {
-//            AVLGUI(0, length, 800);
-//        } else {
-//            int i = 0;
-//            int xStart = 0;
-//            // Iterates AVLGUI in groups of 10.
-//            while (i < pos.size()) {
-//                if ((int) pos.get(i + 1) == 404) {
-//                    break;
-//                }
-//                AVLGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + 800);
-//                xStart += 600;
-//                i++;
-//            }
-//        }
-//    }
-//
-//    /**
-//     * Recursively modifies dragon position in left child node of AVL Tree.
-//     * @param node node where the positioning starts from
-//     * @param x x position of dragon
-//     * @param y y position of dragon
-//     * @param chunk list of dragons to place
-//     */
-//    public static void placeLeft(AVLTreeNode node, int x, double y, DragonList chunk) {
-//        if (node != null) {
-//            Dragon currentDragon = ageToDragon(node.getKey(), chunk);
-//            currentDragon.setPosx(x);
-//            currentDragon.setTranslateY(y);
-//            if (node.right != null) {
-//                placeRight(node.right, x + 60, y - 90, chunk);
-//            }
-//            placeLeft(node.left, x + 60, y + 90, chunk);
-//        }
-//    }
-//
-//    /**
-//     * Recursively modifies dragon position in right child node of AVL Tree.
-//     * @param node node where the positioning starts from
-//     * @param x x position of dragon
-//     * @param y y position of dragon
-//     * @param chunk list of dragons to place
-//     */
-//    public static void placeRight(AVLTreeNode node, int x, double y, DragonList chunk) {
-//        if (node != null) {
-//            Dragon currentDragon = ageToDragon(node.getKey(), chunk);
-//            currentDragon.setPosx(x);
-//            currentDragon.setTranslateY(y);
-//            if (node.left != null) {
-//                placeLeft(node.left, x + 60, y + 90, chunk);
-//            }
-//            placeRight(node.right, x + 60, y - 90, chunk);
-//        }
-//    }
-//
-//    /**
-//     * Converts a list of dragons in AVL Tree class type tree
-//     * @param chunk list of dragons to insert in AVL Tree
-//     * @return AVL Tree of the dragons's ages
-//     */
-//    public static AVLTree instanceToAVL(DragonList chunk) {
-//        AVLTree result = new AVLTree();
-//        DragonNode node = chunk.head;
-//        while (node != null) {
-//            result.root = result.insert(result.root, node.getDragon().getAge());
-//            node = node.next;
-//        }
-//        return result;
-//    }
-//
-//    /**
-//     * Takes an age and gets the Dragon with that age. Happy Birthday Dragons!
-//     * @param age int age of the dragon you want, basically
-//     * @param list DragonList you want to read
-//     * @return Dragon with that age
-//     */
-//    public static Dragon ageToDragon(int age, DragonList list) {
-//        DragonNode node = list.head;
-//        Dragon result = list.head.getDragon();
-//        while (node != null) {
-//            if (node.getDragon().getAge() == age) {
-//                result = node.getDragon();
-//                break;
-//            }
-//            node = node.next;
-//        }
-//        return result;
-//    }
-//
+
+    /**
+     * Organizes dragons in AVL Tree form in GUI.
+     * @param start start of DragonList to organize.
+     * @param end end of DrgonsList to organize
+     * @param startingX starting x position (of dragon in root position)
+     */
+    public void AVLGUI(int start, int end, int startingX) {
+        SendList currentChunk = this.getChunk(start, end);
+        AVLTree tree = instanceToAVL(currentChunk);
+        tree.preOrder(tree.root);
+
+        // Places dragon in root position and defines left and right's x and y positions.
+        DragonData firstDragon = ageToDragon(tree.root.getKey(), currentChunk);
+        firstDragon.setPosx(startingX);
+        firstDragon.setPosy(250);
+        int leftx = firstDragon.getPosx() + 60;
+        int lefty = firstDragon.getPosy() + 90;
+        int rightx = firstDragon.getPosx() + 60;
+        int righty = firstDragon.getPosy() - 90;
+
+        // Recursively modifies dragon positions.
+        this.placeLeft(tree.root.left, leftx, lefty, currentChunk);
+        this.placeRight(tree.root.right, rightx, righty, currentChunk);
+    }
+
+    /**
+     * Organizes alive dragons in AVL Tree form.
+     */
+    public void AVLGUIHelper(){
+        int length = this.large;
+        ArrayList pos = separate(length);
+
+        // If there are less than 10 dragons alive.
+        if (length < 10) {
+            this.AVLGUI(0, length, this.leftest);
+        } else {
+            int i = 0;
+            int xStart = 0;
+            // Iterates AVLGUI in groups of 10.
+            while (i < pos.size()) {
+                if ((int) pos.get(i + 1) == 404) {
+                    break;
+                }
+                this.AVLGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + this.leftest);
+                xStart += 800;
+                i++;
+            }
+        }
+    }
+
+    /**
+     * Recursively modifies dragon position in left child node of AVL Tree.
+     * @param node node where the positioning starts from
+     * @param x x position of dragon
+     * @param y y position of dragon
+     * @param chunk list of dragons to place
+     */
+    public void placeLeft(AVLTreeNode node, int x, int y, SendList chunk) {
+        if (node != null) {
+            DragonData currentDragon = ageToDragon(node.getKey(), chunk);
+            currentDragon.setPosx(x);
+            currentDragon.setPosy(y);
+            if (node.right != null) {
+                this.placeRight(node.right, x + 60, y - 90, chunk);
+            }
+            this.placeLeft(node.left, x + 60, y + 90, chunk);
+        }
+    }
+
+    /**
+     * Recursively modifies dragon position in right child node of AVL Tree.
+     * @param node node where the positioning starts from
+     * @param x x position of dragon
+     * @param y y position of dragon
+     * @param chunk list of dragons to place
+     */
+    public void placeRight(AVLTreeNode node, int x, int y, SendList chunk) {
+        if (node != null) {
+            DragonData currentDragon = ageToDragon(node.getKey(), chunk);
+            currentDragon.setPosx(x);
+            currentDragon.setPosy(y);
+            if (node.left != null) {
+                this.placeLeft(node.left, x + 60, y + 90, chunk);
+            }
+            this.placeRight(node.right, x + 60, y - 90, chunk);
+        }
+    }
+
+    /**
+     * Converts a list of dragons in AVL Tree class type tree
+     * @param chunk list of dragons to insert in AVL Tree
+     * @return AVL Tree of the dragons's ages
+     */
+    public AVLTree instanceToAVL(SendList chunk) {
+        AVLTree result = new AVLTree();
+        SendNode node = chunk.head;
+        while (node != null) {
+            result.root = result.insert(result.root, node.getDragonData().getdAge());
+            node = node.next;
+        }
+        return result;
+    }
+
+    /**
+     * Takes an age and gets the Dragon with that age. Happy Birthday Dragons!
+     * @param age int age of the dragon you want, basically
+     * @param list DragonList you want to read
+     * @return Dragon with that age
+     */
+    public DragonData ageToDragon(int age, SendList list) {
+        SendNode node = list.head;
+        DragonData result = list.head.getDragonData();
+        while (node != null) {
+            if (node.getDragonData().getdAge() == age) {
+                result = node.getDragonData();
+                break;
+            }
+            node = node.next;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) throws IOException {
         int i = 0;
