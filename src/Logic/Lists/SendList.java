@@ -518,7 +518,7 @@ public class SendList {
             id++;
         }
         sl.printAge();
-        sl.quickSort(sl.large - 1, 0);
+        sl.quickSort(949, 0);
         sl.printAge();
     }
 }
