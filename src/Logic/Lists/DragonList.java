@@ -5,7 +5,6 @@ import Game.Dragon;
 public class DragonList {
 
     public DragonNode head;
-
     private int large;
     private int leftest;
     private static DragonList list = new DragonList();
@@ -22,6 +21,9 @@ public class DragonList {
         list = new DragonList();
     }
 
+    /**
+     * Constructor of the DragonList class.
+     */
     private DragonList(){
         this.head = null;
         this.large = 0;
@@ -44,6 +46,10 @@ public class DragonList {
         this.leftest = leftest;
     }
 
+    /**
+     * Method to add a dragon to the list.
+     * @param dragon dragon that the node will save.
+     */
     public void addEnemy(Dragon dragon){
         if (this.head == null){
             this.head = new DragonNode(dragon);
@@ -59,6 +65,10 @@ public class DragonList {
         }
     }
 
+    /**
+     * Method to delete a dragon from the list.
+     * @param dragon dragon that will be erased from the list.
+     */
     public void deleteEnemy(Dragon dragon){
         if (this.head.getDragon() == dragon){
             this.head = this.head.next;
@@ -86,6 +96,10 @@ public class DragonList {
         }
     }
 
+    /**
+     * Method to check if all the dragons arrived to their new positions after the reorganization.
+     * @return boolean to know if all the dragons arrived to their positions.
+     */
     public boolean allReady(){
         if (this.large != 0){
             boolean a = true;

@@ -10,6 +10,20 @@ public class Dragon extends Beast {
     private boolean readyX;
     private int ID;
 
+    /**
+     * Constructor of the Dragon class.
+     * @param resistence integer with the life of the dragon.
+     * @param name string with the name of the dragon.
+     * @param rSpeed integer with the recharge speed of the dragon.
+     * @param age integer with the age of the dragon.
+     * @param clas string with the class of the dragon.
+     * @param posx integer with the x position of the dragon.
+     * @param posy integer with the y position of the dragon.
+     * @param width integer with the width of the dragon.
+     * @param height integer with the height of the dragon.
+     * @param imgPath string with the path of the image of the dragon.
+     * @param ID integer with the ID of the dragon.
+     */
     public Dragon(int resistence, String name, int rSpeed, int age, String clas, int posx, int posy, int width, int height, String imgPath, int ID) {
         super(resistence, posx, posy, width, height, imgPath);
         this.name = name;
@@ -77,6 +91,9 @@ public class Dragon extends Beast {
         this.ID = ID;
     }
 
+    /**
+     * Method to move the dragon to the left.
+     */
     public void moveLeft() {
         if (this.getPosx() <= 0) {
             this.setDead(true);
@@ -91,6 +108,9 @@ public class Dragon extends Beast {
         }
     }
 
+    /**
+     * Method to move the dragon to a specific x position.
+     */
     public void moveToX() {
         boolean ready = true;
         double posx = getTranslateX();
@@ -109,6 +129,9 @@ public class Dragon extends Beast {
         }
     }
 
+    /**
+     * Method to move the dragon to a specific y position.
+     */
     public void moveToY() {
         boolean ready = true;
         double posy = getTranslateY();

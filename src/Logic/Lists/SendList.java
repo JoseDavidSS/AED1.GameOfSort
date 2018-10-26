@@ -16,6 +16,9 @@ public class SendList {
     private int large;
     private int leftest;
 
+    /**
+     * Constructor of the SendList class.
+     */
     public SendList(){
         this.head = null;
     }
@@ -36,6 +39,17 @@ public class SendList {
         this.leftest = leftest;
     }
 
+    /**
+     * Method to add a node with the data of the dragon to the list.
+     * @param dAge integer with the age of the dragon.
+     * @param dRSpeed integer with the recharge speed of the dragon.
+     * @param dClas string with the class of the dragon.
+     * @param posx integer with the x position of the dragon.
+     * @param posy integer with the y position of the dragon.
+     * @param ID integer with the ID if the dragon.
+     * @param name string with the name of the dragon.
+     * @param resistence integer with the resistence of the dragon.
+     */
     public void addData(int dAge, int dRSpeed, String dClas, int posx, int posy, int ID, String name, int resistence){
         if (this.head == null){
             this.head = new SendNode(dAge, dRSpeed, dClas, posx, posy, ID, name, resistence);
@@ -51,6 +65,9 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to print the age of each dragon.
+     */
     public void printAge(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -60,6 +77,9 @@ public class SendList {
         System.out.println("*********");
     }
 
+    /**
+     * Method to print the class of each dragon.
+     */
     public void printFamily(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -69,6 +89,9 @@ public class SendList {
         System.out.println("*********");
     }
 
+    /**
+     * Method to print the recharge speed of each dragon.
+     */
     public void printRSpeed(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -78,6 +101,9 @@ public class SendList {
         System.out.println("*********");
     }
 
+    /**
+     * Method to use the selection sort to reorganize the list.
+     */
     public void selectionSort() {
         if (this.getLarge() >= 1) {
             for (int a = 0; a < this.large - 1; a++) {
@@ -90,6 +116,9 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to use the insertion sort to reorganize the list.
+     */
     public void insertionSort(){
         if (this.getLarge()>0){
             int in;
@@ -106,6 +135,11 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to use the quick sort to reorganize the list.
+     * @param max integer with the lenght of the list.
+     * @param min integer with the number 0 or 1.
+     */
     public void quickSort(int max, int min){
         if(min < max){
             int pi = partition();
@@ -114,6 +148,10 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to divide the list in a half to use it with the quick sort.
+     * @return integer with a position on the list.
+     */
     public int partition(){
         int pivot = this.getDragonData(this.getLarge()-1).getdAge();
         int min = 0;
@@ -130,12 +168,22 @@ public class SendList {
         return(i+1);
     }
 
+    /**
+     * Method to swap data between SendNodes.
+     * @param minIndex integer with the minimun index.
+     * @param i integer with the index of the dragon.
+     */
     public void swap(int minIndex, int i) {
         DragonData tmp = this.getDragonData(minIndex);
         this.setDragonData(minIndex, this.getDragonData(i));
         this.setDragonData(i, tmp);
     }
 
+    /**
+     * Method to get the DragonData of a node.
+     * @param index integer to get to the node that contains the data.
+     * @return the data of the dragon.
+     */
     public DragonData getDragonData(int index){
         SendNode tmp = this.head;
         for(int a = 0; a< index;a++){
@@ -144,6 +192,11 @@ public class SendList {
         return tmp.getDragonData();
     }
 
+    /**
+     * Method to set the DragonData to a node.
+     * @param index integer to get to the node that will have the data.
+     * @param dragon data of the dragon.
+     */
     public void setDragonData(int index, DragonData dragon) {
         if (this.large - 1 < index) {
             System.out.println("IndexOutOfRange");
@@ -156,6 +209,9 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to modify the x and y positions of each dragon .
+     */
     public void arrange(){
         SendNode tmp = this.head;
         int y = 15;
@@ -175,6 +231,11 @@ public class SendList {
         }
     }
 
+    /**
+     * Method to get the node to change.
+     * @param index integer with the node that will be used.
+     * @return the node with the data.
+     */
     public SendNode getSendNode(int index) {
         SendNode tmp = this.head;
         for(int a = 0; a< index;a++){

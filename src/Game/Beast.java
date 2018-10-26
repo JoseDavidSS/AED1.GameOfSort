@@ -12,6 +12,15 @@ public class Beast extends Rectangle {
     private int posy;
     private boolean dead;
 
+    /**
+     * Constructor of the Beast class
+     * @param resistence integer with the life of the sprite.
+     * @param posx integer with the x position of the sprite.
+     * @param posy integer with the y position of the sprite.
+     * @param width integer with the width of the sprite.
+     * @param height integer with the height of the sprite.
+     * @param imgPath string with the path of the image of the sprite.
+     */
     public Beast (int resistence, int posx, int posy, int width, int height, String imgPath){
         super(width, height, Color.BISQUE);
         this.setTranslateX(posx);
@@ -56,6 +65,9 @@ public class Beast extends Rectangle {
         this.dead = dead;
     }
 
+    /**
+     * Method to move the sprite up.
+     */
     public void moveUp(){
         if (this.posy == 0){
         }else{
@@ -64,6 +76,9 @@ public class Beast extends Rectangle {
         }
     }
 
+    /**
+     * Method to move the sprite down.
+     */
     public void moveDown(){
         if (this.posy == 700){
         }else{
@@ -72,6 +87,9 @@ public class Beast extends Rectangle {
         }
     }
 
+    /**
+     * Method to move the sprite left.
+     */
     public void moveLeft(){
         if (this.posx == 0){
         }else{
@@ -80,6 +98,9 @@ public class Beast extends Rectangle {
         }
     }
 
+    /**
+     * Method to move the sprite right.
+     */
     public void moveRight(){
         if (this.posx == 830){
         }else{
@@ -88,6 +109,9 @@ public class Beast extends Rectangle {
         }
     }
 
+    /**
+     * Method to lower the resistence of the sprite.
+     */
     public void hit(){
         if (this.resistence == 0){
             this.dead = true;
