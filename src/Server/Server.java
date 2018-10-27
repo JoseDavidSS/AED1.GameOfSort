@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Server {
+    static int count = 0;
     public static String generate(int dragons) throws IOException {
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/generate?dragons=" + Integer.toString(dragons));
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -18,5 +19,10 @@ public class Server {
             builder.append(new String(buffer,0,leidos));
         }
         return builder.toString();
+    }
+
+    public static String sort(){
+        //if (count = )
+        return null;
     }
 }
