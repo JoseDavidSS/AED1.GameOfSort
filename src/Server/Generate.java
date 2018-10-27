@@ -17,6 +17,11 @@ import static oracle.jrockit.jfr.events.Bits.intValue;
 public class Generate {
     @GET
     @Produces("application/xml")
+    /**
+     * Generates a Sendlist from the server
+     * @param dragons length of the list
+     * @return XML of the list created
+     */
     public String generate(@QueryParam("dragons") int dragons) throws IOException {//Recibe cantidad dragones
         int i = 0;
         int y = 15;

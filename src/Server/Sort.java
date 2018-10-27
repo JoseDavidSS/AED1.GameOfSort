@@ -12,6 +12,12 @@ import java.io.IOException;
 public class Sort {
     @GET
     @Produces("application/xml")
+    /**
+     * Applies a Sorting method to the list receive
+     * @param method Sort algorithm
+     * @param list list
+     * @return XML of the sorted List
+     */
     public String sort(@QueryParam("method") String method, @QueryParam("list") String list) throws IOException {
         SendList sendList = Serializer.deserializadorString(list);
         switch (method){

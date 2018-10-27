@@ -10,6 +10,12 @@ import java.net.URL;
 public class Server {
     static int count = 1;
 
+    /**
+     *
+     * @param dragons Length of the list
+     * @return SendList
+     * @throws IOException
+     */
     public static SendList generate(int dragons) throws IOException {
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/generate?dragons=" + Integer.toString(dragons));
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -26,6 +32,12 @@ public class Server {
         return  Serializer.deserializadorString(builder.toString());
     }
 
+    /**
+     *Applies a sorting algorithm to the list.
+     * @param list
+     * @return Sendlist
+     * @throws IOException
+     */
     public static SendList sort(SendList list) throws IOException{
         String XML = Serializer.serializadorString(list);
         String method = "";
