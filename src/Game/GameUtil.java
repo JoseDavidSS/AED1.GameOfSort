@@ -15,7 +15,7 @@ public class GameUtil {
      */
     public static String generateName() throws IOException {
 
-        String file = "C:\\Users\\jp139\\IdeaProjects\\Progra-2\\src\\Game\\data\\names.txt";
+        String file = "Game/data/names.txt";
         ArrayList<String> allNames = new ArrayList<>();
         Random r = new Random();
 
