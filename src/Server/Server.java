@@ -8,13 +8,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Server {
+
     static int count = 1;
 
     /**
      *
      * @param dragons Length of the list
      * @return SendList
-     * @throws IOException
+     * @throws IOException in case of an error.
      */
     public static SendList generate(int dragons) throws IOException {
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/generate?dragons=" + Integer.toString(dragons));
@@ -34,7 +35,7 @@ public class Server {
 
     /**
      *Applies a sorting algorithm to the list.
-     * @param list
+     * @param list list that will be sorted.
      * @return Sendlist
      * @throws IOException
      */

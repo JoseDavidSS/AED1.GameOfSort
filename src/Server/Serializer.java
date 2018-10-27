@@ -8,10 +8,10 @@ import java.io.*;
 public class Serializer {
 
     /**
-     *
-     * @param sendList
+     * Method to serialize a list
+     * @param sendList Sendlist that will be converted to xml.
      * @return XMl of the the list
-     * @throws IOException
+     * @throws IOException ni case an error happens.
      */
     public static String serializadorString(SendList sendList) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
@@ -20,10 +20,10 @@ public class Serializer {
     }
 
     /**
-     *
-     * @param xml
+     * Method to deserealize an xml to list.
+     * @param xml Xml that will be converted.
      * @return Sendlist created from the XML
-     * @throws IOException
+     * @throws IOException in case an error happens.
      */
     public static SendList deserializadorString(String xml) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
@@ -31,14 +31,4 @@ public class Serializer {
         return value;
     }
 
-    public static String inputStreamToString(InputStream is) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        String line;
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
-        }
-        br.close();
-        return sb.toString();
-    }
 }
