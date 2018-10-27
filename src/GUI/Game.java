@@ -233,9 +233,7 @@ public class Game {
      */
     public void connectToServer() throws IOException {
 
-       SendList sl =  Serializer.deserializadorString(Server.generate(100));
-
-
+       SendList sl = Server.generate(100);
 
         int i = 0;
         int y = 15;
