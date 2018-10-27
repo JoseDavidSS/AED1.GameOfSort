@@ -21,6 +21,8 @@ public class Server {
         while ((leidos = reader.read(buffer))>0){
             builder.append(new String(buffer,0,leidos));
         }
+        reader.close();
+        con.disconnect();
         return  Serializer.deserializadorString(builder.toString());
     }
 
@@ -51,6 +53,7 @@ public class Server {
                 break;
         }
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/sort?method=" + method + "&list=" + XML );
+        System.out.println(url.toString());
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         InputStreamReader reader = new InputStreamReader(con.getInputStream());
@@ -60,6 +63,8 @@ public class Server {
         while ((leidos = reader.read(buffer))>0){
             builder.append(new String(buffer,0,leidos));
         }
+        con.disconnect();
+        reader.close();
         return Serializer.deserializadorString(builder.toString());
     }
 }

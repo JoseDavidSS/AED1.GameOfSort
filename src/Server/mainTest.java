@@ -16,5 +16,7 @@ public class mainTest {
         hola.printAge();
         hola = Server.sort(hola);
         hola.printAge();
+        hola = Server.sort(hola);
+        hola.printRSpeed();
     }
 }
