@@ -38,6 +38,7 @@ public class Game {
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
     @FXML private Text sideText;
+    @FXML private Text sideText2;
     @FXML private AnchorPane paneBoard;
     @FXML private ImageView background1;
     @FXML private ImageView background2;
@@ -136,6 +137,9 @@ public class Game {
 
         //textAreaString += String.format("%s%n", text);
         //this.sideText.setText(textAreaString);
+
+        //textAreaString2 += String.format("%s%n", text);
+        //this.sideText2.setText(textAreaString2);
 
         this.setLivesLeftTxt(10);
 

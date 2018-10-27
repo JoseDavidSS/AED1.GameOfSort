@@ -19,7 +19,7 @@
          <image>
             <Image url="@../Media/Stages/CastleStage.png" />
          </image></ImageView>
-      <ImageView fx:id="background2" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" x="1200.0">
+      <ImageView fx:id="background2" fitHeight="800.0" fitWidth="1200.0" layoutX="-8.0" layoutY="-14.0" pickOnBounds="true" x="1200.0">
          <image>
             <Image url="@../Media/Stages/CastleStage.png" />
          </image></ImageView>
@@ -31,6 +31,7 @@
             <rowConstraints>
                 <RowConstraints maxHeight="395.0" minHeight="6.0" prefHeight="48.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="752.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="752.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Button mnemonicParsing="false" onAction="#startGame" prefHeight="140.0" prefWidth="212.0" text="Begin" GridPane.columnIndex="1">
@@ -66,6 +67,11 @@
                   </Label>
                </children>
             </HBox>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <content>
+                  <Text fx:id="sideText2" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.0" />
+               </content>
+            </ScrollPane>
             </children>
         </GridPane>
     </children>
