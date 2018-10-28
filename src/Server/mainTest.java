@@ -13,8 +13,8 @@ public class mainTest {
 
     public static void main(String[] args) throws IOException{
         SendList hola = Server.generate(100);
-        hola.printAge();
+        hola.printID();
         hola = Server.sort(hola);
-        hola.printAge();
+        hola.printID();
     }
 }

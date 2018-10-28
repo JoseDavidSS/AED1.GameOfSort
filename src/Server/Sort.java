@@ -28,13 +28,13 @@ public class Sort {
                 sendList.insertionSort();
                 break;
             case "quicksort":
-                //sendList.quickSort();
+                //sendList.selectionSort();
                 break;
             case "btree":
-                //Aplicar metodo
+                sendList = sendList.binaryGUIHelper();
                 break;
             case "avl":
-                //Aplicar metodo
+                sendList = sendList.AVLGUIHelper();
                 break;
         }
 

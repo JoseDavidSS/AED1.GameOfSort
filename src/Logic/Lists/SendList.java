@@ -4,6 +4,7 @@ import Game.Dragon;
 import Game.GameUtil;
 import Logic.Trees.AVLTree;
 import Logic.Trees.AVLTreeNode;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,6 +63,9 @@ public class SendList {
             }
             tmp.next = new SendNode(dAge, dRSpeed, dClas, posx, posy, ID, name, resistence);
             this.large++;
+            if (posx < this.leftest){
+                this.leftest = posx;
+            }
         }
     }
 
@@ -101,6 +105,26 @@ public class SendList {
         System.out.println("*********");
     }
 
+    public void printID(){
+        SendNode tmp = this.head;
+        while (tmp != null){
+            System.out.println(tmp.getDragonData().getID());
+            tmp = tmp.next;
+        }
+        System.out.println("*****************");
+    }
+
+    public void printX(){
+        SendNode tmp = this.head;
+        int i = 1;
+        while (tmp != null){
+            System.out.println(i + ": " + tmp.getDragonData().getPosx() + ", " + tmp.getDragonData().getPosy());
+            tmp = tmp.next;
+            i++;
+        }
+        System.out.println("*****************");
+    }
+
     /**
      * Method to use the selection sort to reorganize the list.
      */
@@ -113,6 +137,7 @@ public class SendList {
                         minIndex = j;
                 this.swap(minIndex, a);
             }
+            this.arrange();
         }
     }
 
@@ -132,6 +157,7 @@ public class SendList {
                 }
                 this.setDragonData(in, tmp);
             }
+            this.arrange();
         }
     }
 
@@ -247,24 +273,33 @@ public class SendList {
     /**
      * Organizes alive dragons in Binary Tree form.
      */
-    public void binaryGUIHelper() {
+    public SendList binaryGUIHelper() {
         int length = this.large;
         ArrayList pos = this.separate(length);
         // If there are less than 10 dragons alive.
         if (length < 10) {
-            binaryGUI(0, length, this.leftest);
-        } else {
+            return this.binaryGUI(0, length, this.leftest);
+        }else {
             int i = 0;
             int xStart = 0;
+            SendList newsl = new SendList();
+            SendList s;
             // Iterates binaryGUI in groups of 10.
             while (i < pos.size()) {
                 if ((int) pos.get(i + 1) == 404) {
                     break;
                 }
-                this.binaryGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + this.leftest);
+                s = this.binaryGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + this.leftest);
+                SendNode tmp = s.head;
+                while (tmp != null){
+                    DragonData sub_tmp = tmp.getDragonData();
+                    newsl.addData(sub_tmp.getdAge(), sub_tmp.getdRSpeed(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), sub_tmp.getID(), sub_tmp.getName(), sub_tmp.getResistence());
+                    tmp = tmp.next;
+                }
                 xStart += 800;
                 i++;
             }
+            return newsl;
         }
     }
 
@@ -274,7 +309,7 @@ public class SendList {
      * @param end end of chunk
      * @param startingX start x position (of the first dragon/root)
      */
-    public void binaryGUI(int start, int end, int startingX) {
+    public SendList binaryGUI(int start, int end, int startingX) {
         // Initializes variables, gets chunk of list to organize.
         SendList current10 = this.getChunk(start, end);
         SendNode node = current10.head;
@@ -364,6 +399,7 @@ public class SendList {
             }
             node = node.next;
         }
+        return current10;
     }
 
     /**
@@ -417,7 +453,7 @@ public class SendList {
      * @param end end of DrgonsList to organize
      * @param startingX starting x position (of dragon in root position)
      */
-    public void AVLGUI(int start, int end, int startingX) {
+    public SendList AVLGUI(int start, int end, int startingX) {
         SendList currentChunk = this.getChunk(start, end);
         AVLTree tree = instanceToAVL(currentChunk);
         tree.preOrder(tree.root);
@@ -434,30 +470,39 @@ public class SendList {
         // Recursively modifies dragon positions.
         this.placeLeft(tree.root.left, leftx, lefty, currentChunk);
         this.placeRight(tree.root.right, rightx, righty, currentChunk);
+        return currentChunk;
     }
 
     /**
      * Organizes alive dragons in AVL Tree form.
      */
-    public void AVLGUIHelper(){
+    public SendList AVLGUIHelper(){
         int length = this.large;
         ArrayList pos = separate(length);
-
         // If there are less than 10 dragons alive.
         if (length < 10) {
-            this.AVLGUI(0, length, this.leftest);
+            return this.AVLGUI(0, length, this.leftest);
         } else {
             int i = 0;
             int xStart = 0;
+            SendList newsl = new SendList();
+            SendList s;
             // Iterates AVLGUI in groups of 10.
             while (i < pos.size()) {
                 if ((int) pos.get(i + 1) == 404) {
                     break;
                 }
-                this.AVLGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + this.leftest);
+                s = this.AVLGUI((int) pos.get(i), (int) pos.get(i + 1), xStart + this.leftest);
+                SendNode tmp = s.head;
+                while (tmp != null){
+                    DragonData sub_tmp = tmp.getDragonData();
+                    newsl.addData(sub_tmp.getdAge(), sub_tmp.getdRSpeed(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), sub_tmp.getID(), sub_tmp.getName(), sub_tmp.getResistence());
+                    tmp = tmp.next;
+                }
                 xStart += 800;
                 i++;
             }
+            return newsl;
         }
     }
 
@@ -547,7 +592,7 @@ public class SendList {
         String clas;
         int id = 1;
         SendList sl = new SendList();
-        while (i != 100){
+        while (i != 20){
             dragonName = GameUtil.generateName();
             age = intValue(Math.random() * 1000);
             rSpeed = intValue(Math.random() * 100);
@@ -576,8 +621,8 @@ public class SendList {
             i++;
             id++;
         }
-        sl.printAge();
-        sl.quickSort(949, 0);
-        sl.printAge();
+        sl.printX();
+        sl = sl.AVLGUIHelper();
+        sl.printX();
     }
 }

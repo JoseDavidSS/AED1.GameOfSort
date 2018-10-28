@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class Server {
 
-    static int count = 1;
+    public static int count = 1;
 
     /**
      *
@@ -47,7 +47,6 @@ public class Server {
                 method = "selection";
                 count++;
                 break;
-
             case 2:
                 method = "insertion";
                 count++;
@@ -66,7 +65,6 @@ public class Server {
                 break;
         }
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/sort?method=" + method + "&list=" + XML );
-        System.out.println(url.toString());
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         InputStreamReader reader = new InputStreamReader(con.getInputStream());

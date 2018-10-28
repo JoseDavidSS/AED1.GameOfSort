@@ -54,7 +54,7 @@ public class Generate {
             if (i % 9 == 0 && i != 0){
                 y = 15;
                 if (!fLine){
-                    x += 400;
+                    x += 600;
                     fLine = true;
                 }
                 else{

@@ -1,6 +1,7 @@
 package Server;
 
 import Logic.Lists.SendList;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.*;

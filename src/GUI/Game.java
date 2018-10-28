@@ -2,7 +2,6 @@ package GUI;
 
 import Game.data.MusicPlayer;
 import Logic.Lists.*;
-import Server.Serializer;
 import Server.Server;
 import javafx.animation.*;
 import javafx.application.Platform;
@@ -20,24 +19,21 @@ import java.io.IOException;
 import Game.Gryphon;
 import Game.Attack;
 import Game.Dragon;
-import Game.GameUtil;
 import javafx.util.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static oracle.jrockit.jfr.events.Bits.intValue;
 
 public class Game {
 
     private int BACKGROUND_WIDTH = 1200;
     private ParallelTransition parallelTransition;
-    String textAreaString = "";
     private int level = 1;
     private boolean inFormation = true;
     private double enemyShoot = 0;
     private int whichFormation = 0;
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
+    private boolean pause = false;
     @FXML private Text sideText;
     @FXML private Text sideText2;
     @FXML private AnchorPane paneBoard;
@@ -148,20 +144,37 @@ public class Game {
         Main.scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case A:
-                    player.moveLeft();
+                    if (!this.pause){
+                        player.moveLeft();
+                    }
                     break;
                 case D:
-                    player.moveRight();
+                    if (!this.pause){
+                        player.moveRight();
+                    }
                     break;
                 case W:
-                    player.moveUp();
+                    if (!this.pause){
+                        player.moveUp();
+                    }
                     break;
                 case S:
-                    player.moveDown();
+                    if (!this.pause){
+                        player.moveDown();
+                    }
                     break;
                 case K:
-                    if (inFormation && !player.isDead()){
+                    if (this.inFormation && !player.isDead() && !this.pause){
                         this.shoot();
+                    }
+                    break;
+                case P:
+                    if (!this.pause){
+                        timer.stop();
+                        this.pause = true;
+                    }else{
+                        timer.start();
+                        this.pause = false;
                     }
                     break;
                 case ESCAPE:
@@ -182,7 +195,7 @@ public class Game {
         musicPlayer.start();
 
         try {
-            this.connectToServer();
+            this.callServerToGenerateList();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -231,50 +244,14 @@ public class Game {
      * Method to call the server
      * @throws IOException in case something goes wrong.
      */
-    public void connectToServer() throws IOException {
-
-       SendList sl = Server.generate(100);
-
-        int i = 0;
-        int y = 15;
-        int x = 900;
-        boolean fLine = false;
-        boolean first = false;
-        int age;
-        int rSpeed;
-        int resistence;
-        String dragonName;
-        String clas;
-        int id = 1;
-        while (i != this.batchOfEnemies){
-            dragonName = GameUtil.generateName();
-            age = intValue(Math.random() * 1000);
-            rSpeed = intValue(Math.random() * 100);
-            resistence = intValue(Math.random() * 3 + 0);
-            clas = "Captain";
-            if (!first){
-                first = true;
-                clas = "Commander";
-                resistence = 2;
-            }
-            if (resistence < 2){
-                clas = "Infantry";
-            }
-            Dragon dragon = new Dragon(resistence, dragonName, rSpeed, age, clas, x, y, 80, 140, "file:src/Media/Enemies/Nightfury.gif", id);
+    public void callServerToGenerateList() throws IOException {
+        SendList sl = Server.generate(this.batchOfEnemies);
+        SendNode tmp = sl.head;
+        while (tmp != null){
+            DragonData sub_tmp = tmp.getDragonData();
+            Dragon dragon = new Dragon(sub_tmp.getResistence(), sub_tmp.getName(), sub_tmp.getdRSpeed(), sub_tmp.getdAge(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), 80, 140, "file:src/Media/Enemies/Nightfury.gif", sub_tmp.getID());
             DragonList.getInstance().addEnemy(dragon);
-            y += 70;
-            if (i % 9 == 0 && i != 0){
-                y = 15;
-                if (!fLine){
-                    x += 600;
-                    fLine = true;
-                }
-                else{
-                    x += 400;
-                }
-            }
-            i++;
-            id++;
+            tmp = tmp.next;
         }
         this.addEnemies();
     }
@@ -285,8 +262,9 @@ public class Game {
     private void nextLevel(){
         this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
         this.level++;
+        Server.count = 1;
         try {
-            this.connectToServer();
+            this.callServerToGenerateList();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -306,12 +284,7 @@ public class Game {
                 //Mejorar el fin del juego
                 this.runInstructions();
             } catch (IOException e) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Aviso");
-                alert.setHeaderText("Error");
-                alert.setContentText("A problem appeared :(");
-                alert.showAndWait();
-                Platform.exit();
+                this.errorWindow();
             }
         }if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
@@ -387,6 +360,7 @@ public class Game {
                     if (DragonList.getInstance().getLarge() != 0){
                         this.inFormation = false;
                         this.changeFormation();
+                        break;
                     }else{
                         this.nextLevel();
                         break;
@@ -415,38 +389,64 @@ public class Game {
     public void changeFormation(){
         if (this.whichFormation == 0){
             this.setCurrentOrderTxt("Selection Sort");
-            /*
-            SendList sl = new SendList();
-            DragonList dl = DragonList.getInstance();
-            DragonNode tmp = dl.head;
-            while (tmp != null){
-                Dragon dragon = tmp.getDragon();
-                sl.addData(dragon.getAge(),dragon.getRechargeSpeed(), dragon.getClas(), dragon.getPosx(), dragon.getPosy(), dragon.getID(), dragon.getName(), dragon.getResistence());
-                tmp = tmp.next;
-            }
-            try {
-                Serializer.serializadorString(sl);
-                this.whichFormation++;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
-            this.whichFormation++;
+            this.getNewList();
         }else if (this.whichFormation == 1){
             this.setCurrentOrderTxt("Insertion Sort");
-
-            this.whichFormation++;
+            this.getNewList();
         }else if (this.whichFormation == 2){
             this.setCurrentOrderTxt("Quick Sort");
-
-            this.whichFormation++;
+            this.getNewList();
         }else if (this.whichFormation == 3){
             this.setCurrentOrderTxt("Binary Tree");
-
-            this.whichFormation++;
+            this.getNewList();
         }else{
             this.setCurrentOrderTxt("AVL Tree");
+            this.getNewList();
             this.whichFormation = 0;
         }
+    }
+
+    public void getNewList(){
+        SendList sl = new SendList();
+        DragonList dl = DragonList.getInstance();
+        DragonNode tmp = dl.head;
+        while (tmp != null){
+            Dragon dragon = tmp.getDragon();
+            sl.addData(dragon.getAge(),dragon.getRechargeSpeed(), dragon.getClas(), dragon.getPosx(), dragon.getPosy(), dragon.getID(), dragon.getName(), dragon.getResistence());
+            tmp = tmp.next;
+        }
+        try {
+            SendList s2 = Server.sort(sl);
+            DragonNode tmp3;
+            SendNode tmp2 = s2.head;
+            while (tmp2 != null){
+                DragonData sub_tmp2 = tmp2.getDragonData();
+                tmp3 = dl.head;
+                while (tmp3 != null){
+                    Dragon sub_tmp3 = tmp3.getDragon();
+                    if (sub_tmp2.getID() == sub_tmp3.getID()){
+                        sub_tmp3.setPosx(sub_tmp2.getPosx());
+                        sub_tmp3.setPosy(sub_tmp2.getPosy());
+                        break;
+                    }else{
+                        tmp3 = tmp3.next;
+                    }
+                }
+                tmp2 = tmp2.next;
+            }
+            this.whichFormation++;
+        } catch (IOException e) {
+           this.errorWindow();
+        }
+    }
+
+    public void errorWindow(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Aviso");
+        alert.setHeaderText("Error");
+        alert.setContentText("A problem appeared :(");
+        alert.showAndWait();
+        Platform.exit();
     }
 
     /**
