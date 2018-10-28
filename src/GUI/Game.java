@@ -2,6 +2,7 @@ package GUI;
 
 import Game.data.MusicPlayer;
 import Logic.Lists.*;
+import Logic.Trees.BTree;
 import Server.Server;
 import javafx.animation.*;
 import javafx.application.Platform;
@@ -34,6 +35,7 @@ public class Game {
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
     private boolean pause = false;
+    public static Game game = new Game();
     @FXML private Text sideText;
     @FXML private Text sideText2;
     @FXML private AnchorPane paneBoard;
@@ -129,12 +131,6 @@ public class Game {
     public void startGame(){
 
         parallelTransition.play();
-
-        //textAreaString += String.format("%s%n", text);
-        //this.sideText.setText(textAreaString);
-
-        //textAreaString2 += String.format("%s%n", text);
-        //this.sideText2.setText(textAreaString2);
 
         this.setLivesLeftTxt(10);
 
@@ -238,6 +234,8 @@ public class Game {
         this.setEnemiesLeftTxt(this.batchOfEnemies);
         this.setLevelTxt(this.level);
         this.setCurrentOrderTxt("Random");
+        this.showDragonStats();
+        this.showBTree();
     }
 
     /**
@@ -435,6 +433,8 @@ public class Game {
                 tmp2 = tmp2.next;
             }
             this.whichFormation++;
+            this.showDragonStats();
+            this.showBTree();
         } catch (IOException e) {
            this.errorWindow();
         }
@@ -447,6 +447,45 @@ public class Game {
         alert.setContentText("A problem appeared :(");
         alert.showAndWait();
         Platform.exit();
+    }
+
+    public void showDragonStats(){
+        DragonNode tmp = DragonList.getInstance().head;
+        StringBuilder txt = new StringBuilder();
+        txt.append("Dragons\n");
+        while (tmp != null){
+            Dragon sub_tmp = tmp.getDragon();
+            txt.append("Name: ");
+            txt.append(sub_tmp.getName());
+            txt.append(" | ");
+            txt.append("Fire Recharge Speed: ");
+            txt.append(sub_tmp.getRechargeSpeed());
+            txt.append(" | ");
+            txt.append("Age: ");
+            txt.append(sub_tmp.getAge());
+            txt.append(" | ");
+            txt.append("Resistence: ");
+            txt.append(sub_tmp.getResistence() + 1);
+            txt.append(" | ");
+            txt.append("Class: ");
+            txt.append(sub_tmp.getClas());
+            txt.append("\n");
+            tmp = tmp.next;
+        }
+        String txts = txt.toString();
+        this.sideText.setText(txts);
+    }
+
+    public void showBTree(){
+        BTree<String> bt = new BTree<>();
+        DragonNode tmp = DragonList.getInstance().head;
+        while (tmp != null){
+            Dragon sub_tmp = tmp.getDragon();
+            bt.add(sub_tmp.getName());
+            tmp = tmp.next;
+        }
+        String txt = String.valueOf(bt);
+        this.sideText2.setText(txt);
     }
 
     /**

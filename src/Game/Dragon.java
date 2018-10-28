@@ -1,5 +1,7 @@
 package Game;
 
+import GUI.Game;
+
 public class Dragon extends Beast {
 
     private String name;
@@ -33,6 +35,7 @@ public class Dragon extends Beast {
         this.readyY = false;
         this.readyX = false;
         this.ID = ID;
+//        this.setOnMouseClicked(e -> Game.game.showDragonStats());
     }
 
     public String getName() {
