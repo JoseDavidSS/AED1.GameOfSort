@@ -17,11 +17,11 @@
     <children>
       <ImageView fx:id="background1" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
-            <Image url="@../Media/Stages/CastleStage.png" />
+            <Image url="@../Media/Stages/DesertStage.png" />
          </image></ImageView>
-      <ImageView fx:id="background2" fitHeight="800.0" fitWidth="1200.0" layoutX="-8.0" layoutY="-14.0" pickOnBounds="true" x="1200.0">
+      <ImageView fx:id="background2" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" x="1195.0">
          <image>
-            <Image url="@../Media/Stages/CastleStage.png" />
+            <Image url="@../Media/Stages/DesertStage.png" />
          </image></ImageView>
         <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="800.0" prefWidth="1200.0">
             <columnConstraints>
@@ -29,9 +29,9 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="56.0" prefWidth="198.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="395.0" minHeight="6.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="752.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="752.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="395.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="308.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="456.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Button mnemonicParsing="false" onAction="#startGame" prefHeight="140.0" prefWidth="212.0" text="Begin" GridPane.columnIndex="1">
