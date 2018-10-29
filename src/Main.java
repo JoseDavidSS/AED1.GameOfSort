@@ -1,11 +1,13 @@
 import Game.Dragon;
 import Game.GameUtil;
 import Logic.Lists.DragonList;
+import Logic.Lists.QList;
 import Logic.Trees.AVLTree;
 import Logic.Trees.BTree;
 import Logic.Trees.BinaryTree;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -101,6 +103,27 @@ public class Main {
         DragonList.getInstance().quickSort(Dragons,0);
         DragonList.getInstance().print();
     }*/
+
+        // Creates QList l1
+        QList l1 = new QList();
+
+        // a)
+        int i = 1;
+        while (i != 1001) {
+            l1.appe(i);
+            i++;
+        }
+
+
+        System.out.println(l1.printL());
+        System.out.println("Initial list");
+        GameUtil.unSort(l1);
+        System.out.println(l1.printL());
+        System.out.println("Unsorted List");
+        GameUtil.quickSort(l1);
+        System.out.println(l1.printL());
+        System.out.println("QuickSorted List");
+
 
     }
 }
