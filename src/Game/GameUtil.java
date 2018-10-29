@@ -32,14 +32,14 @@ public class GameUtil {
     }
 
     /**
-     * Sorts by age
+     * QuickSort by age
      * @param list QList with numbers
      */
     public static void quickSort(QList list){
-        quickSort(list, 0, list.getLength()-1);
+        quickSort_aux(list, 0, list.getLength()-1);
     }
 
-    private static void quickSort(QList list, int low, int high){
+    private static void quickSort_aux(QList list, int low, int high){
         // Check for empty or null array
         if (list == null || list.getLength() == 0){
             return;
@@ -74,15 +74,15 @@ public class GameUtil {
         }
         // Sort the subarrays recursively
         if (low < j){
-            quickSort(list, low, j);
+            quickSort_aux(list, low, j);
         }
         if (high > i){
-            quickSort(list, i, high);
+            quickSort_aux(list, i, high);
         }
     }
 
     /**
-     *Swap the positions of two nodes
+     * Swap node positions
      * @param list List to modify
      * @param i Position of Node 1
      * @param j Position of Node 2
@@ -95,8 +95,8 @@ public class GameUtil {
     }
 
     /**
-     * Randomize the order of the list
-     * @param list a Dragons ArrayList
+     * Randomize list
+     * @param list QList
      */
     public static void unSort(QList list){
         Random r = new Random();
