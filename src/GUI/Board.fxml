@@ -23,6 +23,16 @@
          <image>
             <Image url="@../Media/Stages/DesertStage.png" />
          </image></ImageView>
+      <ScrollPane fx:id="scrollPane" layoutX="1002.0" layoutY="36.0" prefHeight="308.0" prefWidth="198.0">
+         <content>
+            <Text fx:id="sideText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.0" />
+         </content>
+      </ScrollPane>
+          <ScrollPane fx:id="scrollPane2" layoutX="1002.0" layoutY="344.0" prefHeight="456.0" prefWidth="198.0">
+              <content>
+                  <Text fx:id="sideText2" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="199.0" />
+              </content>
+          </ScrollPane>
         <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="800.0" prefWidth="1200.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="1034.0" minWidth="10.0" prefWidth="1004.0" />
@@ -34,15 +44,10 @@
             <RowConstraints maxHeight="794.0" minHeight="10.0" prefHeight="456.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button mnemonicParsing="false" onAction="#startGame" prefHeight="140.0" prefWidth="212.0" text="Begin" GridPane.columnIndex="1">
+                <Button mnemonicParsing="false" onAction="#startGame" prefHeight="36.0" prefWidth="208.0" text="Begin" GridPane.columnIndex="1">
                     <font>
                         <Font name="System Bold Italic" size="12.0" />
                     </font></Button>
-                <ScrollPane prefHeight="200.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <content>
-                        <Text fx:id="sideText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="199.0" />
-                    </content>
-                </ScrollPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label fx:id="livesLeftTxt" alignment="CENTER" minHeight="48.0" prefHeight="48.0" prefWidth="251.0" text="Lives left:">
@@ -67,11 +72,6 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <content>
-                  <Text fx:id="sideText2" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.0" />
-               </content>
-            </ScrollPane>
             </children>
         </GridPane>
     </children>

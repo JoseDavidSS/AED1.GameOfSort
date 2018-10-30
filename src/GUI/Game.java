@@ -9,8 +9,10 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
@@ -45,6 +47,8 @@ public class Game {
     @FXML private Label enemiesLeftTxt;
     @FXML private Label levelTxt;
     @FXML private Label currentOrderTxt;
+    @FXML private ScrollPane scrollPane;
+    @FXML private ScrollPane scrollPane2;
     public static Gryphon player;
     final Logger logger = LoggerFactory.getLogger(Game.class);
 
@@ -231,6 +235,8 @@ public class Game {
             paneBoard.getChildren().add(tmp.getDragon());
             tmp = tmp.next;
         }
+        scrollPane.toFront();
+        scrollPane2.toFront();
         this.setEnemiesLeftTxt(this.batchOfEnemies);
         this.setLevelTxt(this.level);
         this.setCurrentOrderTxt("Random");
