@@ -101,6 +101,7 @@ public class Dragon extends Beast {
     public void moveLeft() {
         if (this.getPosx() <= 0) {
             this.setDead(true);
+            Game.lose += 1;
         } else if (this.getPosx() == 1200) {
             this.setPosx(900);
             setTranslateX(900);
@@ -118,9 +119,6 @@ public class Dragon extends Beast {
     public void moveToX() {
         boolean ready = true;
         double posx = getTranslateX();
-        if (this.getPosx() > 900 && this.getPosx() < 1200){
-           // this.setFill(Color.TRANSPARENT);
-        }
         if (this.getPosx() > posx) {
             posx += 1;
             this.setTranslateX(posx);

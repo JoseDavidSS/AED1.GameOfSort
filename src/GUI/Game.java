@@ -35,6 +35,7 @@ public class Game {
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
     private boolean pause = false;
+    public static int lose = 0;
     public static MusicPlayer musicPlayer = new MusicPlayer();
     @FXML private Text sideText;
     @FXML private Text sideText2;
@@ -188,7 +189,7 @@ public class Game {
         timer.start();
 
         musicPlayer.setPath("src/Media/Audio/CastleTheme.mp3");
-        musicPlayer.start();
+        musicPlayer.run();
 
         try {
             this.callServerToGenerateList();
@@ -226,7 +227,7 @@ public class Game {
         DragonNode tmp = list.head;
         Image img = new Image(Holder.enemyRute);
         ImagePattern ing = new ImagePattern(img);
-        while (tmp != null){
+        while (tmp != null) {
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
             tmp = tmp.next;
@@ -272,16 +273,24 @@ public class Game {
     /**
      * update() is a method used to refresh and update game data
      */
-    private void update(){
+    private void update() throws NullPointerException{
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
-        if (player.isDead()){
+        if (player.isDead() || lose == 3){
             paneBoard.getChildren().remove(player);
             timer.stop();
             try {
-                //Mejorar el fin del juego
-                this.runInstructions();
+                musicPlayer.stopMusic();
+                player.setResistence(9);
+                DragonNode sub_tmp2 = tmp2.head;
+                while (sub_tmp2 != null){
+                    Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                    paneBoard.getChildren().remove(sub_sub_tmp2);
+                    sub_tmp2 = sub_tmp2.next;
+                }
+                DragonList.reset();
+                this.runSetUp();
             } catch (IOException e) {
                 this.errorWindow();
             }
