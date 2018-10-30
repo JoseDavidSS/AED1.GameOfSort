@@ -28,7 +28,7 @@ public class Game {
 
     private int BACKGROUND_WIDTH = 1200;
     private ParallelTransition parallelTransition;
-    private int level = 1;
+    private int level = 2;
     private boolean inFormation = true;
     private double enemyShoot = 0;
     private int whichFormation = 0;
@@ -260,6 +260,7 @@ public class Game {
     private void nextLevel(){
         this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
         this.level++;
+        readLevel();
         Server.count = 1;
         try {
             this.callServerToGenerateList();
@@ -537,5 +538,24 @@ public class Game {
      */
     public void setCurrentOrderTxt (String currentOrder){
         currentOrderTxt.setText("Current order: " + currentOrder);
+    }
+
+    /**
+     * readLevel() is a method used to set the background image based on the player´s level
+     */
+    public void readLevel (){
+        if (level == 2){
+            Image image = new Image("file:src/Media/Stages/UnderwaterStage.png");
+            background1.setImage(image);
+            background2.setImage(image);
+        }
+        else if (level == 3){
+            Image image2 = new Image("file:src/Media/Stages/CastleStage.png");
+            background1.setImage(image2);
+            background2.setImage(image2);
+        }
+        else{
+        }
+
     }
 }
