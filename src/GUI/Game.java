@@ -28,14 +28,14 @@ public class Game {
 
     private int BACKGROUND_WIDTH = 1200;
     private ParallelTransition parallelTransition;
-    private int level = 2;
+    private int level = 1;
     private boolean inFormation = true;
     private double enemyShoot = 0;
     private int whichFormation = 0;
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
     private boolean pause = false;
-    public static Game game = new Game();
+    public static MusicPlayer musicPlayer = new MusicPlayer();
     @FXML private Text sideText;
     @FXML private Text sideText2;
     @FXML private AnchorPane paneBoard;
@@ -187,7 +187,7 @@ public class Game {
         };
         timer.start();
 
-        MusicPlayer musicPlayer = new MusicPlayer("src/Media/Audio/CastleTheme.mp3");
+        musicPlayer.setPath("src/Media/Audio/CastleTheme.mp3");
         musicPlayer.start();
 
         try {
@@ -247,7 +247,7 @@ public class Game {
         SendNode tmp = sl.head;
         while (tmp != null){
             DragonData sub_tmp = tmp.getDragonData();
-            Dragon dragon = new Dragon(sub_tmp.getResistence(), sub_tmp.getName(), sub_tmp.getdRSpeed(), sub_tmp.getdAge(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), 80, 140, "file:src/Media/Enemies/Nightfury.gif", sub_tmp.getID());
+            Dragon dragon = new Dragon(sub_tmp.getResistence(), sub_tmp.getName(), sub_tmp.getdRSpeed(), sub_tmp.getdAge(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), 80, 140, Holder.enemyRute, sub_tmp.getID());
             DragonList.getInstance().addEnemy(dragon);
             tmp = tmp.next;
         }
@@ -260,7 +260,7 @@ public class Game {
     private void nextLevel(){
         this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
         this.level++;
-        readLevel();
+        this.readLevel();
         Server.count = 1;
         try {
             this.callServerToGenerateList();

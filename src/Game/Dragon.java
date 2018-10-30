@@ -1,6 +1,7 @@
 package Game;
 
 import GUI.Game;
+import javafx.scene.paint.Color;
 
 public class Dragon extends Beast {
 
@@ -117,6 +118,9 @@ public class Dragon extends Beast {
     public void moveToX() {
         boolean ready = true;
         double posx = getTranslateX();
+        if (this.getPosx() > 900 && this.getPosx() < 1200){
+           // this.setFill(Color.TRANSPARENT);
+        }
         if (this.getPosx() > posx) {
             posx += 1;
             this.setTranslateX(posx);

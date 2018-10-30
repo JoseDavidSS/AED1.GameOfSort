@@ -11,6 +11,8 @@ public class Beast extends Rectangle {
     private int posx;
     private int posy;
     private boolean dead;
+    private Image image;
+    private ImagePattern imagePattern;
 
     /**
      * Constructor of the Beast class
@@ -25,8 +27,9 @@ public class Beast extends Rectangle {
         super(width, height, Color.BISQUE);
         this.setTranslateX(posx);
         this.setTranslateY(posy);
-        Image img = new Image(imgPath);
-        this.setFill(new ImagePattern(img));
+        this.image = new Image(imgPath);
+        this.imagePattern = new ImagePattern(this.image);
+        this.setFill(imagePattern);
         this.posx = posx;
         this.posy = posy;
         this.resistence = resistence;
@@ -63,6 +66,22 @@ public class Beast extends Rectangle {
 
     public void setDead(boolean dead) {
         this.dead = dead;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public ImagePattern getImagePattern() {
+        return imagePattern;
+    }
+
+    public void setImagePattern(ImagePattern imagePattern) {
+        this.imagePattern = imagePattern;
     }
 
     /**

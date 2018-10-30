@@ -11,10 +11,8 @@ public class MusicPlayer extends Thread {
 
     /**
      * Constructor of the Music Player class.
-     * @param path String with the path of the file to play.
      */
-    public MusicPlayer(String path){
-        this.path = path;
+    public MusicPlayer(){
     }
 
     /**
@@ -26,4 +24,11 @@ public class MusicPlayer extends Thread {
         player.play();
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 }
