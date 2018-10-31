@@ -1,7 +1,6 @@
 package Game;
 
 import GUI.Game;
-import javafx.scene.paint.Color;
 
 public class Dragon extends Beast {
 
