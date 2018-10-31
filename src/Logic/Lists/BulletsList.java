@@ -67,6 +67,7 @@ public class BulletsList {
             while (tmp.next != null){
                 if (tmp.next.getAttack() == bullet && tmp.next.next == null){
                     tmp.next = null;
+                    this.large--;
                     break;
                 }else if(tmp.next.getAttack() == bullet){
                     tmp.next = tmp.next.next;

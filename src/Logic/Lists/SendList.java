@@ -68,10 +68,10 @@ public class SendList {
             }
         }
     }
-
+/*
     /**
      * Method to print the age of each dragon.
-     */
+     *
     public void printAge(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -83,7 +83,7 @@ public class SendList {
 
     /**
      * Method to print the class of each dragon.
-     */
+     *
     public void printFamily(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -95,7 +95,7 @@ public class SendList {
 
     /**
      * Method to print the recharge speed of each dragon.
-     */
+     *
     public void printRSpeed(){
         SendNode tmp = this.head;
         while(tmp != null){
@@ -124,7 +124,7 @@ public class SendList {
         }
         System.out.println("*****************");
     }
-
+*/
     /**
      * Method to use the selection sort to reorganize the list.
      */
@@ -159,39 +159,6 @@ public class SendList {
             }
             this.arrange();
         }
-    }
-
-    /**
-     * Method to use the quick sort to reorganize the list.
-     * @param max integer with the lenght of the list.
-     * @param min integer with the number 0 or 1.
-     */
-    public void quickSort(int max, int min){
-        if(min < max){
-            int pi = partition();
-            this.quickSort(pi-1,min);
-            this.quickSort(max, pi+1);
-        }
-    }
-
-    /**
-     * Method to divide the list in a half to use it with the quick sort.
-     * @return integer with a position on the list.
-     */
-    public int partition(){
-        int pivot = this.getDragonData(this.getLarge()-1).getdAge();
-        int min = 0;
-        int max = this.getLarge()-1;
-        int i = min-1;
-        int j;
-        for(j = min; j<this.getLarge()-1; j++){
-            if(this.getDragonData(j).getdAge() <= pivot){
-                i++;
-                this.swap(i,j);
-            }
-        }
-        this.swap(i+1, max);
-        return(i+1);
     }
 
     /**
@@ -310,20 +277,10 @@ public class SendList {
      * @param startingX start x position (of the first dragon/root)
      */
     public SendList binaryGUI(int start, int end, int startingX) {
-        // Initializes variables, gets chunk of list to organize.
         SendList current10 = this.getChunk(start, end);
         SendNode node = current10.head;
         int switchSide = 0;
 
-        // Prints the dragon classes.
-//        while (node != null) {
-//            Dragon currentDragon = node.getDragon();
-//            System.out.println(currentDragon.getClas());
-//            node = node.next;
-//        }
-//        node = current10.head;
-
-        // Takes the first dragon and makes it the root. Modifies x and y positions of next dragons.
         DragonData firstDragon = node.getDragonData();
         firstDragon.setPosx(startingX);
         firstDragon.setPosy(250);
@@ -578,7 +535,7 @@ public class SendList {
         return result;
     }
 
-
+/*
     public static void main(String[] args) throws IOException {
         int i = 0;
         int y = 15;
@@ -624,5 +581,5 @@ public class SendList {
         sl.printX();
         sl = sl.AVLGUIHelper();
         sl.printX();
-    }
+    }*/
 }
