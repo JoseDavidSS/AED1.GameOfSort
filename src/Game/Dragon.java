@@ -36,7 +36,6 @@ public class Dragon extends Beast {
         this.readyY = false;
         this.readyX = false;
         this.ID = ID;
-//        this.setOnMouseClicked(e -> Game.game.showDragonStats());
     }
 
     public String getName() {
@@ -102,9 +101,6 @@ public class Dragon extends Beast {
         if (this.getPosx() <= 0) {
             this.setDead(true);
             Game.lose += 1;
-        } else if (this.getPosx() == 1200) {
-            this.setPosx(900);
-            setTranslateX(900);
         } else {
             if (Math.random() < 0.4) {
                 setTranslateX(this.getPosx() - 1);

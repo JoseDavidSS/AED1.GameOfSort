@@ -9,7 +9,7 @@ public class MusicPlayer {
 
     private String path;
     private Media media;
-    MediaPlayer player;
+    private MediaPlayer player;
 
     /**
      * Constructor of the Music Player class.
