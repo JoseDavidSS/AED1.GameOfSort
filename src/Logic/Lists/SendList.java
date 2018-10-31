@@ -192,7 +192,7 @@ public class SendList {
      */
     public void setDragonData(int index, DragonData dragon) {
         if (this.large - 1 < index) {
-            System.out.println("IndexOutOfRange");
+           // System.out.println("IndexOutOfRange");
         } else {
             SendNode tmp = this.head;
             for (int a = 0; a < index; a++) {
