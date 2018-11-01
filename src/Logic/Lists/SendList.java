@@ -8,6 +8,7 @@ import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import static oracle.jrockit.jfr.events.Bits.intValue;
 
@@ -166,32 +167,54 @@ public class SendList {
      * @param max integer with the lenght of the list.
      * @param min integer with the number 0 or 1.
      */
-    public void quickSort(int max, int min){
-        if(min < max){
-            int pi = partition();
-            this.quickSort(pi-1,min);
-            this.quickSort(max, pi+1);
-        }
+    /**
+     * QuickSort by age
+     */
+    public void quickSort(){
+        quickSort_aux( 0, this.getLarge()-1);
     }
 
-    /**
-     * Method to divide the list in a half to use it with the quick sort.
-     * @return integer with a position on the list.
-     */
-    public int partition(){
-        int pivot = this.getDragonData(this.getLarge()-1).getdAge();
-        int min = 0;
-        int max = this.getLarge()-1;
-        int i = min-1;
-        int j;
-        for(j = min; j<this.getLarge()-1; j++){
-            if(this.getDragonData(j).getdAge() <= pivot){
+    private void quickSort_aux( int low, int high){
+        // Check for empty or null array
+        if (this == null || this.getLarge() == 0){
+            return;
+        }
+        if (low >= high){
+            return;
+        }
+
+        // Get the pivot element from the middle of the list
+        int middle = low + (high - low) / 2;
+        int pivot = this.getDragonData(middle).getdAge(); //remember to add get age
+
+        // Make left < pivot and right > pivot
+        int i = low, j = high;
+        while (i <= j)
+        {
+            // Check until all values on left side array are lower than pivot
+            while (this.getDragonData(i).getdAge() < pivot) {
                 i++;
-                this.swap(i,j);
+            }
+            // Check until all values on left side array are greater than pivot
+            while (this.getDragonData(j).getdAge() > pivot) {
+                j--;
+            }
+            // Comparing values from both side of lists to swap them if necessary
+            if (i <= j)
+            {
+                swap (i, j);
+                i++;
+                j--;
             }
         }
-        this.swap(i+1, max);
-        return(i+1);
+        // Sort the subarrays recursively
+        if (low < j){
+            quickSort_aux(low, j);
+        }
+        if (high > i){
+            quickSort_aux(i, high);
+        }
+
     }
 
     /**

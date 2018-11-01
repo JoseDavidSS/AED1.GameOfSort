@@ -28,7 +28,8 @@ public class Sort {
                 sendList.insertionSort();
                 break;
             case "quicksort":
-                //sendList.selectionSort();
+
+                sendList.quickSort();
                 break;
             case "btree":
                 sendList = sendList.binaryGUIHelper();
