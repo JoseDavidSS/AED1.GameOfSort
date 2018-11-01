@@ -6,63 +6,80 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="697.0" prefWidth="1000.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Game">
    <children>
-      <GridPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox layoutX="335.0" layoutY="139.0" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="212.0" prefWidth="1000.0" textFill="#972a2a">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="266.0" fitWidth="372.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Media/Enemies/YellowDragon.gif" />
+                        <Image url="@../Media/MenuAssets/MainLogo.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="212.0" prefWidth="1000.0" textFill="#972a2a">
+               </graphic>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Separator prefHeight="100.0" prefWidth="406.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runInstructions" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: black;">
                      <font>
-                        <Font name="System Bold" size="96.0" />
+                        <Font name="System Bold Italic" size="36.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="266.0" fitWidth="372.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="112.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Media/MenuAssets/MainLogo.png" />
+                              <Image url="@../Media/MenuAssets/PlayButton.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                  </Label>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Separator prefHeight="100.0" prefWidth="406.0" />
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#runInstructions" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: black;">
-                           <font>
-                              <Font name="System Bold Italic" size="36.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="112.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Media/MenuAssets/PlayButton.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Separator prefHeight="100.0" prefWidth="394.0" />
-                     </children>
-                  </HBox>
+                  </Button>
+                  <Separator prefHeight="100.0" prefWidth="394.0" />
                </children>
-            </VBox>
+            </HBox>
          </children>
-      </GridPane>
+      </VBox>
+      <ImageView fitHeight="198.0" fitWidth="203.0" layoutX="72.0" layoutY="51.0">
+         <image>
+            <Image url="@../Media/MenuAssets/DragonSilhouette.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="158.0" layoutX="795.0" layoutY="46.0">
+         <image>
+            <Image url="@../Media/MenuAssets/HouseLannister.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="198.0" layoutX="749.0" layoutY="381.0">
+         <image>
+            <Image url="@../Media/MenuAssets/HouseTargaryen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="218.0" fitWidth="228.0" layoutX="67.0" layoutY="407.0" preserveRatio="true">
+         <image>
+            <Image url="@../Media/MenuAssets/DaenerysWithDragons.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="613.0" layoutY="614.0" text="Made in Costa Rica by BrokenTeam" textFill="WHITE">
+         <font>
+            <Font name="Helvetica" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="903.0" layoutY="635.0" text="2018" textFill="WHITE">
+         <font>
+            <Font name="Helvetica" size="21.0" />
+         </font>
+      </Label>
+      <Line endX="-18.59520721435547" endY="631.8504638671875" layoutX="41.0" layoutY="46.0" startX="-20.66630744934082" startY="-27.476787567138672" stroke="#d3da0d" strokeWidth="10.0" />
+      <Line endX="-23.595199584960938" endY="621.8504638671875" layoutX="51.0" layoutY="56.0" startX="922.2963256835938" startY="621.8504638671875" stroke="#d3da0d" strokeWidth="10.0" />
+      <Line endX="919.3673706054688" endY="-45.87165451049805" layoutX="61.0" layoutY="66.0" startX="917.2963256835938" startY="611.8504638671875" stroke="#d3da0d" strokeWidth="10.0" />
+      <Line endX="909.3673706054688" endY="-60.87165451049805" layoutX="71.0" layoutY="76.0" startX="-50.66630554199219" startY="-62.476776123046875" stroke="#d3da0d" strokeWidth="10.0" />
    </children>
 </AnchorPane>

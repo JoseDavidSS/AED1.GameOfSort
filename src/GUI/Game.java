@@ -37,6 +37,7 @@ public class Game {
     private int batchOfEnemies = 100;
     private AnimationTimer timer;
     private boolean pause = false;
+    public static int lose = 0;
     public static MusicPlayer musicPlayer = new MusicPlayer();
     @FXML private Text sideText;
     @FXML private Text sideText2;
@@ -192,7 +193,7 @@ public class Game {
         timer.start();
 
         musicPlayer.setPath("src/Media/Audio/CastleTheme.mp3");
-        musicPlayer.start();
+        musicPlayer.run();
 
         try {
             this.callServerToGenerateList();
@@ -230,17 +231,16 @@ public class Game {
         DragonNode tmp = list.head;
         Image img = new Image(Holder.enemyRute);
         ImagePattern ing = new ImagePattern(img);
-        while (tmp != null){
+        while (tmp != null) {
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
             tmp = tmp.next;
         }
-        scrollPane.toFront();
-        scrollPane2.toFront();
+        this.scrollPane.toFront();
+        this.scrollPane2.toFront();
         this.setEnemiesLeftTxt(this.batchOfEnemies);
         this.setLevelTxt(this.level);
         this.setCurrentOrderTxt("Random");
-        this.showDragonStats();
         this.showBTree();
     }
 
@@ -255,6 +255,7 @@ public class Game {
             DragonData sub_tmp = tmp.getDragonData();
             Dragon dragon = new Dragon(sub_tmp.getResistence(), sub_tmp.getName(), sub_tmp.getdRSpeed(), sub_tmp.getdAge(), sub_tmp.getdClas(), sub_tmp.getPosx(), sub_tmp.getPosy(), 80, 140, Holder.enemyRute, sub_tmp.getID());
             DragonList.getInstance().addEnemy(dragon);
+            dragon.setOnMouseClicked(e -> this.showDragonStats(dragon.getName(), dragon.getRechargeSpeed(), dragon.getAge(), dragon.getResistence() + 1, dragon.getClas()));
             tmp = tmp.next;
         }
         this.addEnemies();
@@ -278,16 +279,25 @@ public class Game {
     /**
      * update() is a method used to refresh and update game data
      */
-    private void update(){
+    private void update() throws NullPointerException{
         BulletsList tmp = BulletsList.getInstance();
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
-        if (player.isDead()){
+        if (player.isDead() || lose == 3){
             paneBoard.getChildren().remove(player);
             timer.stop();
             try {
-                //Mejorar el fin del juego
-                this.runInstructions();
+                musicPlayer.stopMusic();
+                player.setResistence(9);
+                Server.count = 1;
+                DragonNode sub_tmp2 = tmp2.head;
+                while (sub_tmp2 != null){
+                    Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                    paneBoard.getChildren().remove(sub_sub_tmp2);
+                    sub_tmp2 = sub_tmp2.next;
+                }
+                DragonList.reset();
+                this.runSetUp();
             } catch (IOException e) {
                 this.errorWindow();
             }
@@ -440,7 +450,6 @@ public class Game {
                 tmp2 = tmp2.next;
             }
             this.whichFormation++;
-            this.showDragonStats();
             this.showBTree();
         } catch (IOException e) {
            this.errorWindow();
@@ -456,31 +465,23 @@ public class Game {
         Platform.exit();
     }
 
-    public void showDragonStats(){
-        DragonNode tmp = DragonList.getInstance().head;
-        StringBuilder txt = new StringBuilder();
-        txt.append("Dragons\n");
-        while (tmp != null){
-            Dragon sub_tmp = tmp.getDragon();
-            txt.append("Name: ");
-            txt.append(sub_tmp.getName());
-            txt.append(" | ");
-            txt.append("Fire Recharge Speed: ");
-            txt.append(sub_tmp.getRechargeSpeed());
-            txt.append(" | ");
-            txt.append("Age: ");
-            txt.append(sub_tmp.getAge());
-            txt.append(" | ");
-            txt.append("Resistence: ");
-            txt.append(sub_tmp.getResistence() + 1);
-            txt.append(" | ");
-            txt.append("Class: ");
-            txt.append(sub_tmp.getClas());
-            txt.append("\n");
-            tmp = tmp.next;
-        }
-        String txts = txt.toString();
-        this.sideText.setText(txts);
+    public void showDragonStats(String name, int frs, int age, int resistence, String clas){
+        String txt = "Dragons Stats:\n" +
+                "Name: " +
+                name +
+                " \n " +
+                "Fire Recharge Speed: " +
+                frs +
+                " \n " +
+                "Age: " +
+                age +
+                " \n " +
+                "Resistence: " +
+                resistence +
+                " \n " +
+                "Class: " +
+                clas;
+        this.sideText.setText(txt);
     }
 
     public void showBTree(){

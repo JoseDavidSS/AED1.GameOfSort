@@ -248,7 +248,7 @@ public class SendList {
      */
     public void setDragonData(int index, DragonData dragon) {
         if (this.large - 1 < index) {
-            System.out.println("IndexOutOfRange");
+           // System.out.println("IndexOutOfRange");
         } else {
             SendNode tmp = this.head;
             for (int a = 0; a < index; a++) {
@@ -333,20 +333,10 @@ public class SendList {
      * @param startingX start x position (of the first dragon/root)
      */
     public SendList binaryGUI(int start, int end, int startingX) {
-        // Initializes variables, gets chunk of list to organize.
         SendList current10 = this.getChunk(start, end);
         SendNode node = current10.head;
         int switchSide = 0;
 
-        // Prints the dragon classes.
-//        while (node != null) {
-//            Dragon currentDragon = node.getDragon();
-//            System.out.println(currentDragon.getClas());
-//            node = node.next;
-//        }
-//        node = current10.head;
-
-        // Takes the first dragon and makes it the root. Modifies x and y positions of next dragons.
         DragonData firstDragon = node.getDragonData();
         firstDragon.setPosx(startingX);
         firstDragon.setPosy(250);
