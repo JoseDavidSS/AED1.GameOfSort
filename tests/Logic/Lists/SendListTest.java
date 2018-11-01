@@ -1,6 +1,9 @@
 package Logic.Lists;
 
+import Logic.Trees.AVLTree;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,14 +65,69 @@ class SendListTest {
     }
 
     @Test
-    void binaryGUIHelper() {
-
-        //Aqui ale
+    void ageToDragon() {
+        SendList sendList = new SendList();
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(992, 65, "Commander", 12, 100, 2, "Jose", 2);
+        sendList.addData(12, 65, "Commander", 12, 100, 2, "Jose", 2);
+        sendList.addData(200, 65, "Commander", 12, 100, 2, "Jose", 2);
+        assertEquals(sendList.head, sendList.ageToDragon(1, sendList));
+        assertEquals(sendList.head.next, sendList.ageToDragon(992, sendList));
+        assertEquals(sendList.head.next.next, sendList.ageToDragon(12, sendList));
+        assertEquals(sendList.head.next.next.next, sendList.ageToDragon(200, sendList));
     }
 
     @Test
-    void AVLGUIHelper() {
+    void instancetoAVL() {
+        SendList sendList = new SendList();
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        AVLTree ages = new AVLTree();
+        ages.insert(ages.root, 1);
+        ages.insert(ages.root, 100);
+        ages.insert(ages.root, 100);
+        assertEquals(ages.getHeight(ages.root), sendList.instanceToAVL(sendList).getHeight(ages.root));
+    }
 
-        //Aqui tambien
+    @Test
+    void separate() {
+        SendList sendList = new SendList();
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(200, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        ArrayList numbers = new ArrayList();
+        numbers.add(0);
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(404);
+        assertEquals(numbers, sendList.separate(10));
+    }
+
+    @Test
+    void getChunk() {
+        SendList sendList = new SendList();
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        sendList.addData(100, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        SendList manualChunk = new SendList();
+        manualChunk.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        manualChunk.addData(1, 33, "Infantry", 50, 100, 1, "Kevin", 1);
+        assertEquals(manualChunk.getLarge(), sendList.getChunk(0, 2).getLarge());
     }
 }
