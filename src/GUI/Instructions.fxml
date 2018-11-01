@@ -24,32 +24,32 @@
                <children>
                   <Label alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" text="Welcome" textFill="#eeeeee">
                      <font>
-                        <Font name="System Bold" size="72.0" />
+                        <Font name="Monospaced Regular" size="72.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1197.0" text="Game of Sorts is a simple sidescroller game in Java. Choose your hero and conquer the Five Realsm by destroying waves of evil dragons. Each wave has its own number of enemies with a unique age, level, power and health. Valar Morghulis." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="118.0" prefWidth="1197.0" text="Game of Sorts is a simple sidescroller game in Java. Choose your hero and conquer the Five Realms by destroying waves of evil dragons. Each wave has its own number of enemies with a unique age, level, power and health. Valar Morghulis." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
-                        <Font name="System Bold Italic" size="24.0" />
+                        <Font name="Helvetica Neue" size="24.0" />
                      </font>
                   </Label>
                   <Label prefHeight="70.0" prefWidth="288.0" text="Movement:" textFill="#eeeeee">
                      <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="Monospaced Bold" size="48.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Use &quot;W&quot;, &quot;A&quot;, &quot;S&quot;, &quot;D&quot; to move upward, backward, downward, and forward respectively." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
-                        <Font name="System Bold Italic" size="24.0" />
+                        <Font name="Helvetica Neue" size="24.0" />
                      </font>
                   </Label>
                   <Label prefHeight="70.0" prefWidth="288.0" text="Shooting:" textFill="#eeeeee">
                      <font>
-                        <Font name="System Bold" size="48.0" />
+                        <Font name="Monospaced Bold" size="48.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" prefHeight="118.0" prefWidth="1000.0" text="Press &quot;K&quot; to shoot at your enemies before they get through you and bring chaos and destruction to the kingdom with them." textAlignment="CENTER" textFill="#eeeeee" wrapText="true">
                      <font>
-                        <Font name="System Bold Italic" size="24.0" />
+                        <Font name="Helvetica Neue" size="24.0" />
                      </font>
                   </Label>
                   <StackPane prefHeight="150.0" prefWidth="200.0">
