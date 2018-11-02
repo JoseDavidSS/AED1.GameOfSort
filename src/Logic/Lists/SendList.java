@@ -171,12 +171,13 @@ public class SendList {
      * QuickSort by age
      */
     public void quickSort(){
-        quickSort_aux( 0, this.getLarge()-1);
+        this.quickSort_aux( 0, this.large-1);
+        this.arrange();
     }
 
     private void quickSort_aux( int low, int high){
         // Check for empty or null array
-        if (this == null || this.getLarge() == 0){
+        if (this.large == 0){
             return;
         }
         if (low >= high){
@@ -209,10 +210,10 @@ public class SendList {
         }
         // Sort the subarrays recursively
         if (low < j){
-            quickSort_aux(low, j);
+            this.quickSort_aux(low, j);
         }
         if (high > i){
-            quickSort_aux(i, high);
+            this.quickSort_aux(i, high);
         }
 
     }
@@ -591,51 +592,4 @@ public class SendList {
         return result;
     }
 
-
-    public static void main(String[] args) throws IOException {
-        int i = 0;
-        int y = 15;
-        int x = 900;
-        boolean fLine = false;
-        boolean first = false;
-        int age;
-        int rSpeed;
-        int resistence;
-        String dragonName;
-        String clas;
-        int id = 1;
-        SendList sl = new SendList();
-        while (i != 20){
-            dragonName = GameUtil.generateName();
-            age = intValue(Math.random() * 1000);
-            rSpeed = intValue(Math.random() * 100);
-            resistence = intValue(Math.random() * 3 + 0);
-            clas = "Captain";
-            if (!first){
-                first = true;
-                clas = "Commander";
-                resistence = 2;
-            }
-            if (resistence < 2){
-                clas = "Infantry";
-            }
-            sl.addData(age, rSpeed, clas, x, y, id, dragonName, resistence);
-            y += 70;
-            if (i % 9 == 0 && i != 0){
-                y = 15;
-                if (!fLine){
-                    x += 400;
-                    fLine = true;
-                }
-                else{
-                    x += 400;
-                }
-            }
-            i++;
-            id++;
-        }
-        sl.printX();
-        sl = sl.AVLGUIHelper();
-        sl.printX();
-    }
 }

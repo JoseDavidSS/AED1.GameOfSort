@@ -28,7 +28,6 @@ public class Sort {
                 sendList.insertionSort();
                 break;
             case "quicksort":
-
                 sendList.quickSort();
                 break;
             case "btree":

@@ -1,7 +1,5 @@
 package Game;
 
-import Logic.Lists.QList;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +15,7 @@ public class GameUtil {
      */
     public static String generateName() throws IOException {
 
-        String file = "C:\\Users\\josed\\IdeaProjects\\Progra-2\\src\\Game\\data\\names.txt";
+        String file = "C:\\Users\\Kevin Cordero Zúñiga\\IdeaProjects\\Game of Sorts\\src\\Game\\data\\names.txt";
         ArrayList<String> allNames = new ArrayList<>();
         Random r = new Random();
 
