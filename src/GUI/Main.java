@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -17,6 +19,7 @@ public class Main extends Application {
 
     static Stage game;
     static Scene scene;
+    final Logger logger = LoggerFactory.getLogger(Main.class);
 
     /**
      * @param scene_route calls Game controller and defines which window to show
@@ -50,5 +53,6 @@ public class Main extends Application {
         primaryStage.setTitle("Game of Sorts");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
+        logger.info("Showing the main screen.");
     }
 }

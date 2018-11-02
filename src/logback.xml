@@ -35,6 +35,24 @@
 	<logger name="GUI.Game" level="ALL">
 		<appender-ref ref="FILE-AUDIT" />
 	</logger>
+	<logger name="Game.data.MusicPlayer" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="GUI.Main" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="Server.Generate" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="Server.Serializer" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="Server.Server" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
+	<logger name="Server.Sort" level="ALL">
+		<appender-ref ref="FILE-AUDIT" />
+	</logger>
 
 	<root level="ALL">
     <appender-ref ref="STDOUT" />

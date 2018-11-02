@@ -1,1 +1,889 @@
-2018-10-26 11:36:10 [JavaFX Application Thread] INFO  GUI.Game - Prueba
+2018-11-02 09:22:33 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 09:22:34 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:22:36 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 09:22:37 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 09:22:38 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 09:22:44 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:22:45 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 09:22:45 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:22:48 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:22:48 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:22:48 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:22:50 [JavaFX Application Thread] INFO  GUI.Game - The game is paused.
+2018-11-02 09:22:53 [JavaFX Application Thread] INFO  GUI.Game - The game continues.
+2018-11-02 09:23:01 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:23:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:23:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:23:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:23:13 [JavaFX Application Thread] INFO  GUI.Game - Showing data from:Carmen
+2018-11-02 09:23:19 [JavaFX Application Thread] INFO  GUI.Game - Showing data from:Chytussias
+2018-11-02 09:23:21 [JavaFX Application Thread] INFO  GUI.Game - Showing data from:Yam-nahar
+2018-11-02 09:33:36 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 09:34:42 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 09:34:43 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:34:46 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 09:34:46 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 09:34:47 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 09:34:48 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:34:48 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 09:34:48 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:34:50 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:34:50 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:34:53 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:34:53 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:34:53 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:35:00 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:39:46 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 09:39:48 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 09:39:49 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:39:52 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 09:39:53 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 09:39:54 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 09:39:55 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:39:55 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 09:39:55 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:39:56 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:39:56 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:39:56 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:39:56 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:39:56 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:03 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:17 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:25 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:33 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:42 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:48 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:40:57 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:41:02 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:41:06 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:2
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:10 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:41:11 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:41:11 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:41:11 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:41:19 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:20 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:41:29 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:41:44 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:41:46 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:41:49 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Burll
+2018-11-02 09:41:56 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Burll
+2018-11-02 09:41:57 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:42:00 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Tlati
+2018-11-02 09:42:01 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:02 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:12 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:18 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:27 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:27 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:42:27 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:27 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:27 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:28 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:33 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:38 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:42 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:43 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:42:46 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:3
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:42:52 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:42:53 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:42:53 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:42:53 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:42:58 [JavaFX Application Thread] INFO  GUI.Game - The game is paused.
+2018-11-02 09:43:02 [JavaFX Application Thread] INFO  GUI.Game - The game continues.
+2018-11-02 09:43:03 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:43:09 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:43:11 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:43:20 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:43:29 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:43:35 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Kincharr
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:43:41 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:43:42 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:43:46 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Othoa
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:43:51 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:43:57 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Fyexug
+2018-11-02 09:44:01 [JavaFX Application Thread] INFO  GUI.Game - Showing data from: Hatuibwari
+2018-11-02 09:44:02 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:44:02 [JavaFX Application Thread] INFO  GUI.Game - The player lose.
+2018-11-02 09:44:02 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 09:44:02 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:50:54 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 09:50:55 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 09:50:55 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:50:57 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 09:50:58 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 09:57:24 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 09:57:27 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 09:57:27 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 09:57:29 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 09:57:30 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 09:57:30 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:57:32 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:57:40 [JavaFX Application Thread] INFO  GUI.Game - The game is paused.
+2018-11-02 09:57:47 [JavaFX Application Thread] INFO  GUI.Game - The game continues.
+2018-11-02 09:57:50 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:57:50 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:57:50 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:57:50 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:57:51 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:57:51 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:03 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:04 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 09:58:14 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:14 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:58:14 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:14 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:14 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:15 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:24 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:30 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:34 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:43 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:48 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:58:51 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:2
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 09:58:57 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:02 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:17 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:27 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:37 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:45 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 09:59:50 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:01 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:07 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:09 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:14 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:18 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:22 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:3
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:28 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:00:29 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:00:29 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:00:29 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:00:33 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:00:35 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:35 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:00:35 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:35 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:35 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:36 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:00:49 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:03 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:14 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:24 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:31 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:40 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:46 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:50 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:01:55 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:02 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:11 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:13 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:14 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:14 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:4
+2018-11-02 10:02:14 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:02:14 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:02:15 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:21 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:30 [JavaFX Application Thread] INFO  GUI.Game - The game is paused.
+2018-11-02 10:02:30 [JavaFX Application Thread] INFO  GUI.Game - The game continues.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:32 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:42 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:02:54 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:03:11 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:03:24 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:03:39 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:03:40 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:03:47 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:03:52 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:00 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:01 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:04:02 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:04 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:11 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:14 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:16 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:21 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:5
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:04:24 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:33 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:42 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:04:50 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:05:02 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:05:19 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:05:30 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:05:46 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:05:57 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:08 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:17 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:22 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:32 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:41 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:46 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:51 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Binary Tree by families.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:06:55 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: AVL Tree by age.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:07:03 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:07:05 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - Setting up level:6
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:07:07 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:07:14 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:16 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:19 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:20 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:20 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:21 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:22 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:22 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:23 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:07:23 [JavaFX Application Thread] INFO  GUI.Game - The player lose.
+2018-11-02 10:07:23 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:07:23 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:11:51 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:11:53 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:11:54 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:11:56 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:11:57 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 10:11:58 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:11:59 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:11:59 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:11:59 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:11:59 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:11:59 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:12:00 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:12:00 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:12:00 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:12:04 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:04 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:04 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:05 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:05 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:08 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:10 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:10 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:10 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:11 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:11 [JavaFX Application Thread] INFO  GUI.Game - The player lose.
+2018-11-02 10:12:11 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:12:11 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:12:13 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:12:14 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Nightfury.
+2018-11-02 10:12:15 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:12:17 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:12:24 [JavaFX Application Thread] INFO  GUI.Game - The player got hit.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Selection Sort by age.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:12:52 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Insertion Sort by recharge speed.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:12:59 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  GUI.Game - An enemy died.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  GUI.Game - Changing formation to: Quick Sort by age.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  GUI.Game - Getting data from server.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to sort the list.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  Server.Serializer - Serializing list to xml.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  GUI.Game - The player lose.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Stopping music.
+2018-11-02 10:13:05 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:13:22 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:14:21 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:14:22 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:14:26 [JavaFX Application Thread] INFO  GUI.Game - The player choose Pony.
+2018-11-02 10:14:28 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:14:29 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Black Dragon.
+2018-11-02 10:14:30 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:14:31 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:14:31 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:14:31 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:14:31 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:14:31 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:14:33 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:14:33 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:14:33 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:14:44 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:14:46 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:14:47 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:14:49 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:14:50 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Green Dragon.
+2018-11-02 10:14:51 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:14:52 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:15:02 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:15:03 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:15:04 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:15:06 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:15:24 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:15:25 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:15:26 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:15:28 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:15:28 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Black Dragon.
+2018-11-02 10:15:29 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:15:30 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:15:30 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:15:30 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:15:31 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:15:31 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:15:42 [JavaFX Application Thread] INFO  GUI.Game - The game is paused.
+2018-11-02 10:15:58 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:15:59 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:16:01 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:16:03 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:16:04 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Green Dragon.
+2018-11-02 10:16:05 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:16:06 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:16:06 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:16:06 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:16:06 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:16:06 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:16:08 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:16:08 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:16:08 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:16:21 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:21:25 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:21:26 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:21:28 [JavaFX Application Thread] INFO  GUI.Game - The player choose Charizard.
+2018-11-02 10:21:29 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Yellow Dragon.
+2018-11-02 10:21:30 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:21:31 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:21:31 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:21:31 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:21:32 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:21:32 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:21:35 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:21:35 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:21:35 [JavaFX Application Thread] INFO  GUI.Game - Start.
+2018-11-02 10:21:51 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:21:52 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:21:53 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:21:55 [JavaFX Application Thread] INFO  GUI.Game - The player choose Pony.
+2018-11-02 10:21:56 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Black Dragon.
+2018-11-02 10:21:57 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:21:59 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:21:59 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:21:59 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:22:00 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:22:00 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:22:17 [JavaFX Application Thread] INFO  GUI.Main - Showing the main screen.
+2018-11-02 10:22:18 [JavaFX Application Thread] INFO  GUI.Game - Showing instructions screen.
+2018-11-02 10:22:19 [JavaFX Application Thread] INFO  GUI.Game - Showing Set Up screen.
+2018-11-02 10:22:22 [JavaFX Application Thread] INFO  GUI.Game - The player choose Pony.
+2018-11-02 10:22:22 [JavaFX Application Thread] INFO  GUI.Game - The player choose enemy Green Dragon.
+2018-11-02 10:22:23 [JavaFX Application Thread] INFO  GUI.Game - Showing the main game screen.
+2018-11-02 10:22:25 [JavaFX Application Thread] INFO  Game.data.MusicPlayer - Starting music.
+2018-11-02 10:22:25 [JavaFX Application Thread] INFO  GUI.Game - Setting up the game.
+2018-11-02 10:22:25 [JavaFX Application Thread] INFO  Server.Server - Connecting to server to generate list.
+2018-11-02 10:22:25 [JavaFX Application Thread] INFO  Server.Serializer - Deserialize xml to list.
+2018-11-02 10:22:25 [JavaFX Application Thread] INFO  GUI.Game - Getting enemies from the server.
+2018-11-02 10:22:27 [JavaFX Application Thread] INFO  GUI.Game - Putting enemies on screen.
+2018-11-02 10:22:27 [JavaFX Application Thread] INFO  GUI.Game - Setting up BTree.
+2018-11-02 10:22:27 [JavaFX Application Thread] INFO  GUI.Game - Start.

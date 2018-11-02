@@ -1,6 +1,8 @@
 package Server;
 
 import Logic.Lists.SendList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,6 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Server {
+
+    final static Logger logger = LoggerFactory.getLogger(Server.class);
 
     public static int count = 1;
 
@@ -18,6 +22,7 @@ public class Server {
      * @throws IOException in case of an error.
      */
     public static SendList generate(int dragons) throws IOException {
+        logger.info("Connecting to server to generate list.");
         URL url = new URL("http://localhost:9080/Progra_2_war_exploded/GOS/generate?dragons=" + Integer.toString(dragons));
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
@@ -40,6 +45,7 @@ public class Server {
      * @throws IOException
      */
     public static SendList sort(SendList list) throws IOException{
+        logger.info("Connecting to server to sort the list.");
         String XML = Serializer.serializadorString(list);
         String method = "";
         switch (count) {

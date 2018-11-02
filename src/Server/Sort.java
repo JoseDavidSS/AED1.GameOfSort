@@ -1,6 +1,8 @@
 package Server;
 
 import Logic.Lists.SendList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +12,9 @@ import java.io.IOException;
 
 @Path("sort")
 public class Sort {
+
+    final Logger logger = LoggerFactory.getLogger(Sort.class);
+
     @GET
     @Produces("application/xml")
     /**
@@ -19,6 +24,7 @@ public class Sort {
      * @return XML of the sorted List
      */
     public String sort(@QueryParam("method") String method, @QueryParam("list") String list) throws IOException {
+        logger.info("Sorting the list.");
         SendList sendList = Serializer.deserializadorString(list);
         switch (method){
             case "selection":

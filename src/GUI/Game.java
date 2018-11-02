@@ -7,12 +7,10 @@ import Server.Server;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.layout.AnchorPane;
@@ -38,6 +36,7 @@ public class Game {
     private AnimationTimer timer;
     private boolean pause = false;
     public static int lose = 0;
+    private boolean win = false;
     public static MusicPlayer musicPlayer = new MusicPlayer();
     @FXML private Text sideText;
     @FXML private Text sideText2;
@@ -57,6 +56,7 @@ public class Game {
      * Defines player´s first skin (image rute)
      */
     public void choosePlayer1 (){
+        logger.info("The player choose Charizard.");
         Holder.playerRute ="file:src/Media/Players/Charizard.gif";
     }
 
@@ -64,6 +64,7 @@ public class Game {
      * Defines player´s second skin (image rute)
      */
     public void choosePlayer2 (){
+        logger.info("The player choose Pony.");
         Holder.playerRute ="file:src/Media/Players/Pony.gif";
     }
 
@@ -71,6 +72,7 @@ public class Game {
      * Defines player´s third skin (image rute)
      */
     public void choosePlayer3 (){
+        logger.info("The player choose Flying Beast.");
         Holder.playerRute = "file:src/Media/Players/FlyingBeast.gif";
     }
 
@@ -78,6 +80,7 @@ public class Game {
      * Defines player´s fourth skin (image rute)
      */
     public void choosePlayer4 (){
+        logger.info("The player choose Pink Pegasus.");
         Holder.playerRute = "file:src/Media/Players/PinkPegasus.gif";
     }
 
@@ -85,6 +88,7 @@ public class Game {
      * Defines enemies´ first skin (image rute)
      */
     public void chooseEnemy1 (){
+        logger.info("The player choose enemy Black Dragon.");
         Holder.enemyRute = "file:src/Media/Enemies/BlackDragon.gif";
     }
 
@@ -92,6 +96,7 @@ public class Game {
      * Defines enemies´ second skin (image rute)
      */
     public void chooseEnemy2 (){
+        logger.info("The player choose enemy Green Dragon.");
         Holder.enemyRute = "file:src/Media/Enemies/GreenDragon.gif";
     }
 
@@ -99,6 +104,7 @@ public class Game {
      * Defines enemies´ third skin (image rute)
      */
     public void chooseEnemy3 (){
+        logger.info("The player choose enemy Nightfury.");
         Holder.enemyRute = "file:src/Media/Enemies/Nightfury.gif";
     }
 
@@ -106,6 +112,7 @@ public class Game {
      * Defines enemies´ fourth skin (image rute)
      */
     public void chooseEnemy4 (){
+        logger.info("The player choose enemy Yellow Dragon.");
         Holder.enemyRute = "file:src/Media/Enemies/YellowDragon.gif";
     }
 
@@ -113,6 +120,7 @@ public class Game {
      * Changes scene from Menu to Instructions
      */
     public void runInstructions () throws IOException {
+        logger.info("Showing instructions screen.");
         Main.setScene("Instructions.fxml");
     }
 
@@ -120,6 +128,7 @@ public class Game {
      * Changes scene from Instructions to SetUp
      */
     public void runSetUp () throws IOException {
+        logger.info("Showing Set Up screen.");
         Main.setScene("SetUp.fxml");
     }
 
@@ -127,6 +136,7 @@ public class Game {
      * Changes scene from SetUp to Board
      */
     public void runBoard () throws IOException {
+        logger.info("Showing the main game screen.");
         Main.setScene("Board.fxml");
     }
 
@@ -173,12 +183,15 @@ public class Game {
                     if (!this.pause){
                         timer.stop();
                         this.pause = true;
+                        logger.info("The game is paused.");
                     }else{
                         timer.start();
                         this.pause = false;
+                        logger.info("The game continues.");
                     }
                     break;
                 case ESCAPE:
+                    logger.info("Exiting the game.");
                     System.exit(0);
                     break;
             }
@@ -192,8 +205,10 @@ public class Game {
         };
         timer.start();
 
-        musicPlayer.setPath("src/Media/Audio/CastleTheme.mp3");
+        musicPlayer.setPath("src/Media/Audio/DesertTheme.mp3");
         musicPlayer.run();
+
+        logger.info("Setting up the game.");
 
         try {
             this.callServerToGenerateList();
@@ -231,6 +246,7 @@ public class Game {
         DragonNode tmp = list.head;
         Image img = new Image(Holder.enemyRute);
         ImagePattern ing = new ImagePattern(img);
+        logger.info("Putting enemies on screen.");
         while (tmp != null) {
             tmp.getDragon().setFill(ing);
             paneBoard.getChildren().add(tmp.getDragon());
@@ -241,7 +257,9 @@ public class Game {
         this.setEnemiesLeftTxt(this.batchOfEnemies);
         this.setLevelTxt(this.level);
         this.setCurrentOrderTxt("Random");
+        logger.info("Setting up BTree.");
         this.showBTree();
+        logger.info("Start.");
     }
 
     /**
@@ -250,6 +268,7 @@ public class Game {
      */
     public void callServerToGenerateList() throws IOException {
         SendList sl = Server.generate(this.batchOfEnemies);
+        logger.info("Getting enemies from the server.");
         SendNode tmp = sl.head;
         while (tmp != null){
             DragonData sub_tmp = tmp.getDragonData();
@@ -265,14 +284,49 @@ public class Game {
      * Method to advance to the next level.
      */
     private void nextLevel(){
-        this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
         this.level++;
-        this.readLevel();
-        Server.count = 1;
+        if (this.level == 6){
+            logger.info("The player win.");
+            player.setDead(true);
+            this.win = true;
+        }else{
+            int lives = player.getResistence();
+            lives++;
+            this.setLivesLeftTxt(lives);
+            player.setResistence(lives);
+            this.batchOfEnemies += (20 * this.batchOfEnemies) / 100;
+            this.whichFormation = 0;
+            this.readLevel();
+            Server.count = 1;
+            try {
+                this.callServerToGenerateList();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void end(){
+        DragonList tmp2 = DragonList.getInstance();
+        paneBoard.getChildren().remove(player);
+        this.restartBackground();
+        timer.stop();
+        this.level = 1;
         try {
-            this.callServerToGenerateList();
+            musicPlayer.stopMusic();
+            player.setResistence(9);
+            Server.count = 1;
+            this.whichFormation = 0;
+            DragonNode sub_tmp2 = tmp2.head;
+            while (sub_tmp2 != null){
+                Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
+                paneBoard.getChildren().remove(sub_sub_tmp2);
+                sub_tmp2 = sub_tmp2.next;
+            }
+            DragonList.reset();
+            this.runSetUp();
         } catch (IOException e) {
-            e.printStackTrace();
+            this.errorWindow();
         }
     }
 
@@ -284,23 +338,10 @@ public class Game {
         DragonList tmp2 = DragonList.getInstance();
         this.enemyShoot += 0.016;
         if (player.isDead() || lose == 3){
-            paneBoard.getChildren().remove(player);
-            timer.stop();
-            try {
-                musicPlayer.stopMusic();
-                player.setResistence(9);
-                Server.count = 1;
-                DragonNode sub_tmp2 = tmp2.head;
-                while (sub_tmp2 != null){
-                    Dragon sub_sub_tmp2 = sub_tmp2.getDragon();
-                    paneBoard.getChildren().remove(sub_sub_tmp2);
-                    sub_tmp2 = sub_tmp2.next;
-                }
-                DragonList.reset();
-                this.runSetUp();
-            } catch (IOException e) {
-                this.errorWindow();
+            if (!win){
+                logger.info("The player lose.");
             }
+            this.end();
         }if (tmp.getLarge() != 0){
             BulletsNodes sub_tmp = tmp.head;
             while (sub_tmp != null){
@@ -339,6 +380,7 @@ public class Game {
                     if (sub_sub_tmp.getBoundsInParent().intersects((player.getBoundsInParent()))) {
                         sub_sub_tmp.setDead(true);
                         player.hit();
+                        logger.info("The player got hit.");
                         this.setLivesLeftTxt(player.getResistence() + 1);
                     }if (sub_sub_tmp.isDead()) {
                         paneBoard.getChildren().remove(sub_sub_tmp);
@@ -372,6 +414,7 @@ public class Game {
                     paneBoard.getChildren().remove(sub_sub_tmp2);
                     DragonList.getInstance().deleteEnemy(sub_sub_tmp2);
                     this.setEnemiesLeftTxt(DragonList.getInstance().getLarge());
+                    logger.info("An enemy died.");
                     if (DragonList.getInstance().getLarge() != 0){
                         this.inFormation = false;
                         this.changeFormation();
@@ -403,18 +446,23 @@ public class Game {
      */
     public void changeFormation(){
         if (this.whichFormation == 0){
+            logger.info("Changing formation to: Selection Sort by age.");
             this.setCurrentOrderTxt("Selection Sort");
             this.getNewList();
         }else if (this.whichFormation == 1){
+            logger.info("Changing formation to: Insertion Sort by recharge speed.");
             this.setCurrentOrderTxt("Insertion Sort");
             this.getNewList();
         }else if (this.whichFormation == 2){
+            logger.info("Changing formation to: Quick Sort by age.");
             this.setCurrentOrderTxt("Quick Sort");
             this.getNewList();
         }else if (this.whichFormation == 3){
+            logger.info("Changing formation to: Binary Tree by families.");
             this.setCurrentOrderTxt("Binary Tree");
             this.getNewList();
         }else{
+            logger.info("Changing formation to: AVL Tree by age.");
             this.setCurrentOrderTxt("AVL Tree");
             this.getNewList();
             this.whichFormation = 0;
@@ -422,6 +470,7 @@ public class Game {
     }
 
     public void getNewList(){
+        logger.info("Getting data from server.");
         SendList sl = new SendList();
         DragonList dl = DragonList.getInstance();
         DragonNode tmp = dl.head;
@@ -457,15 +506,12 @@ public class Game {
     }
 
     public void errorWindow(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Aviso");
-        alert.setHeaderText("Error");
-        alert.setContentText("A problem appeared :(");
-        alert.showAndWait();
+        logger.error("A problem happened while trying to get data from the server.");
         Platform.exit();
     }
 
     public void showDragonStats(String name, int frs, int age, int resistence, String clas){
+        logger.info("Showing data from: " + name);
         String txt = "Dragons Stats:\n" +
                 "Name: " +
                 name +
@@ -551,25 +597,44 @@ public class Game {
      * readLevel() is a method used to set the background image based on the player´s level
      */
     public void readLevel (){
-        if (level == 2){
+        logger.info("Setting up level:" + this.level);
+        if (this.level == 2){
+            musicPlayer.stopMusic();
+            musicPlayer.setPath("src/Media/Audio/CastleTheme.mp3");
+            musicPlayer.run();
             Image image = new Image("file:src/Media/Stages/CastleStage.png");
             background1.setImage(image);
             background2.setImage(image);
         }
-        else if (level == 3){
+        else if (this.level == 3){
+            musicPlayer.stopMusic();
+            musicPlayer.setPath("src/Media/Audio/ForestTheme.mp3");
+            musicPlayer.run();
             Image image2 = new Image("file:src/Media/Stages/ForestStage.png");
             background1.setImage(image2);
             background2.setImage(image2);
         }
-        else if (level == 4){
+        else if (this.level == 4){
+            musicPlayer.stopMusic();
+            musicPlayer.setPath("src/Media/Audio/UnderwaterTheme.mp3");
+            musicPlayer.run();
             Image image3 = new Image("file:src/Media/Stages/UnderwaterStage.png");
             background1.setImage(image3);
             background2.setImage(image3);
         }
-        else if (level == 5){
+        else if (this.level == 5){
+            musicPlayer.stopMusic();
+            musicPlayer.setPath("src/Media/Audio/SpaceTheme.mp3");
+            musicPlayer.run();
             Image image4 = new Image("file:src/Media/Stages/SpaceStage.png");
             background1.setImage(image4);
             background2.setImage(image4);
         }
+    }
+
+    public void restartBackground(){
+        Image image = new Image("file:src/Media/Stages/DesertStage.png");
+        background1.setImage(image);
+        background2.setImage(image);
     }
 }

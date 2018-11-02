@@ -3,10 +3,14 @@ package Server;
 import Logic.Lists.SendList;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 
 public class Serializer {
+
+    final static Logger logger = LoggerFactory.getLogger(Serializer.class);
 
     /**
      * Method to serialize a list
@@ -17,6 +21,7 @@ public class Serializer {
     public static String serializadorString(SendList sendList) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         String xml = xmlMapper.writeValueAsString(sendList);
+        logger.info("Serializing list to xml.");
         return xml;
     }
 
@@ -29,6 +34,7 @@ public class Serializer {
     public static SendList deserializadorString(String xml) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         SendList value = xmlMapper.readValue(xml, SendList.class);
+        logger.info("Deserialize xml to list.");
         return value;
     }
 

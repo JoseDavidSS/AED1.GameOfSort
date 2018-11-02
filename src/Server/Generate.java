@@ -1,8 +1,9 @@
 package Server;
 
-
 import Game.GameUtil;
 import Logic.Lists.SendList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,6 +16,9 @@ import static oracle.jrockit.jfr.events.Bits.intValue;
 
 @Path("generate")
 public class Generate {
+
+    final Logger logger = LoggerFactory.getLogger(Generate.class);
+
     @GET
     @Produces("application/xml")
     /**
@@ -23,6 +27,7 @@ public class Generate {
      * @return XML of the list created
      */
     public String generate(@QueryParam("dragons") int dragons) throws IOException {//Recibe cantidad dragones
+        logger.info("Generating list with " + dragons + " dragons.");
         int i = 0;
         int y = 15;
         int x = 900;
