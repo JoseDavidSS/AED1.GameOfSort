@@ -552,17 +552,24 @@ public class Game {
      */
     public void readLevel (){
         if (level == 2){
-            Image image = new Image("file:src/Media/Stages/UnderwaterStage.png");
+            Image image = new Image("file:src/Media/Stages/CastleStage.png");
             background1.setImage(image);
             background2.setImage(image);
         }
         else if (level == 3){
-            Image image2 = new Image("file:src/Media/Stages/CastleStage.png");
+            Image image2 = new Image("file:src/Media/Stages/ForestStage.png");
             background1.setImage(image2);
             background2.setImage(image2);
         }
-        else{
+        else if (level == 4){
+            Image image3 = new Image("file:src/Media/Stages/UnderwaterStage.png");
+            background1.setImage(image3);
+            background2.setImage(image3);
         }
-
+        else if (level == 5){
+            Image image4 = new Image("file:src/Media/Stages/SpaceStage.png");
+            background1.setImage(image4);
+            background2.setImage(image4);
+        }
     }
 }
