@@ -12,7 +12,21 @@ class BTreeTest {
         bt.add("Pablo");
         bt.add("Byron");
         bt.add("Isaac");
-        assertEquals(3, bt.size());
+        bt.add("Jeff");
+        bt.add("killme");
+        bt.add("Youtube");
+        bt.add("pls");
+        bt.add("Tyrell");
+        bt.add("Rochester");
+        bt.add("iPhone");
+        bt.add("iPad");
+        bt.add("AppleWatch");
+        bt.add("GooglePixel");
+        bt.add("SurfacePro");
+        bt.add("SurfaceBook");
+        bt.add("Note7");
+        bt.add("explosion");
+        assertEquals(17, bt.size());
     }
 
     @Test
@@ -21,8 +35,15 @@ class BTreeTest {
         bt.add("Drani");
         bt.add("Smaug");
         bt.add("Jeff");
+        bt.add("Yurgen");
+        bt.add("Stuff");
+        bt.remove("Gamecube");
         bt.remove("Jeff");
+        bt.remove("Smaug");
+        bt.remove("Stuff");
         assertEquals(false, bt.contains("Jeff"));
+        assertEquals(false, bt.contains("Smaug"));
+        assertEquals(false, bt.contains("Stuff"));
     }
 
     @Test

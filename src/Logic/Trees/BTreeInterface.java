@@ -35,12 +35,6 @@ public interface BTreeInterface<T> {
     public int size();
 
     /**
-     * Validate the tree according to the invariants.
-     * @return True if the tree is valid.
-     */
-    public boolean validate();
-
-    /**
      * Get Tree as a Java compatible Collection
      * @return Java compatible Collection
      */
