@@ -221,7 +221,7 @@ public class Game {
     /**
      * shoot() is a method used to create and move player's bullets
      */
-    private void shoot(){
+    public void shoot(){
         Attack attack = new Attack(0, player.getPosx() + 150, player.getPosy(), 40, 40, "file:src/Media/Bullets/Green Bullet.png", "playerbullet");
         paneBoard.getChildren().add(attack);
         BulletsList.getInstance().addBullet(attack);
